@@ -2,7 +2,7 @@
 
 # ESIIL Innovation Summit
 
-March 12-14, 2024
+May 14-16, 2024
 
 Forests have the potential to regulate a changing climate through uptake of carbon dioxide. However, this function is being compromised by increasing wildfires and other disturbances, particularly in the western U.S. The goal of the Forest Carbon Codefest is for teams to use cyberinfrastructure and a curated set of data to define their own scientific questions that advance our understanding of aboveground forest carbon dynamics as they relate to forest disturbance. Teams will then collaboratively answer that question in the form of a fully open, reproducible, and complete code script.
 
