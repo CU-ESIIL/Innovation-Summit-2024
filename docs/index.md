@@ -1,6 +1,6 @@
 ![Forest pixel banner](./assets/codefest_hero.png)
 
-# Forest Carbon CodeFest
+# ESIIL Innovation Summit
 
 March 12-14, 2024
 
