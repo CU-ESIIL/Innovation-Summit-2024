@@ -1,11 +1,11 @@
 site_name: 'Forest Carbon Codefest ESIIL'
 site_description: 'FCC 2024'
 site_author: Tyler McIntosh
-site_url: https://cu-esiil.github.io/forest-carbon-codefest
+site_url: https://cu-esiil.github.io/innovation-summit-2024
 
 # Repository
-repo_name: forest-carbon-codefest
-repo_url: https://github.com/CU-ESIIL/forest-carbon-codefest
+repo_name: Innovation-Summit-2024
+repo_url: https://github.com/CU-ESIIL/Innovation-Summit-2024
 edit_uri: edit/main/docs/
 # Copyright
 copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
