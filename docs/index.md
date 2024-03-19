@@ -18,9 +18,26 @@ Encourage the co-production of environmental knowledge with communities that are
 ## [Event living agenda is linked here](https://docs.google.com/document/d/1UPiDjg_5f5lV7603QF9W7XTl1GWIMb4dk6EYPIh6nlU/edit?usp=sharing)
 
 ## Venue Information
-The ESIIL Innovation Summit will be held at the University of Colorado Boulder East Campus SEEC Building (4001 Discovery Dr, Boulder, CO 80303). Directions to the SEEC Building [here](https://https://seec.colorado.edu/getting-here/directions).
+### Explore Boulder Like a Local!
+Want to get out to explore while you’re here? [This website](https://https://www.bouldercoloradousa.com/things-to-do/) has lots of information on things to do in Boulder, such as shopping, restaurants, nightlife, and much more!
 
-(Building Maps to follow)
+### Weather and Packing
+Boulder is 5,430 feet in elevation and has a sunny, semi-arid climate. Hydrating during your stay is very important, as altitude sickness (headache, nausea, shortness of breath, dizziness, and tiredness) can occur. Weather conditions can change rapidly throughout each day and from day to day. Layers are always a good choice. In summer months, average high daily temperatures are in the 80s and 90s, with lows in the 50s and 60s. The sun is strong in Boulder, so please bring sunscreen, sunglasses, and a hat. Afternoon thunderstorms aren’t unusual, so a rain jacket is helpful. There are many trails near Boulder, so hiking or running shoes and a set of workout clothes can help get you outside during your stay.
+
+### Health & Safety Resources
+* Campus and Off-Campus Emergencies 911
+* CU Police Department (On-Campus, Non-Emergency) 303-492-6666
+* City of Boulder Police Department (Non-Emergency) 303-441-3333
+* Boulder Community Hospital 303-415-7000: 4747 Arapahoe Ave, Boulder, CO 80303
+
+### Technology Needs
+The Summit will give participants an opportunity to collaborate with each other on environmental data sets in real time. We would like you to bring a laptop/notebook that has the ability to connect to the internet (don’t forget your chargers!). If you do not have one that you can bring with you, please email esiil@colorado.edu, as we may be able to request a few rentals from the university library. 
+
+### Internet Access
+Access wireless service on campus by selecting UCB Guest Wireless from your available Wi-Fi network options and accepting the terms and conditions upon opening your web browser. You will be prompted to re-accept these terms and conditions periodically. If you encounter difficulty accessing the Internet, call 303-735-HELP (4357) or email help@colorado.edu for assistance during their business hours. Check firewalls or security settings on your computer that could possibly complicate accessing the campus Wi-Fi system before you arrive.
+
+### Parking
+Permits are required to park on CU Boulder campus. For any non-CU employees/students who will need to park a vehicle on campus, please email esiil@colorado for parking pass information. The nearest to the SEEC building is Lot 556 (Campus Map).
 
 ## Hotels 
 **[Fairfield Inn and Suites Boulder](https://https://www.marriott.com/en-us/hotels/vboff-fairfield-inn-and-suites-boulder/overview/?gclid=CjwKCAiArfauBhApEiwAeoB7qMAiU5fx2MLcvIu6_IzEGkfX_GXVtOJQkOGWaU63o8dVHRqDfwUKChoCQhUQAvD_BwE&gclsrc=aw.ds&cid=PAI_GLB0004YXD_GLE000BIM5_GLF000OETA)**
