@@ -54,24 +54,24 @@ When booking with one of these hotels ([instructions on the site](https://https:
 
 ## Transportation
 
-### Air Transportation
+**Air Transportation**
 If you are flying in for the event you will want to fly into the Denver International Airport (DIA). Note that the airport is quite large and you will need to take an airport train to the main terminal.
 
 ### Ground Transportation
-#### Ride Share
+**Ride Share**
 A Lyft or Uber or airport taxi are the most expensive option but also the most direct way to get from the airport to Boulder (often $70 or higher one way).
 
 
-#### Public transportation to/from airport
+**Public transportation to/from airport**
 Transit from the Denver airport to Boulder is quite easy via the **AB1 Boulder/Denver** airport bus. This bus runs at least once an hour during the day, with more frequent trips at popular times. To locate the bus, follow signs in the Denver airport baggage claim area to ‘Train to city,’ which will lead you down an escalator. At the base of the escalator, instead of continuing straight towards the visible train station, turn left and you should see a bus terminal with an RTD ticket machine. Tickets for the AB1 can be purchased for $10. Find the gate for the AB1 / Downtown Boulder line.
 
-#### Airport Shuttle Services
+**Airport Shuttle Services**
 If you would prefer to book a shuttle to/from DIA (Denver International Airport) & Boulder, there are three options:
 * Green Ride Boulder: www.greenrideboulder.com 303-997-0238
 * SuperShuttle: www.supershuttle.com 800-258-3826
 * Eight Black Shuttle: https://eightblackairportshuttle.com 720-223-5474
 
-#### Car Rentals
+**Car Rentals**
 There are a number of rental car agencies located at the Denver International Airport:
 * Advantage: www.advantage.com
 * Alamo: www.alamo.com
@@ -83,17 +83,17 @@ There are a number of rental car agencies located at the Denver International Ai
 * National: www.nationalcar.com
 * Payless: www.paylesscarrental.com
 
-#### Additional car rental options include:
+**Additional car rental options include:**
 * eGo CarShare
 * Zipcar
 
 ### Transportation around the Boulder area
 Boulder has a number of public transportation options for traversing Boulder and the surrounding area.
-#### Bus lines
+**Bus lines**
 [Information about Boulder’s local bus network can be found here](https://http://www.bouldercolorado.gov/goboulder/bus). Note that the Skip, Bound, and Hop lines pass campus regularly.
 If you need to travel to Denver for any reason, the [Flatiron Flyer](https://https://www.rtd-denver.com/services/flatiron-flyer) bus connects Denver to Boulder. Currently the FF1 is the best option, and connects Denver’s Union Station to the Downtown Boulder Station (with numerous stops in-between).
 
-#### Biking & Walking
+**Biking & Walking**
 Boulder has an extensive system of city walking/biking paths; [maps can be found here](https://https://bouldercolorado.gov/goboulder/walk). [Boulder B-Cycle](https://http://www.boulder.bcycle.com/) is a community non-profit bike sharing system with daily and month passes available.
 
 
