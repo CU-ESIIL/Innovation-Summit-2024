@@ -1,26 +1,27 @@
 ![Forest pixel banner](./assets/codefest_hero.png)
 
-# ESIIL Innovation Summit
+# Big Data for Environmental Resilience and Adaptation 
+May 14th-16th, 2024
+University of Colorado Boulder
 
-May 14-16, 2024
+ESIIL's 2024 Innovation Summit will offer an opportunity to use big data to understand resilience across genes, species, ecosystems and societies, advance ecological forecasting with solutions in mind, and inform adaptive management and natural climate solutions. The Summit will support attendees to advance data-informed courses of action for resilience and adaptation in the face of our changing environment. It will be an in-person ‘unconference’, enabling participants to dynamically work on themes that most inspire them, with inclusive physical and intellectual spaces for working together. Over two and a half days participants will work in teams to explore research questions using open science approaches, including: data infrastructure, artificial intelligence (AI) and novel analytics, and cloud computing. Participants will be encouraged to work across and respect different perspectives, with the aim of co-developing resilience solutions. ESIIL will provide participants with opportunities to learn more about cultural intelligence, ethical and open science practices, and leadership in the rapidly evolving field of environmental data science. Overall, the Summit will capitalize on the combination of open data and analytics opportunities to develop innovative or impactful approaches that improve environmental resilience and adaptation.
 
-Forests have the potential to regulate a changing climate through uptake of carbon dioxide. However, this function is being compromised by increasing wildfires and other disturbances, particularly in the western U.S. The goal of the Forest Carbon Codefest is for teams to use cyberinfrastructure and a curated set of data to define their own scientific questions that advance our understanding of aboveground forest carbon dynamics as they relate to forest disturbance. Teams will then collaboratively answer that question in the form of a fully open, reproducible, and complete code script.
+## Why Big Data for Environmental Resilience and Adaptation?
+Humans have vastly altered ecosystems, leading to habitat and biodiversity loss, climate change, and altered nutrient and water cycles. At the same time, we are in an unprecedented moment where vast amounts of data are being produced about our planet faster than we can generate insights in a responsible way. We urgently need solutions that foster equitable use of our planet’s resources and better distribute the burden of adaptation.
 
-At the end of the event, projects will be judged by the participant community and facilitation team, with a prize awarded to each member of the winning team.
-
-Our passionate cohort of participants for the event includes individuals from academia, land management, and industry, across a range of career stages.
-
-Code generated for the event can be found on [our GitHub repo](https://github.com/CU-ESIIL/forest-carbon-codefest) (or, in the case of team code products, linked on the 'Teams' page of this site), and is available for use under an MIT license.
-
-# Details
+## The goals of the 2024 ESIIL Innovation Summit are to: 
+Explore big data for environmental resilience and adaptation by identifying data synthesis opportunities and utilizing ESIIL cloud-compute capabilities. 
+Promote best practices in ethical, open science, by supporting accessibility and usability of environmental data by all stakeholders. Champion ethical and equitable practices in environmental science, honoring data sovereignty and encouraging the responsible use of AI. 
+Support diverse and inclusive teams by establishing collaborations around data-inspired themes across different disciplines, sectors, career stages, and backgrounds.
+Encourage the co-production of environmental knowledge with communities that are experiencing significant environmental challenges.
 
 ## [Event living agenda is linked here](https://docs.google.com/document/d/1UPiDjg_5f5lV7603QF9W7XTl1GWIMb4dk6EYPIh6nlU/edit?usp=sharing)
 
 ## Where  
 In-person at the University of Colorado, Boulder  
 
-## When  
-March 12-14, 2024
+## Event Logistics
+ADD Link to Logistics page
 
 # Event Documents
 
@@ -31,5 +32,5 @@ March 12-14, 2024
 - [Guidelines for intellectual contributions and credit](https://drive.google.com/file/d/1WcjV412EzCxohNtjFtca-o2Gpf36ISAX/view?usp=sharing)
 
 
-*This event is hosted by ESIIL and the CU Boulder CIRES Earth Lab. It is funded by the National Science Foundation (via awards numbers DBI-2153040, DEB-1846384, and DEB-2017889), and subject to the NSF’s terms and conditions*
+*This event is hosted by ESIIL and funded by the National Science Foundation (via award # DBI-2153040), and subject to the NSF’s terms and conditions.
 
