@@ -1,4 +1,4 @@
-![Forest pixel banner](./assets/codefest_hero.png)
+![Forest pixel banner]([./assets/codefest_hero.png](https://github.com/CU-ESIIL/Innovation-Summit-2024/blob/1bbfad9522e472093a40a8b5e9e99337b0fb9e57/docs/assets/esiil_content/ESIIL%20log%20white%20letteringAsset%204%402x.png))
 
 # Big Data for Environmental Resilience and Adaptation 
 May 14th-16th, 2024
