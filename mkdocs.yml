@@ -13,45 +13,13 @@ copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
-  - Codefest Teams: teams.md
   - Pre-event virtual meetings: virtual-meetings.md
-  - Breakout prompts: breakout.md
-  - Collaborating on the cloud:
-       - Markdown basics: collaborating-on-the-cloud/markdown_basics.md
-       - Cyverse basics: collaborating-on-the-cloud/cyverse-instructions.md
-       - Github basics: collaborating-on-the-cloud/github-basics.md
-       - Cyverse data management: collaborating-on-the-cloud/cyverse_data_management.md
   - Additional resources:
        - Code of Conduct: additional-resources/code-of-conduct.md
        - Participant agreement: additional-resources/participant_agreement.md
        - R and Python bilingualism: additional-resources/bilingualism_md.md
        - Cyverse hacks: additional-resources/cyverse_hacks.md
        - Useful links: additional-resources/useful_links.md
-  - Codefest data library:
-       - TUTORIAL Moving data to your instance from the data store: data-library/move-data-to-instance.md
-       - TUTORIAL Mounting data directly from a URL: data-library/mounting-via-vsi.md
-       - TUTORIAL Accessing data via STAC: data-library/stac_simple.md
-       - TUTORIAL STAC & VSI: data-library/stac_mount_save.md
-       - TUTORIAL Sentinal 2 STAC example: data-library/Pull_Sentinal2_l2_data.md
-       - EPA Ecoregions: data-library/epa-ecoregions.md
-       - Forest Inventory Analysis Database: data-library/fia.md
-       - GEDI: data-library/gedi.md
-       - TreeMap: data-library/treemap.md
-       - Disturbance stack: data-library/disturbance-stack.md
-       - Landfire Events: data-library/landfire-events.md
-       - Fire Severity (CBI): data-library/fire-cbi.md
-       - LCMAP (Land cover): data-library/lcmap.md
-       - MODIS Vegetation Continuous Fields (VCF): data-library/modis-vcf.md
-       - Drought indices (SPEI & PDSI): data-library/drought.md
-       - Additional ESIIL Data Libraries: data-library/esiil-data-library.md
-  - Project documentation:
-       - Discussion notes: project-documentation/project-notes.md
-       - Methods: project-documentation/methods.md
-       - Project presentation: project-documentation/project-presentation.md
-  - Publication:
-       - Manuscript: resources/manuscript.md
-       - Notes from readings: resources/notes_from_readings.md
-       - Citations: resources/citations.md
 
 # Configuration
 theme:
