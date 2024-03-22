@@ -101,10 +101,5 @@ Boulder has an extensive system of city walking/biking paths; [maps can be found
 # Event Documents
 
 
-- [Code of conduct](https://docs.google.com/document/d/1BpqHKCaa_NZYQXPk2BHyPG3p9tjvWMJNsixn93mtAMU/edit?usp=drive_link)
-- [Intellectual property participant agreement](https://docs.google.com/document/d/1jKXWrVzuhKWbRPtcRelxcSD9svh9rvTQUmadDV1Dy1I/edit?usp=drive_link)
-- [Guidelines for intellectual contributions and credit](https://drive.google.com/file/d/1WcjV412EzCxohNtjFtca-o2Gpf36ISAX/view?usp=sharing)
-
-
 *This event is hosted by ESIIL and funded by the National Science Foundation (via award # DBI-2153040), and subject to the NSF’s terms and conditions.
 
