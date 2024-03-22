@@ -42,16 +42,11 @@ Permits are required to park on CU Boulder campus. For any non-CU employees/stud
 
 ## Hotels 
 **[Fairfield Inn and Suites Boulder](https://https://www.marriott.com/en-us/hotels/vboff-fairfield-inn-and-suites-boulder/overview/?gclid=CjwKCAiArfauBhApEiwAeoB7qMAiU5fx2MLcvIu6_IzEGkfX_GXVtOJQkOGWaU63o8dVHRqDfwUKChoCQhUQAvD_BwE&gclsrc=aw.ds&cid=PAI_GLB0004YXD_GLE000BIM5_GLF000OETA)**
-
-**ESIIL Event Rate:** $152 
-
-**Location:** 5397 South Boulder Rd., Boulder, CO (2.3 miles from venue)
-
-**Contact:** Ari Rubin, ari.rubin@marriott.com
-
-Complimentary breakfast buffet, free internet, free parking, and use of fitness center. 
-
-**Attendees can access this rate at:** https://www.marriott.com/event-reservations/reservation-link.mi?id=1709058275827&key=GRP&app=resvlink
+* **ESIIL Event Rate:** $152 
+* **Location:** 5397 South Boulder Rd., Boulder, CO (2.3 miles from venue)
+* **Contact:** Ari Rubin, ari.rubin@marriott.com
+* Complimentary breakfast buffet, free internet, free parking, and use of fitness center. 
+* **Attendees can access this rate at:** https://www.marriott.com/event-reservations/reservation-link.mi?id=1709058275827&key=GRP&app=resvlink
 
 
 CU Boulder has set negotiated rates with hotels all around Boulder and the surrounding area, which should provide some different options depending on your budget. Of these hotels, the **Marriott Boulder**, **Residence Inn Boulder Canyon Boulevard**, **Hilton Garden Inn**, and **Embassy Suites** by Hilton Boulder are the closest to CU Boulder’s East Campus. The Hotel Boulderado and the St. Julien Hotel and Spa are further from East Campus, but are within walking distance of Boulder’s Pearl Street Mall–a lively, walking-only street with many shops and restaurants.
