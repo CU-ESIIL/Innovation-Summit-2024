@@ -58,6 +58,7 @@ Permits are required to park on CU Boulder campus. For any non-CU employees/stud
 
 ## Hotels 
 **[Fairfield Inn and Suites Boulder](https://www.marriott.com/en-us/hotels/vboff-fairfield-inn-and-suites-boulder/overview/?gclid=CjwKCAiArfauBhApEiwAeoB7qMAiU5fx2MLcvIu6_IzEGkfX_GXVtOJQkOGWaU63o8dVHRqDfwUKChoCQhUQAvD_BwE&gclsrc=aw.ds&cid=PAI_GLB0004YXD_GLE000BIM5_GLF000OETA)**
+
 - **ESIIL Event Rate:** $152 
 - **Location:** 5397 South Boulder Rd., Boulder, CO (2.3 miles from venue)
 - **Contact:** Ari Rubin, ari.rubin@marriott.com
@@ -92,8 +93,6 @@ If you would prefer to book a shuttle to/from DIA (Denver International Airport)
 **Car Rentals**
 There are a number of rental car agencies located at the Denver International Airport:
 
-* Advantage: sfafe
-
 * Advantage: www.advantage.com
 * Alamo: www.alamo.com
 * Avis: www.avis.com
@@ -105,6 +104,7 @@ There are a number of rental car agencies located at the Denver International Ai
 * Payless: www.paylesscarrental.com
 
 **Additional car rental options include:**
+
 * eGo CarShare
 * Zipcar
 
