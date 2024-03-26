@@ -16,11 +16,11 @@ Encourage the co-production of environmental knowledge with communities that are
 ## Agenda
 **Pre-Summit Trainings**
 
-April 24, 12:00-2:00 PM MT: Head in the Clouds: Navigating the Basics of Cloud Computing
+April 24, 12-2pm MT: Head in the Clouds: Navigating the Basics of Cloud Computing
 
-May 1, 12:00-2:00 PM MT: Feet on the ground:  Collaborating with Other People Using Cloud Computing
+May 1, 12-2pm MT: Feet on the ground:  Collaborating with Other People Using Cloud Computing
 
-May 6, 9:00-11:00 AM MT: Voices in Concert: Cultural Intelligence, the Art of Team Science, and Community Skills
+May 6, 9-11am MT: Voices in Concert: Cultural Intelligence, the Art of Team Science, and Community Skills
 
 **2024 ESIIL Innovation Summit**
 
