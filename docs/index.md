@@ -13,7 +13,7 @@ Promote best practices in ethical, open science, by supporting accessibility and
 Support diverse and inclusive teams by establishing collaborations around data-inspired themes across different disciplines, sectors, career stages, and backgrounds.
 Encourage the co-production of environmental knowledge with communities that are experiencing significant environmental challenges.
 
-## [Agenda](https://docs.google.com/document/d/1UPiDjg_5f5lV7603QF9W7XTl1GWIMb4dk6EYPIh6nlU/edit?usp=sharing)
+## Agenda - coming soon
 ## Join our Slack Workspace
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace here: Link
 ## Venue Information
