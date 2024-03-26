@@ -108,10 +108,10 @@ There are a number of rental car agencies located at the Denver International Ai
 Boulder has a number of public transportation options for traversing Boulder and the surrounding area.
 **Bus lines**
 [Information about Boulder’s local bus network can be found here](http://www.bouldercolorado.gov/goboulder/bus). Note that the Skip, Bound, and Hop lines pass campus regularly.
-If you need to travel to Denver for any reason, the [Flatiron Flyer](https://https://www.rtd-denver.com/services/flatiron-flyer) bus connects Denver to Boulder. Currently the FF1 is the best option, and connects Denver’s Union Station to the Downtown Boulder Station (with numerous stops in-between).
+If you need to travel to Denver for any reason, the [Flatiron Flyer](https://www.rtd-denver.com/services/flatiron-flyer) bus connects Denver to Boulder. Currently the FF1 is the best option, and connects Denver’s Union Station to the Downtown Boulder Station (with numerous stops in-between).
 
 **Biking & Walking**
-Boulder has an extensive system of city walking/biking paths; [maps can be found here](bouldercolorado.gov/goboulder/walk). [Boulder B-Cycle](https://www.boulder.bcycle.com/) is a community non-profit bike sharing system with daily and month passes available.
+Boulder has an extensive system of city walking/biking paths; [maps can be found here](https://bouldercolorado.gov/goboulder/walk). [Boulder B-Cycle](http://www.boulder.bcycle.com/) is a community non-profit bike sharing system with daily and month passes available.
 
 
 *This event is hosted by ESIIL and funded by the National Science Foundation (via award # DBI-2153040), and subject to the NSF’s terms and conditions.
