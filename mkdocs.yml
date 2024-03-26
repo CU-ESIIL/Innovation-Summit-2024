@@ -13,7 +13,7 @@ copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
-  - Pre-event virtual meetings: virtual-meetings.md
+  - Pre-Summit Virtual Trainings: virtual-meetings.md
   - Additional resources:
        - Code of Conduct: additional-resources/code-of-conduct.md
        - R and Python bilingualism: additional-resources/bilingualism_md.md
