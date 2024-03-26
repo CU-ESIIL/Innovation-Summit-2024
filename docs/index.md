@@ -1,4 +1,4 @@
-![](../assets/esiil_content/Summit_Header.png)
+![](/assets/esiil_content/Summit_Header.png)
 
 # Big Data for Environmental Resilience and Adaptation 
 May 14th-16th, 2024
