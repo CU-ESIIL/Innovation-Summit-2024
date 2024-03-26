@@ -36,7 +36,7 @@ May 16: 9am-12pm MT
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ). 
 ## Venue Information
 ### Explore Boulder Like a Local!
-Want to get out to explore while you’re here? [This website](https://https://www.bouldercoloradousa.com/things-to-do/) has lots of information on things to do in Boulder, such as shopping, restaurants, nightlife, and much more!
+Want to get out to explore while you’re here? [This website](https://www.bouldercoloradousa.com/things-to-do/) has lots of information on things to do in Boulder, such as shopping, restaurants, nightlife, and much more!
 
 ### Weather and Packing
 Boulder is 5,430 feet in elevation and has a sunny, semi-arid climate. Hydrating during your stay is very important, as altitude sickness (headache, nausea, shortness of breath, dizziness, and tiredness) can occur. Weather conditions can change rapidly throughout each day and from day to day. Layers are always a good choice. In summer months, average high daily temperatures are in the 80s and 90s, with lows in the 50s and 60s. The sun is strong in Boulder, so please bring sunscreen, sunglasses, and a hat. Afternoon thunderstorms aren’t unusual, so a rain jacket is helpful. There are many trails near Boulder, so hiking or running shoes and a set of workout clothes can help get you outside during your stay.
@@ -67,7 +67,7 @@ Permits are required to park on CU Boulder campus. For any non-CU employees/stud
 
 CU Boulder has set negotiated rates with hotels all around Boulder and the surrounding area, which should provide some different options depending on your budget. Of these hotels, the **Marriott Boulder**, **Residence Inn Boulder Canyon Boulevard**, **Hilton Garden Inn**, and **Embassy Suites** by Hilton Boulder are the closest to CU Boulder’s East Campus. The Hotel Boulderado and the St. Julien Hotel and Spa are further from East Campus, but are within walking distance of Boulder’s Pearl Street Mall–a lively, walking-only street with many shops and restaurants.
 
-When booking with one of these hotels ([instructions on the site](https://https://www.cu.edu/psc/travel/preferred-hotel-program-local/preferred-hotel-program-local-ucb)), note that you need to mention “The University of Colorado special rate” and that you will be staying for a university-sponsored event. You should be able to get these rates up until the day before the event, but we recommend booking sooner than later to ensure that there is space at your preferred location.
+When booking with one of these hotels [instructions on the site](https://www.cu.edu/psc/travel/preferred-hotel-program-local/preferred-hotel-program-local-ucb), note that you need to mention “The University of Colorado special rate” and that you will be staying for a university-sponsored event. You should be able to get these rates up until the day before the event, but we recommend booking sooner than later to ensure that there is space at your preferred location.
 
 ## Transportation
 
@@ -112,9 +112,6 @@ If you need to travel to Denver for any reason, the [Flatiron Flyer](https://htt
 
 **Biking & Walking**
 Boulder has an extensive system of city walking/biking paths; [maps can be found here](https://https://bouldercolorado.gov/goboulder/walk). [Boulder B-Cycle](https://http://www.boulder.bcycle.com/) is a community non-profit bike sharing system with daily and month passes available.
-
-
-# Event Documents
 
 
 *This event is hosted by ESIIL and funded by the National Science Foundation (via award # DBI-2153040), and subject to the NSF’s terms and conditions.
