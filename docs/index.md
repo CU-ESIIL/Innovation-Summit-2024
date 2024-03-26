@@ -13,9 +13,23 @@ Promote best practices in ethical, open science, by supporting accessibility and
 Support diverse and inclusive teams by establishing collaborations around data-inspired themes across different disciplines, sectors, career stages, and backgrounds.
 Encourage the co-production of environmental knowledge with communities that are experiencing significant environmental challenges.
 
-## Agenda - coming soon
+## Agenda
+**Pre-Summit Trainings**
+
+April 24, 12:00-2:00 PM MT: Head in the Clouds: Navigating the Basics of Cloud Computing
+
+May 1, 12:00-2:00 PM MT: Feet on the ground:  Collaborating with Other People Using Cloud Computing
+
+May 6, 9:00-11:00 AM MT: Voices in Concert: Cultural Intelligence, the Art of Team Science, and Community Skills
+
+**2024 ESIIL Innovation Summit**
+May 13: Early Registration and Optional Activities
+May 14: 9am-5pm MT
+May 15: 9am-5pm MT
+May 16: 9am-12pm MT
+
 ## Join our Slack Workspace
-We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace here: Link
+We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://https://www.bouldercoloradousa.com/things-to-do/](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ) 
 ## Venue Information
 ### Explore Boulder Like a Local!
 Want to get out to explore while you’re here? [This website](https://https://www.bouldercoloradousa.com/things-to-do/) has lots of information on things to do in Boulder, such as shopping, restaurants, nightlife, and much more!
