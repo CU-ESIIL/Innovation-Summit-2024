@@ -92,6 +92,8 @@ If you would prefer to book a shuttle to/from DIA (Denver International Airport)
 **Car Rentals**
 There are a number of rental car agencies located at the Denver International Airport:
 
+* Advantage: sfafe
+
 * Advantage: www.advantage.com
 * Alamo: www.alamo.com
 * Avis: www.avis.com
