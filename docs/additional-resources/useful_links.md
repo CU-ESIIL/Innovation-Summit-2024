@@ -1,11 +1,9 @@
-# Useful links for the Forest Carbon Codefest
+# Useful links 
 
 [CyVerse User Portal](https://user.cyverse.org/services)
-
-[FCC GitHub repo](https://github.com/CU-ESIIL/forest-carbon-codefest)
 
 [GitHub](https://github.com/)
 
 [ESIIL Website](https://esiil.org/)
 
-[CyVerse Utils Repo](https://github.com/CU-ESIIL/cyverse-utils)
+[2024 Summit Slack](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ)
