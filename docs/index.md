@@ -84,12 +84,14 @@ Transit from the Denver airport to Boulder is quite easy via the **AB1 Boulder/D
 
 **Airport Shuttle Services**
 If you would prefer to book a shuttle to/from DIA (Denver International Airport) & Boulder, there are three options:
+
 * Green Ride Boulder: www.greenrideboulder.com 303-997-0238
 * SuperShuttle: www.supershuttle.com 800-258-3826
 * Eight Black Shuttle: https://eightblackairportshuttle.com 720-223-5474
 
 **Car Rentals**
 There are a number of rental car agencies located at the Denver International Airport:
+
 * Advantage: www.advantage.com
 * Alamo: www.alamo.com
 * Avis: www.avis.com
