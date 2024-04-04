@@ -10,7 +10,7 @@ Date: April 24, 2024
 
 Time: 12:00-2:00 PM MST
 
-Zoom Link: 
+Zoom Link: [https://cuboulder.zoom.us/j/99754742074](https://cuboulder.zoom.us/j/99754742074)
 
 
 ## Virtual meeting #2
