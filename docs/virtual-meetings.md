@@ -21,7 +21,7 @@ Date:  May 1, 2024
 
 Time: 12:00-2:00 PM MST
 
-Zoom Link:
+Zoom Link: [https://cuboulder.zoom.us/j/99754742074](https://cuboulder.zoom.us/j/99754742074)
 
 
 ## Virtual meeting #3
@@ -32,4 +32,4 @@ Date: May 6, 2024
 
 Time: 9-11 AM MST
 
-Zoom Link:
+Zoom Link: [https://cuboulder.zoom.us/j/99754742074](https://cuboulder.zoom.us/j/99754742074)
