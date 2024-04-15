@@ -1,4 +1,4 @@
-# Team GetHub Page Prompts
+# TEAM ACTIVITY 2: Make a plan
 ### Instructions:
 Work through the prompts in order. Use a decision-making method "to decide" before moving to a new section of the handout.
 
