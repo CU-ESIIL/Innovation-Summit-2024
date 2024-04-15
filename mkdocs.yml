@@ -18,6 +18,8 @@ nav:
        - Code of Conduct: additional-resources/code-of-conduct.md
        - Cyverse hacks: additional-resources/cyverse_hacks.md
        - Useful links: additional-resources/useful_links.md
+  - Group worksheets:
+       - Introduction worksheet: worksheets/worksheet_1.md
 
 # Configuration
 theme:
