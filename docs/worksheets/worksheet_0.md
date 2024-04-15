@@ -1,95 +1,29 @@
-# TEAM ACTIVITY 2: Make a plan
-### Instructions:
-- **Follow the Prompts Sequentially:**
-  - Work through the prompts in the order they are presented.
-- **Decision-Making Process:**
-  - Before advancing to the next section of the handout, use a structured decision-making method. Ensure that all team members agree on the decisions made. This approach helps in maintaining coherence and collective agreement throughout the activities.
+# Introduction to the Tutorial on Historic Redlining and Environmental Analysis
 
-### Introductions (approx. time: 10 mins total or "2 breaths" per person)
-- **Each team member please share the following information about yourself:**
+## Understanding Redlining
 
-  - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
-  - **Expertise:** [Your Expertise]
-  - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
-  - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
+Redlining is a term that originated in the 1930s, used to describe a discriminatory practice where banks and other lending institutions refused to offer mortgages or offered worse terms to people in specific neighborhoods based on racial and ethnic compositions. This practice was facilitated by maps created by the Home Owners’ Loan Corporation (HOLC), which color-coded areas deemed risky for investment in red, hence the term "redlining." These areas were typically home to minority populations and, as a result, were systematically denied access to investment and development opportunities.
 
-  ---
-  - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
-  - **Expertise:** [Your Expertise]
-  - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
-  - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
+The power of maps extends far beyond simple navigation aids; they are tools of communication and control. By drawing lines on a map, the HOLC didn't just reflect societal prejudices; they reinforced and perpetuated them. These maps dictated economic opportunities and shaped the physical and social architecture of communities for generations. As a visual representation of exclusion, redlining maps not only influenced perceptions but also had a tangible impact on the urban landscape, determining where infrastructure was built, where services were provided, and ultimately, who would thrive and who would not. [Jackson, K. T. (1985). *Crabgrass Frontier: The Suburbanization of the United States.* Oxford University Press.]
 
-  ---
-  - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
-  - **Expertise:** [Your Expertise]
-  - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
-  - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
+The consequences of redlining are profound and long-lasting. Economically and socially, these practices contributed to a cycle of poverty, racial segregation, and an entrenched wealth gap that still persists. Environmentally, the neighborhoods targeted by redlining often suffer from significant injustices. These areas typically have reduced access to green spaces, higher exposure to pollutants, and greater vulnerability to the impacts of climate change, further compounding the health and well-being challenges faced by their residents. [Rothstein, R. (2017). *The Color of Law: A Forgotten History of How Our Government Segregated America.* Liveright Publishing.]
 
-  ---
-  - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
-  - **Expertise:** [Your Expertise]
-  - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
-  - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
-
-  ---
-  - **Continue adding more team members following the same format, with a line break after each person.**
-  ---
-### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Refine the initial research question your team developed earlier. Please make any necessary edits or adjustments below:**
-  - [Edit or refine your team's previously selected research question here]
+Through mapping these injustices and understanding their origins, we gain insight into the systemic barriers that have shaped our cities. This tutorial not only aims to uncover the legacy of redlining but also to illustrate how such policies continue to affect urban environments today, demonstrating the powerful role that mapping plays in urban policy and social equity. [Coates, T-N. (2014). "The Case for Reparations." *The Atlantic.*]
 
 
-### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Craft a catchy and public-facing title for your team’s project. Think of something that would grab attention at a conference or in a headline:**
-  - [Create an engaging title that captures the essence of your project here]
+## Goals of the Tutorial
 
+This tutorial aims to explore the historical context of redlining using the HOLC's data available for Philadelphia and then to examine the current environmental conditions of these historically redlined areas compared to non-redlined areas. By integrating historical redlining data with contemporary environmental data, we can observe the persistent effects of past policies on present-day urban landscapes.
 
-### Promoting Resilience and Adaptation
-- **Describe how your proposed project aligns with the summit's themes of resilience and adaptation. Please provide 1-2 sentences that clearly connect your project's goals or methods to these themes:**
-  - [Insert your response here]
+## Tutorial Overview
 
+1. **Part 1: Accessing and Visualizing Historical Redlining Data**
+   - We will download and plot the geographic boundaries of redlined areas using GeoJSON data from the HOLC. This part will guide you on how to use R and Python to visualize these historic policies spatially.
 
-### What Big Data Set
-- **Explore and draft potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, and after discussion and review, indicate your final choice for both the system being perturbed/disrupted and the perturbator/disrupter.**
+2. **Part 2: Integrating Environmental Satellite Data**
+   - In this part, we will retrieve environmental satellite data to analyze the environmental quality indicators such as vegetation, air quality, and surface temperature for the areas within and outside the redlined boundaries.
 
-#### Draft Potential Data Sets
-  - **System Being Perturbed/Disrupted:**
-    - [List all potential data sets here]
-  - **Perturbator/Disrupter:**
-    - [List all potential data sets here]
+3. **Part 3: Comparative Analysis and Visualization**
+   - We will perform statistical analyses to compare environmental conditions in redlined versus non-redlined areas and visualize the disparities. This involves creating maps and graphs that highlight the environmental inequities linked to historic redlining.
 
-#### Final Choice
-  - **System Being Perturbed/Disrupted (Final Choice):**
-    - [Indicate your final selected data set here]
-  - **Perturbator/Disrupter (Final Choice):**
-    - [Indicate your final selected data set here]
-
-
-
-### Brief Check-in: Definition of Resilience (approx. 5 mins)
-- **Review and refine the working definition of 'Resilience' provided below, based on your discussions and insights from earlier sections of this worksheet. Adjust the definition to better align with your team’s understanding or reaffirm it if it fully resonates with your views:**
-  - "Resilience is the capacity of a system, community, organization, or individual to absorb stress, recover from disruptions, adapt to change, and continue to develop and thrive."
-    - [Edit or reaffirm this definition here]
-
-
-### Day 1 Report Back
-- **Select one representative from your group to present the findings and insights to all summit attendees (~125 people). You will be addressing all the participants you've interacted with during the morning sessions. This is an opportunity for your breakout group (one of 10-15 groups) to summarize your project’s approach to the themes of adaptation and resilience.**
-  - **Presentation Content:**
-    - **Project Title:** 
-      - [Insert your team's project title here]
-    - **Research Question:** 
-      - [Insert your team's refined research question here]
-    - **Selected Data Sets:** 
-      - [List the data sets your team has chosen to use here]
-    - **Narrative on Resilience and Adaptation:**
-      - **System Being Perturbed/Disrupted:** [Describe the system]
-      - **Perturbator/Disrupter:** [Describe the perturbator/disrupter]
-      - **Impact on Resilience:** [Explain how these factors are influencing resilience]
-      - **Proposed Actionable Insight:** [Detail an actionable step that decision makers could take based on your proposed analysis]
-  - **Presentation Guidelines:**
-    - **Duration:** Your presentation should last between 30-60 seconds. Keep it concise and focused.
-    - **Objective:** Clearly communicate how your project aligns with the conference themes and highlight actionable insights that can aid decision makers.
+By the end of this tutorial, you will have a deeper understanding of how historical urban policies continue to affect modern urban environments and how to analyze these impacts using geographic and environmental data.
