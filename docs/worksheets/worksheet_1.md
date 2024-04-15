@@ -36,12 +36,11 @@ Work through the prompts in order. Use a decision-making method "to decide" befo
 
   ---
   - **Continue adding more team members following the same format, with a line break after each person.**
-
-
-
+  ---
 ### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Please revise the research question your team selected below:**
-  - [Edit or write your team's research question here]
+- **Refine the initial research question your team developed earlier. Please make any necessary edits or adjustments below:**
+  - [Edit or refine your team's previously selected research question here]
+
 
 ### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
 - **Create a title for your team’s project below:**
