@@ -5,7 +5,7 @@ Work through the prompts in order. Use a decision-making method "to decide" befo
 ## Day 1
 
 ### Introductions (approx. time: 10 mins total or "2 breaths" per person)
-- **Please share the following information about yourself:**
+- **Each team member please share the following information about yourself:**
 
   - **Name:** [Your Name]
   - **Preferred Pronouns:** [Your Pronouns]
