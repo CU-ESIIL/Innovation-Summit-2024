@@ -1,6 +1,9 @@
 # TEAM ACTIVITY 2: Make a plan
 ### Instructions:
-Work through the prompts in order. Use a decision-making method "to decide" before moving to a new section of the handout.
+- **Follow the Prompts Sequentially:**
+  - Work through the prompts in the order they are presented.
+- **Decision-Making Process:**
+  - Before advancing to the next section of the handout, use a structured decision-making method. Ensure that all team members agree on the decisions made. This approach helps in maintaining coherence and collective agreement throughout the activities.
 
 ### Introductions (approx. time: 10 mins total or "2 breaths" per person)
 - **Each team member please share the following information about yourself:**
