@@ -43,59 +43,52 @@ Work through the prompts in order. Use a decision-making method "to decide" befo
 
 
 ### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Create a title for your team’s project below:**
-  - [Edit or write your team's project title here]
+- **Craft a catchy and public-facing title for your team’s project. Think of something that would grab attention at a conference or in a headline:**
+  - [Create an engaging title that captures the essence of your project here]
+
 
 ### Promoting Resilience and Adaptation
-- **How does your proposed project relate to the summit themes: resilience and adaptation? (insert 1-2 sentences below).**
-  - [Insert response here]
+- **Describe how your proposed project aligns with the summit's themes of resilience and adaptation. Please provide 1-2 sentences that clearly connect your project's goals or methods to these themes:**
+  - [Insert your response here]
+
 
 ### What Big Data Set
-- **What data set(s) will you use to address this topic? Check the [data library](https://cu-esiil.github.io/data-library/) for suggestions. List some options below for the system being perturbed and the perturbator/disrupter, then highlight your top choices:**
-  - **System being perturbed/disrupted:**
-    - [List options here]
+- **Explore and draft potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, and after discussion and review, indicate your final choice for both the system being perturbed/disrupted and the perturbator/disrupter.**
+
+#### Draft Potential Data Sets
+  - **System Being Perturbed/Disrupted:**
+    - [List all potential data sets here]
   - **Perturbator/Disrupter:**
-    - [List options here]
+    - [List all potential data sets here]
+
+#### Final Choice
+  - **System Being Perturbed/Disrupted (Final Choice):**
+    - [Indicate your final selected data set here]
+  - **Perturbator/Disrupter (Final Choice):**
+    - [Indicate your final selected data set here]
+
+
 
 ### Brief Check-in: Definition of Resilience (approx. 5 mins)
-- **Below is a working definition of the word 'Resilience' for the Summit. Please edit the definition based on your responses to the prompts above:**
+- **Review and refine the working definition of 'Resilience' provided below, based on your discussions and insights from earlier sections of this worksheet. Adjust the definition to better align with your team’s understanding or reaffirm it if it fully resonates with your views:**
   - "Resilience is the capacity of a system, community, organization, or individual to absorb stress, recover from disruptions, adapt to change, and continue to develop and thrive."
     - [Edit or reaffirm this definition here]
 
-### Day 1 Report back
-- **Select one person to report back. For the report back, please read your team’s responses to the section headings:**
-  - **What is your title?**
-    - [Title here]
-  - **What is your research question?**
-    - [Research question here]
-  - **What data sets are you planning to use?**
-    - [Data sets here]
-- **Total time for each team to report back: 30-60 seconds**
 
-## Day 2
-### See GitHub Page for today’s prompts.
-[Data Library](https://cu-esiil.github.io/data-library/)
-
-### Goals and Objectives for the Day
-- **Decide on your data sets using a decision-making technique (Kaner’s Gradient of Agreement).**
-
-### End of the second day: One thing to bring everyone together.
-- **What is your title and research question?**
-  - [Title and question here]
-- **What datasets have you selected?**
-  - [Datasets here]
-- **What aspect of your team’s project is the most exciting?**
-  - [Exciting aspect here]
-
-### Day 2 Report back
-- **At the end of the day, connect to your GitHub and share your team’s progress.**
-
-## Day 3
-### Prepare for the final report back
-
-### Final Report back
-- **Share the following in a 4-minute presentation per team:**
-  - **Your team’s most inspiring finding:**
-    - [Finding here]
-  - **What are you thinking about doing next with your team?**
-    - [Future plans here]
+### Day 1 Report Back
+- **Select one representative from your group to present the findings and insights to all summit attendees (~125 people). You will be addressing all the participants you've interacted with during the morning sessions. This is an opportunity for your breakout group (one of 10-15 groups) to summarize your project’s approach to the themes of adaptation and resilience.**
+  - **Presentation Content:**
+    - **Project Title:** 
+      - [Insert your team's project title here]
+    - **Research Question:** 
+      - [Insert your team's refined research question here]
+    - **Selected Data Sets:** 
+      - [List the data sets your team has chosen to use here]
+    - **Narrative on Resilience and Adaptation:**
+      - **System Being Perturbed/Disrupted:** [Describe the system]
+      - **Perturbator/Disrupter:** [Describe the perturbator/disrupter]
+      - **Impact on Resilience:** [Explain how these factors are influencing resilience]
+      - **Proposed Actionable Insight:** [Detail an actionable step that decision makers could take based on your proposed analysis]
+  - **Presentation Guidelines:**
+    - **Duration:** Your presentation should last between 30-60 seconds. Keep it concise and focused.
+    - **Objective:** Clearly communicate how your project aligns with the conference themes and highlight actionable insights that can aid decision makers.
