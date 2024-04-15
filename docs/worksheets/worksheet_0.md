@@ -1,31 +1,50 @@
-# Introduction to the Tutorial on Historic Redlining and Environmental Analysis
+# Tutorial on Historic Redlining and Environmental Analysis
+
+## Introduction
+
+This tutorial explores the enduring impacts of historic redlining on contemporary urban greenspace. Drawing upon a recent study by Nardone et al. (2021), which assessed the correlation between historic redlining and greenspace disparities in urban settings, we aim to replicate and expand upon their analysis using similar datasets and methods.
 
 ## Understanding Redlining
 
-Redlining is a term that originated in the 1930s, used to describe a discriminatory practice where banks and other lending institutions refused to offer mortgages or offered worse terms to people in specific neighborhoods based on racial and ethnic compositions. This practice was facilitated by maps created by the Home Owners’ Loan Corporation (HOLC), which color-coded areas deemed risky for investment in red, hence the term "redlining." These areas were typically home to minority populations and, as a result, were systematically denied access to investment and development opportunities.
+Redlining, a discriminatory practice initiated in the 1930s by the Home Owners’ Loan Corporation (HOLC), involved marking out neighborhoods deemed poor financial risks often based on racial composition, which were colored in red on maps. This practice denied mortgages and insurance to residents in these neighborhoods and led to long-term economic and racial segregation.
 
-The power of maps extends far beyond simple navigation aids; they are tools of communication and control. By drawing lines on a map, the HOLC didn't just reflect societal prejudices; they reinforced and perpetuated them. These maps dictated economic opportunities and shaped the physical and social architecture of communities for generations. As a visual representation of exclusion, redlining maps not only influenced perceptions but also had a tangible impact on the urban landscape, determining where infrastructure was built, where services were provided, and ultimately, who would thrive and who would not. [Nelson, R.K., Winling, L., Marciano, R., Connolly, N. (2019). "Mapping Inequality." *Science*.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7839347/pdf/ehp7495.pdf)
-
-The consequences of redlining are profound and long-lasting. Economically and socially, these practices contributed to a cycle of poverty, racial segregation, and an entrenched wealth gap that still persists. Environmentally, the neighborhoods targeted by redlining often suffer from significant injustices. These areas typically have reduced access to green spaces, higher exposure to pollutants, and greater vulnerability to the impacts of climate change, further compounding the health and well-being challenges faced by their residents.
-
-Through mapping these injustices and understanding their origins, we gain insight into the systemic barriers that have shaped our cities. This tutorial not only aims to uncover the legacy of redlining but also to illustrate how such policies continue to affect urban environments today, demonstrating the powerful role that mapping plays in urban policy and social equity.
-
-
-
+Maps have the power to shape economic opportunities, dictate infrastructure development, and influence community services. The HOLC maps not only reflected societal biases; they also reinforced and exacerbated them, contributing to significant social and economic disparities that persist today.
 
 ## Goals of the Tutorial
 
-This tutorial aims to explore the historical context of redlining using the HOLC's data available for Philadelphia and then to examine the current environmental conditions of these historically redlined areas compared to non-redlined areas. By integrating historical redlining data with contemporary environmental data, we can observe the persistent effects of past policies on present-day urban landscapes.
+The primary objectives of this tutorial are:
+1. To analyze the relationship between HOLC grades and the presence of urban greenspace.
+2. To understand how historic policies continue to affect the spatial distribution of environmental amenities.
+3. To visualize the impact of redlining on urban greenspace using Geographic Information Systems (GIS) and statistical analysis tools.
 
-## Tutorial Overview
+## Part 1: Accessing and Visualizing Historic Redlining Data
 
-1. **Part 1: Accessing and Visualizing Historical Redlining Data**
-   - We will download and plot the geographic boundaries of redlined areas using GeoJSON data from the HOLC. This part will guide you on how to use R and Python to visualize these historic policies spatially.
+We will begin by accessing HOLC maps from the Mapping Inequality project and overlaying this data with modern geographic datasets to visualize the historical impact on contemporary urban landscapes.
 
-2. **Part 2: Integrating Environmental Satellite Data**
-   - In this part, we will retrieve environmental satellite data to analyze the environmental quality indicators such as vegetation, air quality, and surface temperature for the areas within and outside the redlined boundaries.
+### Data Acquisition
+- Download HOLC map shapefiles from the University of Richmond’s Mapping Inequality Project.
+- Utilize satellite imagery and other geospatial data to map current greenspace using the normalized difference vegetation index (NDVI).
 
-3. **Part 3: Comparative Analysis and Visualization**
-   - We will perform statistical analyses to compare environmental conditions in redlined versus non-redlined areas and visualize the disparities. This involves creating maps and graphs that highlight the environmental inequities linked to historic redlining.
+### Analysis Methodology
+- Replicate the approach used by Nardone et al. to calculate NDVI values for each HOLC neighborhood, assessing greenspace as a health-promoting resource.
+- Employ statistical methods such as propensity score matching to control for confounding variables and estimate the true impact of HOLC grades on urban greenspace.
 
-By the end of this tutorial, you will have a deeper understanding of how historical urban policies continue to affect modern urban environments and how to analyze these impacts using geographic and environmental data.
+## Part 2: Integrating Environmental Data
+
+### Data Processing
+- Use satellite data from 2010 to analyze greenspace using NDVI, an index that measures the quantity of vegetation in an area.
+- Apply methods to adjust for potential confounders as described in the study, ensuring that comparisons of greenspace across HOLC grades are valid and not biased by historical or socio-demographic factors.
+
+## Part 3: Comparative Analysis and Visualization
+
+### Statistical Analysis
+- Conduct a detailed statistical analysis to compare greenspace across different HOLC grades, using techniques like Targeted Maximum Likelihood Estimation (TMLE) to assess the association between historical redlining and current greenspace levels.
+- Visualize the disparities in greenspace distribution using GIS tools, highlighting how redlining has shaped urban ecological landscapes.
+
+## Conclusion
+
+This tutorial provides tools and methodologies to explore the lingering effects of historic redlining on urban greenspace, offering insights into the intersection of urban planning, environmental justice, and public health.
+
+## References
+
+- Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. Environmental Health Perspectives, 129(1), 017006. [DOI:10.
