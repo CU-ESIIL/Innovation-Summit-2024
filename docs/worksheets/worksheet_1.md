@@ -5,15 +5,53 @@ Work through the prompts in order. Use a decision-making method "to decide" befo
 ## Day 1
 
 ### Introductions (approx. time: 10 mins total or "2 breaths" per person)
-- **Please share the following information with your team:**
+- **Please share the following information about yourself:**
+
   - **Name:**
     - [Your Name]
   - **Preferred Pronouns:**
     - [Your Pronouns]
   - **Expertise:**
     - [Your Expertise]
-  - **Reflection on polarities exercise:**
+  - **Environmental Data Science Superpower:**
+    - [Describe your unique skill or interest in environmental data science]
+  - **Reflection on Polarities Exercise:**
     - [Share one thing you observed about yourself]
+
+  - **Name:**
+    - [Your Name]
+  - **Preferred Pronouns:**
+    - [Your Pronouns]
+  - **Expertise:**
+    - [Your Expertise]
+  - **Environmental Data Science Superpower:**
+    - [Describe your unique skill or interest in environmental data science]
+  - **Reflection on Polarities Exercise:**
+    - [Share one thing you observed about yourself]
+
+  - **Name:**
+    - [Your Name]
+  - **Preferred Pronouns:**
+    - [Your Pronouns]
+  - **Expertise:**
+    - [Your Expertise]
+  - **Environmental Data Science Superpower:**
+    - [Describe your unique skill or interest in environmental data science]
+  - **Reflection on Polarities Exercise:**
+    - [Share one thing you observed about yourself]
+
+  - **Name:**
+    - [Your Name]
+  - **Preferred Pronouns:**
+    - [Your Pronouns]
+  - **Expertise:**
+    - [Your Expertise]
+  - **Environmental Data Science Superpower:**
+    - [Describe your unique skill or interest in environmental data science]
+  - **Reflection on Polarities Exercise:**
+    - [Share one thing you observed about yourself]
+
+  - **Continue adding more team members following the same format.**
 
 ### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
 - **Please revise the research question your team selected below:**
