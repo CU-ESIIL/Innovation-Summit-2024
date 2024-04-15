@@ -2,8 +2,6 @@
 ### Instructions:
 Work through the prompts in order. Use a decision-making method "to decide" before moving to a new section of the handout.
 
-## Day 1
-
 ### Introductions (approx. time: 10 mins total or "2 breaths" per person)
 - **Each team member please share the following information about yourself:**
 
