@@ -2,17 +2,25 @@
 
 # Introduction
 
-This tutorial delves into the enduring impacts of historic redlining on contemporary urban greenspace. Inspired by the research conducted by Nardone et al. (2021), which explores the correlation between historic redlining and disparities in urban greenspace, this guide aims to replicate and expand upon their analysis using similar datasets and methods. Our goal is to illuminate how historic policies continue to influence modern urban environments.
+This tutorial examines the enduring impacts of historic redlining on contemporary urban greenspace and explores themes of adaptation and resilience in the face of systemic disturbances. Drawing upon the research conducted by Nardone et al. (2021), which assesses the correlation between historic redlining and disparities in urban greenspace, this guide aims to replicate and expand their analysis using similar datasets and methods. Our goal is to demonstrate how urban communities adapt and develop resilience against long-standing discriminatory practices.
 
-## Understanding Redlining
+## Understanding Redlining as a Systemic Disturbance
 
-Redlining began in the 1930s as a discriminatory practice where banks and other lending institutions denied mortgages or offered unfavorable terms to certain neighborhoods based on racial and ethnic compositions. This practice was systematically executed through maps created by the Home Owners' Loan Corporation (HOLC), which color-coded "risky" investment areas in red, thus coining the term "redlining." Predominantly, these redlined areas housed minority populations, who were systematically excluded from investment and development opportunities.
+Redlining originated in the 1930s as a discriminatory practice where the Home Owners' Loan Corporation (HOLC) systematically denied mortgages or offered unfavorable terms based on racial and ethnic compositions. This methodical exclusion, executed through maps that color-coded "risky" investment areas in red, marked minority-populated areas, denying them crucial investment and development opportunities and initiating a profound and lasting disturbance in the urban fabric.
 
-Maps are powerful tools that extend beyond simple navigation; they serve as instruments of communication and control. By delineating neighborhoods in this way, HOLC maps not only reflected but also reinforced societal prejudices. They dictated economic opportunities and profoundly shaped the physical and social architectures of communities. As instruments of exclusion, these maps had a lasting impact on urban landscapes, influencing where infrastructure was built, which areas received services, and ultimately, which communities would flourish or fail.
+Maps serve as powerful tools beyond navigation; they communicate and enforce control. By defining neighborhood boundaries through redlining, HOLC maps not only mirrored societal biases but also perpetuated and embedded them into the urban landscape. This manipulation of geographic data set a trajectory that limited economic growth, dictated the allocation of services, and influenced the development or deterioration of community infrastructure.
 
-The repercussions of redlining are deep and persistent. Economically and socially, it initiated a cycle of poverty, entrenched racial segregation, and a deep-rooted wealth gap that persists today. Environmentally, redlined neighborhoods often endure significant injustices—they typically experience limited access to green spaces, are subjected to higher pollution levels, and face increased vulnerability to climate change impacts, exacerbating health and well-being challenges for their residents.
+## Resilience and Adaptation in Urban Environments
 
-By analyzing these patterns and understanding their roots through mapping, we gain critical insights into the systemic barriers that have sculpted our urban landscapes. This tutorial not only seeks to reveal the legacy of redlining but also to demonstrate how such discriminatory policies continue to shape urban environments, highlighting the crucial role of mapping in urban policy and social equity.
+The legacy of redlining presents both a challenge and an opportunity for resilience and adaptation. Economically and socially, redlining entrenched cycles of poverty and racial segregation, creating a resilient wealth gap that has been difficult to dismantle. Environmentally, the neighborhoods targeted by redlining continue to face significant challenges—they generally feature less greenspace, suffer from higher pollution levels, and are more vulnerable to the impacts of climate change. These factors compound the health and wellness challenges faced by residents.
+
+Despite these adversities, urban communities have continually demonstrated remarkable resilience. Adaptation strategies, such as community-led green initiatives, urban agriculture, and grassroots activism, have emerged as responses to these systemic disturbances. By enhancing green infrastructure and advocating for equitable environmental policies, these communities strive to increase their resilience against both historical inequities and environmental challenges.
+
+This tutorial will not only uncover the impact of redlining on urban greenspace but also highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
+
+### Reference
+
+- Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. *Environmental Health Perspectives*, 129(1), 017006. DOI:10.1289/EHP7495.
 
 
 
