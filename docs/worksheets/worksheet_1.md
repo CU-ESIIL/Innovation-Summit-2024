@@ -1,126 +1,78 @@
-# Breakout prompts & dedicated working space
+# Team GetHub Page Prompts
+### Instructions:
+Work through the prompts in order. Use a decision-making method "to decide" before moving to a new section of the handout.
 
-## Dedicated working space
+## Day 1
 
-Each team will have a room that has been reserved for their use at all team times. Those rooms will shift for each breakout time, shown below. However, your team is also welcome to explore the building and find other spaces that make you more comfortable or creative. For example, you may want to check out:
+### Introductions (approx. time: 10 mins total or "2 breaths" per person)
+- **Please share the following information with your team:**
+  - **Name:**
+    - [Your Name]
+  - **Preferred Pronouns:**
+    - [Your Pronouns]
+  - **Expertise:**
+    - [Your Expertise]
+  - **Reflection on polarities exercise:**
+    - [Share one thing you observed about yourself]
 
-  - The SEEC Cafe dining area (north end of the building, lots of windows in the eating room!)
-  - The SEEC lobby (both north and south)
-  - The Earth Lab conference room (S340). Note that this room may sometimes be reserved by Earth Lab staff.
-  - The southern end of the first floor, S148
-  - Outside if it is sunny! The grass or SEEC courtyard!
-You are also welcome to use other rooms if they are available, but please be aware that other classes, study groups, or workshops may have reserved them and kick you out.
+### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
+- **Please revise the research question your team selected below:**
+  - [Edit or write your team's research question here]
 
-| Day 1        | Team  | Dedicated Space |
-|--------------|-------|-----------------|
-| Morning team time | Team 1 | S221            |
-|              | Team 2 | S149            |
-|              | Team 3 | C325            |
-|              | Team 4 | S240            |
-|              | Team 5 | Viz Studio (S372A) |
-|              | Team 6 | Viz Studio (S372B) |
-| Afternoon team time | Team 1 | Viz Studio (S372B) |
-|              | Team 2 | S221            |
-|              | Team 3 | S149            |
-|              | Team 4 | C325            |
-|              | Team 5 | S240            |
-|              | Team 6 | Viz Studio (S372A) |
+### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
+- **Create a title for your team’s project below:**
+  - [Edit or write your team's project title here]
 
-| Day 2        | Team  | Dedicated Space |
-|--------------|-------|-----------------|
-| Morning team time | Team 1 | Viz Studio (S372A) |
-|              | Team 2 | Viz Studio (S372B) |
-|              | Team 3 | S221            |
-|              | Team 4 | S149            |
-|              | Team 5 | C325            |
-|              | Team 6 | S240            |
-| Afternoon team time | Team 1 | S240            |
-|              | Team 2 | Viz Studio (S372A) |
-|              | Team 3 | Viz Studio (S372B) |
-|              | Team 4 | S221            |
-|              | Team 5 | S149            |
-|              | Team 6 | C325            |
+### Promoting Resilience and Adaptation
+- **How does your proposed project relate to the summit themes: resilience and adaptation? (insert 1-2 sentences below).**
+  - [Insert response here]
 
-| Day 3        | Team  | Dedicated Space |
-|--------------|-------|-----------------|
-| Morning team time | Team 1 | C325            |
-|              | Team 2 | S240            |
-|              | Team 3 | Viz Studio (S372A) |
-|              | Team 4 | Viz Studio (S372B) |
-|              | Team 5 | S221            |
-|              | Team 6 | S149            |
+### What Big Data Set
+- **What data set(s) will you use to address this topic? Check the [data library](https://cu-esiil.github.io/data-library/) for suggestions. List some options below for the system being perturbed and the perturbator/disrupter, then highlight your top choices:**
+  - **System being perturbed/disrupted:**
+    - [List options here]
+  - **Perturbator/Disrupter:**
+    - [List options here]
 
+### Brief Check-in: Definition of Resilience (approx. 5 mins)
+- **Below is a working definition of the word 'Resilience' for the Summit. Please edit the definition based on your responses to the prompts above:**
+  - "Resilience is the capacity of a system, community, organization, or individual to absorb stress, recover from disruptions, adapt to change, and continue to develop and thrive."
+    - [Edit or reaffirm this definition here]
 
-## Breakout Prompts
+### Day 1 Report back
+- **Select one person to report back. For the report back, please read your team’s responses to the section headings:**
+  - **What is your title?**
+    - [Title here]
+  - **What is your research question?**
+    - [Research question here]
+  - **What data sets are you planning to use?**
+    - [Data sets here]
+- **Total time for each team to report back: 30-60 seconds**
 
-For ease of access to breakout group prompts throughout the codefest.
+## Day 2
+### See GitHub Page for today’s prompts.
+[Data Library](https://cu-esiil.github.io/data-library/)
 
-### Breakout #0: Virtual meeting #3
+### Goals and Objectives for the Day
+- **Decide on your data sets using a decision-making technique (Kaner’s Gradient of Agreement).**
 
-Introduce yourselves! Please briefly share:
+### End of the second day: One thing to bring everyone together.
+- **What is your title and research question?**
+  - [Title and question here]
+- **What datasets have you selected?**
+  - [Datasets here]
+- **What aspect of your team’s project is the most exciting?**
+  - [Exciting aspect here]
 
- - Your preferred name and where you are currently based
- - A skill or area of expertise that you feel you are bringing to the table
- - Something you are worried about regarding the codefest
- - Something that brings you joy
- - What is a topic that you are excited to investigate for two days related to forest carbon in the Southern Rocky mountains?
-   - What datasets are you excited to potentially use?
+### Day 2 Report back
+- **At the end of the day, connect to your GitHub and share your team’s progress.**
 
-*(Tuesday morning you will have ~2.5 hours to continue brainstorming, with a draft question ready by noon! So don't stress, this is just a first opportunity to get a sense of what your team is generally excited about.)*
+## Day 3
+### Prepare for the final report back
 
-### Breakout #1: Day 1 morning team time
-
-*In-person introductions*
-
-  - Who are you and why are you excited to be here?
-
-*Establish team norms*
-
-  - Note-taking and documenting the flow of ideas
-  - Expectations for work outside of official event hours
-
-*Brainstorm*
-
-  - What will your team project be for the next 2.5 days?! This should be a specific scientific question related to forest carbon in the Southern Rocky Mountains that you think is potentially answerable (at least in a very rough form) by the end of the event.
-  - Think about…
-    - What are you each excited about and what skills do you have around the table that can be leveraged?
-    - What datasets are you familiar with and/or excited to work with? Spin up some instances and get familiar with the data!
-    - Evaluation criteria (linked on the website!)
-
-*Bring back*
-
-  - One spokesperson to talk for 1 minute
-  - Your specific, answerable scientific question
-  - One ‘need’ that you see, whether that is help accessing an additional dataset, guidance on a dataset already available, or just your first step to get cracking
-
-
-### Breakout #2: Day 1 afternoon team time
-
-Establish:
-
-  - How are you going to divide work, responsibilities, and code workflows?
-  - How are you going to manage people working in different coding languages?
-
-Take time to explore the datasets you intend to use and make sure you know how to work with and visualize them.
-
-Map out an initial workflow. What are the steps you will need to take to get from start to 'finish'?
-
-Begin work!
-
-### Breakout #3: Day 2 morning team time
-
-Code, code, code!
-
-Focus on concrete, tractable problems, and don't get sucked into unneccessary coding or debugging. Is there an easier or faster way to answer your question?
-
-Graphics and deliverables are your friend! Demonstrate the progress you're making and remember to document what you are doing and WHY you're making the decisions you are.
-
-Keep your repo up to date!
-
-### Breakout #4: Day 2 afternoon team time
-
-Prepare your deliverables. What figures are necessary to tell the story of your project? What do you want in your presentation and on your team website?
-
-### Breakout #5: Day 3 morning team time
-
-Finalize all deliverables, push them to your website & GitHub, and finalize your presentation!
+### Final Report back
+- **Share the following in a 4-minute presentation per team:**
+  - **Your team’s most inspiring finding:**
+    - [Finding here]
+  - **What are you thinking about doing next with your team?**
+    - [Future plans here]
