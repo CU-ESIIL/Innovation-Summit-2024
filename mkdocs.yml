@@ -19,7 +19,9 @@ nav:
        - Cyverse hacks: additional-resources/cyverse_hacks.md
        - Useful links: additional-resources/useful_links.md
   - Group worksheets:
-       - Day 1: worksheets/worksheet_1.md
+       - Day 1: 
+           - Explore the problem: worksheets/worksheet_0.md
+           - Make a plan: worksheets/worksheet_2.md
 
 # Configuration
 theme:
