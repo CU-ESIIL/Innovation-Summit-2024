@@ -11,6 +11,7 @@ Date: April 24, 2024
 Time: 12:00-2:00 PM MST
 
 Zoom Link: [https://cuboulder.zoom.us/j/99754742074](https://cuboulder.zoom.us/j/99754742074)
+
 **Important Note:** Please set up a GitHub account and a Cyverse account prior to this training.
 
 ## Virtual meeting #2
