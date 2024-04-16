@@ -10,7 +10,10 @@ Redlining originated in the 1930s as a discriminatory practice where the Home Ow
 
 Maps serve as powerful tools beyond navigation; they communicate and enforce control. By defining neighborhood boundaries through redlining, HOLC maps not only mirrored societal biases but also perpetuated and embedded them into the urban landscape. This manipulation of geographic data set a trajectory that limited economic growth, dictated the allocation of services, and influenced the development or deterioration of community infrastructure.
 
-![1938 Map of Atlanta uses colors are grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining.png)
+**Figure 1:** 1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”
+
+![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining.png)
+
 
 ## Resilience and Adaptation in Urban Environments
 
@@ -20,7 +23,10 @@ Despite these adversities, urban communities have continually demonstrated remar
 
 [![Watch the video](https://img.youtube.com/vi/O5FBJyqfoLM/hqdefault.jpg)](https://youtu.be/O5FBJyqfoLM)
 
-This group exercise will not only uncover the impact of redlining on urban greenspace but also highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
+**Video Title:** Exploring the Impacts of Historical Redlining on Urban Development  
+**Description:** Click on the image above to watch a video that delves into the consequences of historical redlining and its ongoing impact on urban environments. This educational piece offers insights into how such discriminatory practices have shaped cities and what can be learned from them.
+
+The following group exercise will not only uncover the impact of redlining on urban greenspace but also highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
 
 
 ## Goals of the Tutorial
@@ -28,7 +34,7 @@ This group exercise will not only uncover the impact of redlining on urban green
 The primary objectives of this tutorial are:
 1. To analyze the relationship between HOLC grades and the presence of urban greenspace.
 2. To understand how historic policies continue to affect the spatial distribution of environmental amenities.
-3. To visualize the impact of redlining on urban greenspace using Geographic Information Systems (GIS) and statistical analysis tools.
+3. To visualize the impact of redlining on urban greenspace using mapping and statistical analysis tools.
 
 ## Part 1: Accessing and Visualizing Historic Redlining Data
 
