@@ -10,6 +10,7 @@ Redlining originated in the 1930s as a discriminatory practice where the Home Ow
 
 Maps serve as powerful tools beyond navigation; they communicate and enforce control. By defining neighborhood boundaries through redlining, HOLC maps not only mirrored societal biases but also perpetuated and embedded them into the urban landscape. This manipulation of geographic data set a trajectory that limited economic growth, dictated the allocation of services, and influenced the development or deterioration of community infrastructure.
 
+![](../assets/redlining.png)
 
 ## Resilience and Adaptation in Urban Environments
 
