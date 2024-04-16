@@ -1,8 +1,8 @@
-# Tutorial on Historic Redlining and Environmental Analysis
+# Exploring the Impact of Historical Redlining on Urban Greenspace: A Collaborative Examination of Maps, Justice, and Resilience
 
-# Introduction
+## Introduction
 
-This tutorial examines the enduring impacts of historic redlining on contemporary urban greenspace and explores themes of adaptation and resilience in the face of systemic disturbances. Drawing upon the research conducted by Nardone et al. (2021), which assesses the correlation between historic redlining and disparities in urban greenspace, this guide aims to replicate and expand their analysis using similar datasets and methods. Our goal is to demonstrate how urban communities adapt and develop resilience against long-standing discriminatory practices.
+This group exploration delves into the long-term impacts of historical redlining on urban greenspace, emphasizing the powerful role of maps in shaping environmental and social landscapes. By drawing on the research by Nardone et al. (2021), you will collaboratively investigate how discriminatory practices encoded in maps have led to persistent disparities in urban settings. This exploration aims to uncover the resilience of communities in adapting to these entrenched injustices and to foster a deeper understanding of how mapping can serve both as a tool of exclusion and as a means for promoting social equity.
 
 ## Understanding Redlining as a Systemic Disturbance
 
