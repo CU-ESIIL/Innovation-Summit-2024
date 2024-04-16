@@ -37,6 +37,7 @@ May 16: 9am-12pm MT
 ## Join our Slack Workspace
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ). 
 ## Venue Information
+The ESIIL Innovation Summit will be held at the University of Colorado Boulder East Campus SEEC Building (4001 Discovery Dr, Boulder, CO 80303). Directions to the SEEC Building here.
 ### Explore Boulder Like a Local!
 Want to get out to explore while you’re here? [This website](https://www.bouldercoloradousa.com/things-to-do/) has lots of information on things to do in Boulder, such as shopping, restaurants, nightlife, and much more!
 
