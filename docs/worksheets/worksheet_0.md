@@ -41,7 +41,7 @@ The following group exercise will not only uncover the impact of redlining on ur
 - Hoffman, J. S., Shandas, V., & Pendleton, N. (2020). The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas. *Climate*, 8(1), 12. DOI:10.3390/cli8010012.
 
 
-## Goals of the Tutorial
+## Goals of this group activity
 
 The primary objectives of this tutorial are:
 1. To analyze the relationship between HOLC grades and the presence of urban greenspace.
