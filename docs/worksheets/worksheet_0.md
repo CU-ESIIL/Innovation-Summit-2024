@@ -32,9 +32,9 @@ The following group exercise will not only uncover the impact of redlining on ur
 ## Goals of the Tutorial
 
 The primary objectives of this tutorial are:
-1. To analyze the relationship between HOLC grades and the presence of urban greenspace.
-2. To understand how historic policies continue to affect the spatial distribution of environmental amenities.
-3. To visualize the impact of redlining on urban greenspace using mapping and statistical analysis tools.
+  1. To practice coding in CyVerse.
+  2. To analyze the relationship between HOLC grades and the presence of urban greenspace.
+  3. To understand how historic policies continue to affect the spatial distribution of environmental amenities.
 
 ## Part 1: Accessing and Visualizing Historic Redlining Data
 
