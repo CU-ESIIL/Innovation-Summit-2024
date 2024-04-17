@@ -12,7 +12,11 @@ Maps serve as powerful tools beyond navigation; they communicate and enforce con
 
 **Figure 1:** 1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”
 
-![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining.png)
+![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining/redlining.png)
+
+[![ArcGIS Story Map](../assets/redlining/georectified-thumbnail.png)](https://storymaps.arcgis.com/stories/0f58d49c566b486482b3e64e9e5f7ac9)
+
+**Explore the Story Map:** Click on the image above to explore the interactive story map about [subject of the story map].
 
 
 ## Resilience and Adaptation in Urban Environments
