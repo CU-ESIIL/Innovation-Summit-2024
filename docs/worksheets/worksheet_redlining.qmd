@@ -1,0 +1,9 @@
+---
+title: "redlining"
+format: gfm
+---
+
+```{r}
+
+```
+
