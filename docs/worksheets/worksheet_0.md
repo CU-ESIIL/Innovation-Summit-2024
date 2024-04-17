@@ -2,24 +2,38 @@
 
 ## Introduction
 
-In this collaborative exploration, we delve into the long-term impacts of historical redlining on urban greenspace and uncover the resilience of communities in adapting to these entrenched injustices. We underscore the critical role of maps in shaping environmental and social landscapes and emphasize how discriminatory practices encoded in maps have led to persistent disparities. Studies like that of Nardone et al. (2021) and Hoffman et al. (2020) inform our investigation by showing how redlining has contributed to urban heat islands and the disproportionate exposure of marginalized communities to extreme heat.
-
-Historical housing policies have not only led to economic and social segregation but have also set the stage for environmental injustices that resonate to this day. The analysis by Hoffman et al. (2020) reveals a stark 2.6°C average increase in land surface temperatures in redlined areas compared to non-redlined ones, signaling a call to action for urban planners and policymakers to mitigate these disparities and prevent further exacerbation due to current and future climate change.
-
-This introduction sets the stage for a deeper examination of the multi-dimensional consequences of redlining. Through a lens of justice and equity, we aim to highlight the power of adaptation and resilience, illustrating how urban communities can respond to historical disturbances with innovative and sustainable strategies.
+This group exploration delves into the long-term impacts of historical redlining on urban greenspace, emphasizing the powerful role of maps in shaping environmental and social landscapes. By drawing on the research by Nardone et al. (2021), you will collaboratively investigate how discriminatory practices encoded in maps have led to persistent disparities in urban settings. This exploration aims to uncover the resilience of communities in adapting to these entrenched injustices and to foster a deeper understanding of how mapping can serve both as a tool of exclusion and as a means for promoting social equity.
 
 ![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining/redlining.png))
 
+## Understanding Redlining as a Systemic Disturbance
+
+Redlining originated in the 1930s as a discriminatory practice where the Home Owners' Loan Corporation (HOLC) systematically denied mortgages or offered unfavorable terms based on racial and ethnic compositions. This methodical exclusion, executed through maps that color-coded "risky" investment areas in red, marked minority-populated areas, denying them crucial investment and development opportunities and initiating a profound and lasting disturbance in the urban fabric.
+
+Maps serve as powerful tools beyond navigation; they communicate and enforce control. By defining neighborhood boundaries through redlining, HOLC maps not only mirrored societal biases but also perpetuated and embedded them into the urban landscape. This manipulation of geographic data set a trajectory that limited economic growth, dictated the allocation of services, and influenced the development or deterioration of community infrastructure.
+
 **Figure 1:** 1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”
+
+
 
 [![ArcGIS Story Map](../assets/redlining/georectified-thumbnail.png)](https://storymaps.arcgis.com/stories/0f58d49c566b486482b3e64e9e5f7ac9)
 
-**Explore the Story Map:** Click on the image above to explore the interactive story map about the enduring effects of redlining on urban environments.
+**Explore the Story Map:** Click on the image above to explore the interactive story map about [subject of the story map].
+
+
+## Resilience and Adaptation in Urban Environments
+
+The legacy of redlining presents both a challenge and an opportunity for resilience and adaptation. Economically and socially, redlining entrenched cycles of poverty and racial segregation, creating a resilient wealth gap that has been difficult to dismantle. Environmentally, the neighborhoods targeted by redlining continue to face significant challenges—they generally feature less greenspace, suffer from higher pollution levels, and are more vulnerable to the impacts of climate change. These factors compound the health and wellness challenges faced by residents.
+
+Despite these adversities, urban communities have continually demonstrated remarkable resilience. Adaptation strategies, such as community-led green initiatives, urban agriculture, and grassroots activism, have emerged as responses to these systemic disturbances. By enhancing green infrastructure and advocating for equitable environmental policies, these communities strive to increase their resilience against both historical inequities and environmental challenges.
 
 [![Watch the video](https://img.youtube.com/vi/O5FBJyqfoLM/hqdefault.jpg)](https://youtu.be/O5FBJyqfoLM)
 
 **Video Title:** Exploring the Impacts of Historical Redlining on Urban Development  
 **Description:** Click on the image above to watch a video that delves into the consequences of historical redlining and its ongoing impact on urban environments. This educational piece offers insights into how such discriminatory practices have shaped cities and what can be learned from them.
+
+The following group exercise will not only uncover the impact of redlining on urban greenspace but also highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
+
 
 ### References
 
