@@ -1,25 +1,61 @@
----
-title: "redlining"
-format: gfm
----
+redlining
+================
 
-
-
-
-```{r}
+``` r
 # Install and load necessary libraries]
 library(knitr)
 library(sf)
-library(dplyr)
+```
 
+    Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
+
+``` r
+library(dplyr)
+```
+
+
+    Attaching package: 'dplyr'
+
+    The following objects are masked from 'package:stats':
+
+        filter, lag
+
+    The following objects are masked from 'package:base':
+
+        intersect, setdiff, setequal, union
+
+``` r
 #https://dsl.richmond.edu/panorama/redlining/static/mappinginequality.json
 
 # Download historic redlining data for Philadelphia
 url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
 philly_geojson <- read_sf(url)
 philly_geojson
+```
 
+    Simple feature collection with 51866 features and 15 fields
+    Geometry type: MULTIPOLYGON
+    Dimension:     XY
+    Bounding box:  xmin: -122.7675 ymin: 25.70537 xmax: -69.60044 ymax: 48.2473
+    Geodetic CRS:  WGS 84
+    # A tibble: 51,866 × 16
+       area_id city      state city_survey cat   grade label res   com   ind   fill 
+         <int> <chr>     <chr> <lgl>       <chr> <chr> <chr> <lgl> <lgl> <lgl> <chr>
+     1     244 Birmingh… AL    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a…
+     2     244 Birmingh… AL    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a…
+     3     244 Birmingh… AL    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a…
+     4     244 Birmingh… AL    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a…
+     5     244 Birmingh… AL    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a…
+     6     193 Birmingh… AL    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a…
+     7     193 Birmingh… AL    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a…
+     8     193 Birmingh… AL    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a…
+     9     193 Birmingh… AL    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a…
+    10     193 Birmingh… AL    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a…
+    # ℹ 51,856 more rows
+    # ℹ 5 more variables: GEOID10 <chr>, GISJOIN <chr>, calc_area <dbl>,
+    #   pct_tract <dbl>, geometry <MULTIPOLYGON [°]>
 
+``` r
 # Count the number of areas per HOLC grade
 colorado_redline <- philly_geojson |>
   filter(city=="Denver" & grade != "") 
@@ -28,23 +64,54 @@ colorado_redline <- philly_geojson |>
 colorado_redline$grade
 ```
 
+      [1] "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A"
+     [19] "A" "A" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B"
+     [37] "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B"
+     [55] "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B" "B"
+     [73] "B" "B" "B" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+     [91] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [109] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [127] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [145] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [163] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [181] "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C"
+    [199] "C" "C" "C" "C" "C" "C" "C" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D"
+    [217] "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D"
+    [235] "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D"
+    [253] "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D" "D"
+    [271] "D" "D" "D" "D" "D" "D" "D" "D" "D"
 
-```{r}
+``` r
 library(ggplot2)
+```
+
+    Warning: package 'ggplot2' was built under R version 4.3.2
+
+``` r
 library(ggthemes)
+```
+
+    Warning: package 'ggthemes' was built under R version 4.3.2
+
+``` r
 ggplot(data=colorado_redline, aes(fill=cat)) +
   geom_sf() +
   theme_tufte()  + 
   labs(fill='HOLC Categories')
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-2-1.png)
+
+``` r
 colorado_redline |>
   st_bbox() -> bbox_here
 
 library(osmdata)
+```
 
+    Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
+
+``` r
 aoi <- getbb("United States", format_out="sf_polygon")
 
 conus <- aoi$multipolygon |>
@@ -53,14 +120,18 @@ conus <- aoi$multipolygon |>
 
 ggplot(data=conus) +
   geom_sf()
-
-
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-3-1.png)
 
-```{r}
+``` r
 library(osmextract)
+```
 
+    Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright.
+    Check the package website, https://docs.ropensci.org/osmextract/, for more details.
+
+``` r
 # Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
 colorado_redline |>
   st_bbox() |>
@@ -77,13 +148,19 @@ highway_network <- oe_get(
 
 # Crop the data to the bounding box
 cropped_highway_network <- st_crop(highway_network, bbox_here)
+```
 
+    Warning: attribute variables are assumed to be spatially constant throughout
+    all geometries
 
-
+``` r
 ggplot(data=cropped_highway_network) +
   geom_sf()
 ```
-```{r}
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-4-1.png)
+
+``` r
 library(osmextract)
 library(sf)
 library(ggplot2)
@@ -103,16 +180,22 @@ river_network <- oe_get(
 
 # Crop the data to the bounding box
 cropped_river_network <- st_crop(river_network, bbox_here)
+```
 
+    Warning: attribute variables are assumed to be spatially constant throughout
+    all geometries
+
+``` r
 # Plotting the cropped river network
 ggplot(data = cropped_river_network) +
   geom_sf() +
   ggtitle("River Network") +
   theme_minimal()
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-5-1.png)
+
+``` r
 library(osmextract)
 library(sf)
 library(ggplot2)
@@ -132,18 +215,22 @@ monitoring_stations <- oe_get(
 
 # Crop the data to the bounding box
 cropped_monitoring_stations <- st_crop(monitoring_stations, bbox_here)
+```
 
+    Warning: attribute variables are assumed to be spatially constant throughout
+    all geometries
+
+``` r
 # Plotting the cropped environmental monitoring stations
 ggplot(data = cropped_monitoring_stations) +
   geom_sf() +
   ggtitle("Environmental Monitoring Stations") +
   theme_minimal()
-
-
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-6-1.png)
+
+``` r
 library(osmextract)
 library(sf)
 library(ggplot2)
@@ -165,27 +252,52 @@ natural_habitats <- oe_get(
            )",
   quiet = TRUE
 )
+```
 
+    Warning in CPL_gdalvectortranslate(source, destination, options, oo, doo, :
+    GDAL Message 1: Non closed ring detected. To avoid accepting it, set the
+    OGR_GEOMETRY_ACCEPT_UNCLOSED_RING configuration option to NO
+
+    Warning in CPL_gdalvectortranslate(source, destination, options, oo, doo, :
+    GDAL Message 1: Non closed ring detected. To avoid accepting it, set the
+    OGR_GEOMETRY_ACCEPT_UNCLOSED_RING configuration option to NO
+
+    Warning in CPL_gdalvectortranslate(source, destination, options, oo, doo, :
+    GDAL Message 1: Non closed ring detected. To avoid accepting it, set the
+    OGR_GEOMETRY_ACCEPT_UNCLOSED_RING configuration option to NO
+
+    Warning in CPL_gdalvectortranslate(source, destination, options, oo, doo, :
+    GDAL Message 1: Non closed ring detected. To avoid accepting it, set the
+    OGR_GEOMETRY_ACCEPT_UNCLOSED_RING configuration option to NO
+
+``` r
 # Validate and possibly repair geometries before cropping
 natural_habitats <- st_make_valid(natural_habitats)  # or lwgeom::st_make_valid(natural_habitats)
 
 # Crop the data
 cropped_natural_habitats <- st_crop(natural_habitats, bbox_here)
+```
 
+    Warning: attribute variables are assumed to be spatially constant throughout
+    all geometries
+
+``` r
 # Plotting the cropped natural habitats
 ggplot(data = cropped_natural_habitats) +
   geom_sf() +
   ggtitle("Natural Habitats and Protected Areas") +
   theme_minimal()
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-7-1.png)
+
+``` r
 unique(colorado_redline$fill)
 ```
 
+    [1] "#76a865" "#7cb5bd" "#ffff00" "#d9838d"
 
-```{r}
+``` r
 colors <- c( "#76a865","#7cb5bd", "#ffff00", "#d9838d")
 
 
@@ -198,10 +310,11 @@ ggplot() +
   theme_tufte()  + 
   scale_fill_manual(values = colors) +
   labs(fill='DENVER \nHOLC Categories')
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-9-1.png)
+
+``` r
 # Filter for only A and D grade polygons
 sf_data_filtered <- colorado_redline %>% 
   filter(grade %in% c('A', 'D')) %>%
@@ -220,7 +333,9 @@ ggplot(data = sf_data_filtered) +
   theme(legend.position = "none")  # Hide the legend if not needed
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-10-1.png)
+
+``` r
 library(ggplot2)
 library(sf)
 library(dplyr)
@@ -253,8 +368,24 @@ ggplot(data = sf_data_filtered) +
         panel.grid.minor = element_blank())  
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-11-1.png)
+
+``` r
 library(terra)
+```
+
+    Warning: package 'terra' was built under R version 4.3.2
+
+    terra 1.7.71
+
+
+    Attaching package: 'terra'
+
+    The following object is masked from 'package:knitr':
+
+        spin
+
+``` r
 library(ggplot2)
 library(sf)
 library(dplyr)
@@ -280,10 +411,11 @@ ggplot(df_raster, aes(x = x, y = y, fill = count)) +
   coord_fixed(ratio = 1) +  # Keep aspect ratio fixed
   labs(fill = "Polygon count") +
   theme_minimal()
-
 ```
 
-```{r}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-12-1.png)
+
+``` r
 # Load the sf library
 library(sf)
 library(dplyr)  # for data manipulation
@@ -323,12 +455,9 @@ for (grade in c("A", "B", "C", "D")) {
 
 # Combine all selected polygons from different grades into one sf object
 final_selected_polygons <- do.call(rbind, results)
-
-
-
 ```
 
-```{r}
+``` r
 library(ggplot2)
 
 grade_colors <- c("A" = "#76a865", "B" = "#7cb5bd", "C" = "#ffff00", "D" = "#d9838d")
@@ -341,11 +470,11 @@ ggplot(data = final_selected_polygons) +
        fill = "Grade") +
   theme_minimal() +
   coord_sf()  # Use coord_sf to use the proper aspect ratio
-
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-14-1.png)
 
-```{r}
+``` r
 grade_colors_2 <- c("A" = "black", "B" = "black", "C" = "black", "D" = "black")
 
 # Create the plot with panels for each grade
@@ -367,3 +496,4 @@ ggplot(data = sf_data_filtered) +
 geom_sf(data = final_selected_polygons, aes(fill = grade), color = "limegreen",fill = "limegreen", size = 0.2) 
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-15-1.png)
