@@ -3,197 +3,268 @@ title: "redlining"
 format: gfm
 ---
 
-
-
-
 ```{r}
-# Install and load necessary libraries]
-library(knitr)
+
 library(sf)
-library(dplyr)
-
-#https://dsl.richmond.edu/panorama/redlining/static/mappinginequality.json
-
-# Download historic redlining data for Philadelphia
-url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
-philly_geojson <- read_sf(url)
-philly_geojson
-
-
-# Count the number of areas per HOLC grade
-colorado_redline <- philly_geojson |>
-  filter(city=="Denver" & grade != "") 
-
-
-colorado_redline$grade
-```
-
-
-```{r}
 library(ggplot2)
 library(ggthemes)
-ggplot(data=colorado_redline, aes(fill=cat)) +
-  geom_sf() +
-  theme_tufte()  + 
-  labs(fill='HOLC Categories')
-
-```
-
-```{r}
-colorado_redline |>
-  st_bbox() -> bbox_here
-
-library(osmdata)
-
-aoi <- getbb("United States", format_out="sf_polygon")
-
-conus <- aoi$multipolygon |>
-  st_crop(bbox_here)
-
-
-ggplot(data=conus) +
-  geom_sf()
-
+library(dplyr)
 
 ```
 
 
-```{r}
-library(osmextract)
+```{r, collapse=TRUE}
+# Function to get a list of unique cities and states from the redlining data
+get_city_state_list_from_redlining_data <- function() {
+  # URL to the GeoJSON data
+  url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
+  
+  # Read the GeoJSON file into an sf object
+  redlining_data <- tryCatch({
+    read_sf(url)
+  }, error = function(e) {
+    stop("Error reading GeoJSON data: ", e$message)
+  })
 
-# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
-colorado_redline |>
-  st_bbox() |>
-  st_as_sfc() -> bbox_here
+  # Check for the existence of 'city' and 'state' columns
+  if (!all(c("city", "state") %in% names(redlining_data))) {
+    stop("The required columns 'city' and/or 'state' do not exist in the data.")
+  }
 
-# Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for highways
-highway_network <- oe_get(
-  place = bbox_here,
-  layer = "lines",
-  query = "SELECT * FROM lines WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary', 'tertiary')",
-  quiet = TRUE
-)
+  # Extract a unique list of city and state pairs without the geometries
+  city_state_df <- redlining_data %>%
+    select(city, state) %>%
+    st_set_geometry(NULL) %>%  # Drop the geometry to avoid issues with invalid shapes
+    distinct(city, state) %>%
+    arrange(state, city )  # Arrange the list alphabetically by state, then by city
 
-
-# Crop the data to the bounding box
-cropped_highway_network <- st_crop(highway_network, bbox_here)
-
-
-
-ggplot(data=cropped_highway_network) +
-  geom_sf()
-```
-```{r}
-library(osmextract)
-library(sf)
-library(ggplot2)
-
-# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
-colorado_redline |>
-  st_bbox() |>
-  st_as_sfc() -> bbox_here
-
-# Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for rivers
-river_network <- oe_get(
-  place = bbox_here,
-  layer = "lines",
-  query = "SELECT * FROM lines WHERE waterway IN ('river')",
-  quiet = TRUE
-)
-
-# Crop the data to the bounding box
-cropped_river_network <- st_crop(river_network, bbox_here)
-
-# Plotting the cropped river network
-ggplot(data = cropped_river_network) +
-  geom_sf() +
-  ggtitle("River Network") +
-  theme_minimal()
+  # Return the dataframe of unique city-state pairs
+  return(city_state_df)
+}
 
 ```
 
 ```{r}
+#Retrieve the list of cities and states
+city_state_list <- get_city_state_list_from_redlining_data()
+print(city_state_list)
+
+```
+
+
+```{r, collapse=TRUE}
+# Function to load and filter redlining data by city
+load_city_redlining_data <- function(city_name) {
+  # URL to the GeoJSON data
+  url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
+  
+  # Read the GeoJSON file into an sf object
+  redlining_data <- read_sf(url)
+  
+  # Filter the data for the specified city and non-empty grades
+  
+  city_redline <- redlining_data %>%
+    filter(city == city_name )
+  
+  # Return the filtered data
+  return(city_redline)
+}
+```
+
+```{r}
+
+# Load redlining data for Denver
+denver_redlining <- load_city_redlining_data("Denver")
+print(denver_redlining)
+
+```
+
+
+```{r, collapse=TRUE}
 library(osmextract)
 library(sf)
 library(ggplot2)
+library(ggthemes)
 
-# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
-colorado_redline |>
-  st_bbox() |>
-  st_as_sfc() -> bbox_here
-
-# Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for environmental monitoring stations
-monitoring_stations <- oe_get(
-  place = bbox_here,
-  layer = "points",  # Assuming monitoring stations are best represented as points
-  query = "SELECT * FROM points WHERE man_made = 'monitoring_station'",
-  quiet = TRUE
-)
-
-# Crop the data to the bounding box
-cropped_monitoring_stations <- st_crop(monitoring_stations, bbox_here)
-
-# Plotting the cropped environmental monitoring stations
-ggplot(data = cropped_monitoring_stations) +
-  geom_sf() +
-  ggtitle("Environmental Monitoring Stations") +
-  theme_minimal()
-
-
-
-```
-
-```{r}
-library(osmextract)
-library(sf)
-library(ggplot2)
-
-# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
-colorado_redline |>
-  st_bbox() |>
-  st_as_sfc() -> bbox_here
-
-# Use the bbox to get data with oe_get(), specifying custom SQL queries for natural habitats
-natural_habitats <- oe_get(
-  place = bbox_here,
-  layer = "multipolygons",  # Assuming natural features may be represented as areas
-  query = "SELECT * FROM multipolygons WHERE (
+get_places <- function(polygon_layer, type = "food" ) {
+  # Check if the input is an sf object
+  if (!inherits(polygon_layer, "sf")) {
+    stop("The provided object is not an sf object.")
+  }
+  
+  # Create a bounding box from the input sf object
+  bbox_here <- st_bbox(polygon_layer) |>
+    st_as_sfc()
+  
+  if(type == "food"){
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
+                 shop IN ('supermarket', 'bodega', 'market', 'other_market', 'farm', 'garden_centre', 'doityourself', 'farm_supply', 'compost', 'mulch', 'fertilizer') OR
+                 amenity IN ('social_facility', 'market', 'restaurant', 'coffee') OR
+                 leisure = 'garden' OR
+                 landuse IN ('farm', 'farmland', 'row_crops', 'orchard_plantation', 'dairy_grazing') OR
+                 building IN ('brewery', 'winery', 'distillery') OR
+                 shop = 'greengrocer' OR
+                 amenity = 'marketplace'
+               )"
+    title <- "food"
+  }
+  
+  
+  if(type == "natural_habitats"){
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
              boundary = 'protected_area' OR
              natural IN ('tree', 'wood') OR
              landuse = 'forest' OR
              leisure = 'park'
-           )",
-  quiet = TRUE
-)
+           )"
+    title <- "Natural habitats or City owned trees"
+  }
+  
+   if(type == "roads"){
+    my_layer <- "lines"
+    my_query <- "SELECT * FROM lines WHERE (
+             highway IN ('motorway', 'trunk', 'primary', 'secondary', 'tertiary') )"
+    title <- "Major roads"
+   }
+  
+  if(type == "rivers"){
+    my_layer <- "lines"
+    my_query <- "SELECT * FROM lines WHERE (
+             waterway IN ('river'))"
+    title <- "Major rivers"
+  }
+  
+  # Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for fresh food places
+  tryCatch({
+    places <- oe_get(
+      place = bbox_here,
+      layer = my_layer,  # Adjusted layer; change as per actual data availability
+      query = my_query,
+      quiet = TRUE
+    )
+    
+  places <- st_make_valid(places)
+    
+    # Crop the data to the bounding box
+    cropped_places <- st_crop(places, bbox_here)
+    
+    # Plotting the cropped fresh food places
+    plot <- ggplot(data = cropped_places) +
+      geom_sf(fill="cornflowerblue", color="cornflowerblue") +
+      ggtitle(title) +
+  theme_tufte()+
+  theme(legend.position = "none",  # Optionally hide the legend
+        axis.text = element_blank(),     # Remove axis text
+        axis.title = element_blank(),    # Remove axis titles
+        axis.ticks = element_blank(),    # Remove axis ticks
+         plot.background = element_rect(fill = "white", color = NA),  # Set the plot background to white
+        panel.background = element_rect(fill = "white", color = NA),  # Set the panel background to white
+        panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),
+        ) 
+    
+    # Save the plot as a PNG file
+    png_filename <- paste0(title,"_", Sys.Date(), ".png")
+    ggsave(png_filename, plot, width = 10, height = 8, units = "in")
+    
+    # Return the cropped dataset
+    return(cropped_places)
+  }, error = function(e) {
+    stop("Failed to retrieve or plot data: ", e$message)
+  })
+}
 
-# Validate and possibly repair geometries before cropping
-natural_habitats <- st_make_valid(natural_habitats)  # or lwgeom::st_make_valid(natural_habitats)
 
-# Crop the data
-cropped_natural_habitats <- st_crop(natural_habitats, bbox_here)
 
-# Plotting the cropped natural habitats
-ggplot(data = cropped_natural_habitats) +
-  geom_sf() +
-  ggtitle("Natural Habitats and Protected Areas") +
-  theme_minimal()
+```
+
+
+```{r}
+food <- get_places(denver_redlining, type="food")
+
+natural_habitats <- get_places(denver_redlining, type="natural_habitats")
+
+roads <- get_places(denver_redlining, type="roads")
+
+rivers <- get_places(denver_redlining, type="rivers")
+
 
 ```
 
 ```{r}
-unique(colorado_redline$fill)
+places_polygons <- rbind(food, natural_habitats)
+places_polygons
+
+places_lines <- rbind(roads, rivers)
+places_lines
+```
+
+
+```{r, warning=FALSE}
+
+library(sf)
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+
+# Function to plot city redlining data including various geographic features
+plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png") {
+  # Fetch additional geographic data based on redlining data
+  roads <- get_places(redlining_data, type = "roads")
+  rivers <- get_places(redlining_data, type = "rivers")
+  
+  # Filter residential zones with valid grades and where city survey is TRUE
+  residential_zones <- redlining_data %>%
+    filter(city_survey == TRUE & grade != "") 
+
+  # Colors for the grades
+  colors <- c("#76a865", "#7cb5bd", "#ffff00", "#d9838d")
+
+  # Plot the data using ggplot2
+  plot <- ggplot() +
+    geom_sf(data = roads, lwd = 0.1) +
+    geom_sf(data = rivers, color = "blue", alpha = 0.5, lwd = 1.1) +
+    geom_sf(data = residential_zones, aes(fill = grade), alpha = 0.5) +
+    theme_tufte() +
+    scale_fill_manual(values = colors) +
+    labs(fill = 'HOLC Categories') +
+    theme(
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.background = element_rect(fill = "white", color = NA),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      legend.position = "right"
+    )
+  
+  # Save the plot as a high-resolution PNG file
+  ggsave(filename, plot, width = 10, height = 8, units = "in", dpi = 600)
+  
+  # Return the plot object if needed for further manipulation or checking
+  return(plot)
+}
+
+
+
+denver_plot <- plot_city_redlining(denver_redlining)
+print(denver_plot)
+
 ```
 
 
 ```{r}
+
+residential_zones <- denver_redlining |>
+  filter(city_survey == TRUE & grade != "") 
+
 colors <- c( "#76a865","#7cb5bd", "#ffff00", "#d9838d")
 
 
 ggplot() +
-  
-  geom_sf(data=cropped_highway_network, lwd=0.1) +
-  geom_sf(data = cropped_river_network, col="blue", alpha=0.5, lwd=1.1) +
-  geom_sf(data=colorado_redline, aes(fill=grade), alpha=0.5) +
+  geom_sf(data=roads, lwd=0.1) +
+  geom_sf(data = rivers, col="blue", alpha=0.5, lwd=1.1) +
+  geom_sf(data=residential_zones, aes(fill=grade), alpha=0.5) +
   #geom_sf(data=cropped_natural_habitats,color="black", fill="black", alpha=1)+
   theme_tufte()  + 
   scale_fill_manual(values = colors) +
@@ -201,28 +272,7 @@ ggplot() +
 
 ```
 
-```{r}
-# Filter for only A and D grade polygons
-sf_data_filtered <- colorado_redline %>% 
-  filter(grade %in% c('A', 'D')) %>%
-  # Add a dummy column for facetting, ensuring there's only one A and one D polygon
-  group_by(grade) %>%
-  #slice(2) %>%
-  ungroup()
 
-# Create the plot with two panels
-ggplot(data = sf_data_filtered) +
-  geom_sf(aes(fill = grade)) +
-  facet_wrap(~ grade) + # Free scales allow for different zoom levels
-  scale_fill_manual(values = c("A" = "green", "D" = "red")) +
-  theme_tufte()+
-  theme(legend.position = "none",  # Optionally hide the legend
-        axis.text = element_blank(),     # Remove axis text
-        axis.title = element_blank(),    # Remove axis titles
-        axis.ticks = element_blank(),    # Remove axis ticks
-        panel.grid.major = element_blank(),  # Remove major grid lines
-        panel.grid.minor = element_blank()) 
-```
 
 ```{r}
 library(ggplot2)
@@ -523,3 +573,34 @@ ggplot(data = pins_df, aes(x = 1, y = ID)) +
 
 ```
 
+
+```{r}
+library(osmextract)
+library(sf)
+library(ggplot2)
+
+# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
+colorado_redline |>
+  st_bbox() |>
+  st_as_sfc() -> bbox_here
+
+# Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for environmental monitoring stations
+monitoring_stations <- oe_get(
+  place = bbox_here,
+  layer = "points",  # Assuming monitoring stations are best represented as points
+  query = "SELECT * FROM points WHERE man_made = 'monitoring_station'",
+  quiet = TRUE
+)
+
+# Crop the data to the bounding box
+cropped_monitoring_stations <- st_crop(monitoring_stations, bbox_here)
+
+# Plotting the cropped environmental monitoring stations
+ggplot(data = cropped_monitoring_stations) +
+  geom_sf() +
+  ggtitle("Environmental Monitoring Stations") +
+  theme_minimal()
+
+
+
+```
