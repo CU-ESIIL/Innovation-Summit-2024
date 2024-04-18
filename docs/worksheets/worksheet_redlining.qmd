@@ -215,9 +215,13 @@ ggplot(data = sf_data_filtered) +
   geom_sf(aes(fill = grade)) +
   facet_wrap(~ grade) + # Free scales allow for different zoom levels
   scale_fill_manual(values = c("A" = "green", "D" = "red")) +
-  theme_minimal() +
-  labs(fill = 'HOLC Grade') +
-  theme(legend.position = "none")  # Hide the legend if not needed
+  theme_tufte()+
+  theme(legend.position = "none",  # Optionally hide the legend
+        axis.text = element_blank(),     # Remove axis text
+        axis.title = element_blank(),    # Remove axis titles
+        axis.ticks = element_blank(),    # Remove axis ticks
+        panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank()) 
 ```
 
 ```{r}
@@ -253,35 +257,7 @@ ggplot(data = sf_data_filtered) +
         panel.grid.minor = element_blank())  
 ```
 
-```{r}
-library(terra)
-library(ggplot2)
-library(sf)
-library(dplyr)
 
-# Assuming 'cropped_natural_habitats' is your sf object with polygons
-# Make sure it is in a projected coordinate system appropriate for area calculations
-
-# Create a raster with the desired resolution using terra
-r <- rast(ext(cropped_natural_habitats))  # Replace res with desired resolution
-dim(r) <- c(150, 150, 1)
-
-# Rasterize: count the number of polygons in each cell using terra
-r_count <- terra::rasterize(cropped_natural_habitats, r, field=1, fun = 'count')
-
-# Convert the raster to a dataframe for ggplot
-df_raster <- as.data.frame(r_count, xy = TRUE, na.rm = TRUE)
-colnames(df_raster) <- c("x", "y", "count")
-
-# Plot using ggplot
-ggplot(df_raster, aes(x = x, y = y, fill = count)) +
-  geom_tile() +  # Use geom_tile to visualize the raster grid
-  scale_fill_viridis_c() +  # Use a continuous color scale
-  coord_fixed(ratio = 1) +  # Keep aspect ratio fixed
-  labs(fill = "Polygon count") +
-  theme_minimal()
-
-```
 
 ```{r}
 # Load the sf library
@@ -365,5 +341,185 @@ ggplot(data = sf_data_filtered) +
         panel.grid.major = element_blank(),  # Remove major grid lines
         panel.grid.minor = element_blank())+
 geom_sf(data = final_selected_polygons, aes(fill = grade), color = "limegreen",fill = "limegreen", size = 0.2) 
+```
+
+
+```{r}
+
+library(sf)
+library(httr)
+
+# Assuming the polygon data is loaded into R as an sf object
+polygon_data <- colorado_redline |>
+  st_make_valid()
+
+# Calculate the centroid of the polygon
+centroid <- st_centroid(polygon_data)
+
+# Extract longitude and latitude
+coords <- st_coordinates(centroid)
+longitude <- coords[1]
+latitude <- coords[2]
+
+# Define the base URL for the Historypin API
+base_url <- "https://historypin.org/en/api/"
+
+# Construct the API endpoint for searching projects, collections, or pins (assuming pins here)
+# Note: Update `path` based on what type of data you are interested in (e.g., "pins")
+endpoint <- "pins/nearby"
+
+# Prepare the API URL with query parameters (assuming latitude, longitude, and a radius are valid parameters)
+api_url <- paste(base_url, endpoint, "?lat=", latitude, "&lon=", longitude, "&radius=10000", sep="")
+
+# Make the API request
+response <- GET(api_url)
+
+# Check the status of the response
+if (http_status(response)$category == "success") {
+  # Parse the response as JSON
+  data <- content(response, "parsed")
+  print(data)
+} else {
+  print("Failed to retrieve data: ")
+  print(content(response, "text"))
+}
+
+
+```
+
+
+```{r}
+# Load necessary libraries
+library(httr)
+library(jsonlite)
+
+# Define the base URL and parameters for the Historypin API
+base_url <- "http://www.historypin.org/en/api/"
+type <- "pin"
+
+# Parameters for the API call
+params <- list(
+  limit = 6,
+  page = 1,
+  sort = "-recent",  # Fetch the most recent pins
+  user = 11          # Optionally filter by user ID
+)
+
+# Construct the full API URL
+url <- paste0(base_url, type, "/listing.json")
+
+# Make the HTTP GET request
+response <- GET(url, query = params)
+
+response
+
+# Parse the JSON response
+data <- content(response, "parsed")
+
+# Check if 'results' is not empty
+if (!is.null(data$results) && length(data$results) > 0) {
+    # Extract relevant data into a data frame
+    pins_df <- data.frame(
+      ID = sapply(data$results, function(x) x$id),
+      Caption = sapply(data$results, function(x) x$caption),
+      Image_URL = sapply(data$results, function(x) {
+        if (!is.null(x$image)) {
+          return(paste0("https:", x$image))
+        } else {
+          return(NA)
+        }
+      }),
+      Description = sapply(data$results, function(x) x$desc),
+      User_Name = sapply(data$results, function(x) x$user$name),
+      Project = sapply(data$results, function(x) x$project),
+      stringsAsFactors = FALSE
+    )
+    
+    # Print the data frame
+    print(pins_df)
+} else {
+    print("No results found.")
+}
+
+pins_df
+```
+
+
+```{r}
+# Function to load images
+load_images <- function(url) {
+  tryCatch({
+    image <- magick::image_read(url)
+    image <- magick::image_scale(image, "100x100")  # Resize for uniformity
+    return(image)
+  }, error = function(e) {
+    return(NA)  # Return NA on error
+  })
+}
+
+# Apply function to Image_URL column
+pins_df$Image <- sapply(pins_df$Image_URL, load_images, USE.NAMES = FALSE)
+
+```
+
+```{r}
+# Install and load required packages
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("magick")) install.packages("magick", repos = "http://cran.us.r-project.org")
+if (!require("ggimage")) install.packages("ggimage")
+library(ggplot2)
+library(magick)
+library(ggimage)
+
+# Function to load and resize images
+load_images <- function(url) {
+  tryCatch({
+    image <- magick::image_read(url)
+    image <- magick::image_scale(image, "100x100")  # Resize images to 100x100 for uniformity
+    return(image)
+  }, error = function(e) {
+    return(NA)  # Return NA if the image fails to load
+  })
+}
+
+# Correcting the Image URLs in the dataframe
+pins_df$Image_URL <- gsub("https:/", "https://", pins_df$Image_URL)
+
+# Function to load and resize images safely
+load_images <- function(url) {
+  tryCatch({
+    # Attempt to read the image from the URL
+    image <- magick::image_read(url)
+    # Resize image for consistency in the plot
+    image <- magick::image_scale(image, "100x100")
+    return(image)
+  }, error = function(e) {
+    # Return NA if there's an error in loading the image
+    return(NA)
+  })
+}
+
+load_images(pins_df$Image_URL[1])
+
+# Apply the function to correct Image_URL column
+pins_df$Image <- sapply(pins_df$Image_URL, load_images, USE.NAMES = FALSE)
+
+# Checking if images are loaded (optional, can comment out in production)
+print(sum(!is.na(pins_df$Image)), "images loaded successfully.")
+
+# Plot the images using ggplot2 and ggimage
+library(ggplot2)
+library(ggimage)  # Ensure ggimage is installed and loaded
+
+ggplot(data = pins_df, aes(x = 1, y = ID)) +
+  geom_image(aes(image = Image), size = 0.1) +  # Plot images
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(size = 8)) +
+  labs(title = "Images from Historypin", y = "Image ID")
+
 ```
 
