@@ -521,12 +521,31 @@ print(ndvi$raster)
 
 
 ```{r}
+denver_redlining <- denver_redlining |>
+  filter(grade != "")
+
+bbox <- st_bbox(denver_redlining)
+background_poly <- st_as_sfc(bbox, crs = st_crs(denver_redlining)) |>
+  st_make_valid() 
+
+cleaned_redlining <- denver_redlining |>
+  st_make_valid() 
+
+# Step 2: Create an "inverted" mask by subtracting your polygon from the background
+mask <- st_difference(background_poly, st_union(cleaned_redlining)) 
+
+
+
+# Convert to an sf object for easier plotting
+mask_sf <- st_sf(geometry = mask)
+sf_polygons <- mask_sf[st_geometry_type(mask_sf) == "MULTIPOLYGON", ]
+
 ggplot()+
   geom_spatraster(data = ndvi$raster, aes(fill = NDVI)) +
     scale_fill_viridis_c(option = "viridis", direction = -1, name = "NDVI") +
   geom_sf(data = roads, alpha = 0.05, lwd = 0.1) +
     geom_sf(data = rivers, color = "blue", alpha = 0.1, lwd = 1.1) +
-    geom_sf(data = layer1, fill = "grey", color = "grey", size = 0.1) +
+    geom_sf(data = sf_polygons, fill = "grey", color = "grey", size = 0.1) +
     facet_wrap(~ grade, nrow = 1) +
     geom_sf(data = final_selected_polygons,fill = "green", color = "green", size = 0.1) +
     facet_wrap(~ grade, nrow = 1) +
