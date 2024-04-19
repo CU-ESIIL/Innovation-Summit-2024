@@ -9,7 +9,11 @@ library(sf)
 library(ggplot2)
 library(ggthemes)
 library(dplyr)
-
+library(gdalcubes)
+library(rstac)
+library(gdalUtils)
+library(gdalcubes)
+library(colorspace)
 ```
 
 
@@ -363,6 +367,183 @@ final_selected_polygons <- do.call(rbind, results)
  final_plot <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(final_plot)
 ```
+
+```{r}
+
+polygon_layer <- denver_redlining
+# Function to process satellite data based on an SF polygon's extent
+process_satellite_data <- function(polygon_layer, start_date, end_date, assets, fps = 4, output_file = "anim.gif") {
+  # Record start time
+  start_time <- Sys.time()
+  
+  # Calculate the bbox from the polygon layer
+  bbox <- st_bbox(polygon_layer)
+  
+  s = stac("https://earth-search.aws.element84.com/v0")
+
+  
+  # Use stacR to search for Sentinel-2 images within the bbox and date range
+  items = s |> stac_search(
+    collections = "sentinel-s2-l2a-cogs",
+    bbox = c(bbox["xmin"], bbox["ymin"], bbox["xmax"], bbox["ymax"]),
+    datetime = paste(start_date, end_date, sep = "/"),
+    limit = 500
+  ) %>% 
+  post_request()
+  
+  # Define mask for Sentinel-2 image quality
+  S2.mask <- image_mask("SCL", values = c(3, 8, 9))
+  
+  # Create a collection of images filtering by cloud cover
+  col <- stac_image_collection(items$features, asset_names = assets,
+                               property_filter = function(x) {x[["eo:cloud_cover"]] < 30})
+  
+  # Define a view for processing the data
+  v <- cube_view(srs = "EPSG:4326", 
+                 extent = list(t0 = start_date, t1 = end_date,
+                               left = bbox["xmin"], right = bbox["xmax"], 
+                               top = bbox["ymax"], bottom = bbox["ymin"]),
+                 dx = 0.001, dy = 0.001, dt = "P1M", 
+                 aggregation = "median", resampling = "bilinear")
+  
+  # Calculate NDVI and create an animation
+  ndvi_col <- function(n) {
+    rev(sequential_hcl(n, "Green-Yellow"))
+  }
+  
+  raster_cube(col, v, mask = S2.mask) %>%
+    select_bands(c("B04", "B08")) %>%
+    apply_pixel("(B08-B04)/(B08+B04)", "NDVI") %>%
+    animate(col = ndvi_col, zlim = c(-0.2, 1), key.pos = 1, save_as = output_file, fps = fps)
+  
+  # Calculate processing time
+  end_time <- Sys.time()
+  processing_time <- difftime(end_time, start_time)
+  
+  # Return processing time
+  return(processing_time)
+}
+
+# Example usage:
+# Assuming you have a proper 'polygon_layer' loaded as an sf object, and 'assets' defined
+ processing_time <- process_satellite_data(denver_redlining, "2020-01-01", "2022-12-31", c("B04", "B08"))
+ print(processing_time)
+
+```
+
+
+
+
+
+
+
+```{r}
+stac("https://earth-search.aws.element84.com/v0") %>%
+       collections() %>%
+       get_request()
+```
+
+
+```{r build_collection, cache=FALSE, warning=FALSE, message=FALSE, eval=TRUE, collapse=TRUE}
+# Record start time
+a <- Sys.time()
+
+# Initialize STAC connection
+s = stac("https://earth-search.aws.element84.com/v0")
+
+
+# Search for Sentinel-2 images within specified bounding box and date range
+#22 Million items
+items = s |>
+    stac_search(collections = "sentinel-s2-l2a-cogs",
+                bbox = c(bbox_4326_boulder["xmin"], 
+                         bbox_4326_boulder["ymin"],
+                         bbox_4326_boulder["xmax"], 
+                         bbox_4326_boulder["ymax"]), 
+                datetime = "2021-05-15/2021-05-16") |>
+    post_request() |>
+    items_fetch(progress = FALSE)
+
+# Print number of found items
+length(items$features)
+
+# Prepare the assets for analysis
+library(gdalcubes)
+assets = c("B01", "B02", "B03", "B04", "B05", "B06", 
+           "B07", 
+           "B08", "B8A", "B09", "B11", "B12", "SCL")
+s2_collection = stac_image_collection(items$features, asset_names = assets,
+property_filter = function(x) {x[["eo:cloud_cover"]] < 20}) #all images with less than 20% clouds
+
+b <- Sys.time()
+difftime(b, a)
+
+# Display the image collection
+s2_collection
+```
+
+```{r set_view_window, cache=TRUE, warning=FALSE, message=FALSE, collapse=TRUE}
+# Record start time
+a <- Sys.time()
+
+# Define a specific view on the satellite image collection
+v = cube_view(
+    srs = "EPSG:32720", #this is harder than expected. 
+    dx = 100, 
+    dy = 100, 
+    dt = "P1M", 
+    aggregation = "median", 
+    resampling = "near",
+    extent = list(
+        t0 = "2021-05-15", 
+        t1 = "2021-05-16",
+        left = bbox_32720_boulder[1], 
+        right = bbox_32720_boulder[2],
+        top = bbox_32720_boulder[4], 
+        bottom = bbox_32720_boulder[3]
+    )
+)
+
+b <- Sys.time()
+difftime(b, a)
+
+# Display the defined view
+v
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
