@@ -204,12 +204,7 @@ places_lines
 
 ```{r, warning=FALSE}
 
-library(sf)
-library(ggplot2)
-library(ggthemes)
-library(dplyr)
 
-# Function to plot city redlining data including various geographic features
 plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png") {
   # Fetch additional geographic data based on redlining data
   roads <- get_places(redlining_data, type = "roads")
@@ -253,53 +248,33 @@ print(denver_plot)
 ```
 
 
-```{r}
-
-residential_zones <- denver_redlining |>
-  filter(city_survey == TRUE & grade != "") 
-
-colors <- c( "#76a865","#7cb5bd", "#ffff00", "#d9838d")
-
-
-ggplot() +
-  geom_sf(data=roads, lwd=0.1) +
-  geom_sf(data = rivers, col="blue", alpha=0.5, lwd=1.1) +
-  geom_sf(data=residential_zones, aes(fill=grade), alpha=0.5) +
-  #geom_sf(data=cropped_natural_habitats,color="black", fill="black", alpha=1)+
-  theme_tufte()  + 
-  scale_fill_manual(values = colors) +
-  labs(fill='DENVER \nHOLC Categories')
-
-```
-
-
 
 ```{r}
-library(ggplot2)
-library(sf)
-library(dplyr)
+
 
 # Assuming colorado_redline is your sf object with a 'grade' column
 # Filter for grades A, B, C, and D
-sf_data_filtered <- colorado_redline %>% 
+sf_data_filtered <- denver_redlining %>% 
   filter(grade %in% c('A', 'B', 'C', 'D'))
 
 # Define a color for each grade
 grade_colors <- c("A" = "#76a865", "B" = "#7cb5bd", "C" = "#ffff00", "D" = "#d9838d")
 
-grade_colors <- c("A" = "black", "B" = "black", "C" = "black", "D" = "black")
+#grade_colors <- c("A" = "black", "B" = "black", "C" = "black", "D" = "black")
 
 # Create the plot with panels for each grade
 ggplot(data = sf_data_filtered) +
-  geom_sf(data=cropped_highway_network,alpha=0.1, lwd=0.1) +
-  geom_sf(data = cropped_river_network, col="blue", alpha=0.1, lwd=1.1) +
+  geom_sf(data=roads,alpha=0.1, lwd=0.1) +
+  geom_sf(data = rivers, col="blue", alpha=0.1, lwd=1.1) +
   geom_sf(aes(fill = grade)) +
   facet_wrap(~ grade, nrow = 1) +  # Free scales for different zoom levels if needed
   scale_fill_manual(values = grade_colors) +
   theme_minimal() +
   labs(fill = 'HOLC Grade') +
   theme_tufte()+
-  theme(legend.position = "none",  # Optionally hide the legend
+  theme(plot.background = element_rect(fill = "white", color = NA),
+      panel.background = element_rect(fill = "white", color = NA),
+      legend.position = "none",  # Optionally hide the legend
         axis.text = element_blank(),     # Remove axis text
         axis.title = element_blank(),    # Remove axis titles
         axis.ticks = element_blank(),    # Remove axis ticks
@@ -308,22 +283,16 @@ ggplot(data = sf_data_filtered) +
 ```
 
 
+```{r, collapse=TRUE}
 
-```{r}
-# Load the sf library
-library(sf)
-library(dplyr)  # for data manipulation
-
-# Example data loading (assumes colorado_redline and cropped_natural_habitats are already loaded)
-layer1 <- colorado_redline
-layer2 <- cropped_natural_habitats
-
-# Make geometries valid
+process_and_plot_sf_layers <- function(layer1, layer2, output_file = "output_plot.png") {
+ # Make geometries valid
 layer1 <- st_make_valid(layer1)
 layer2 <- st_make_valid(layer2)
 
 # Optionally, simplify geometries to remove duplicate vertices
-layer1 <- st_simplify(layer1, preserveTopology = TRUE)
+layer1 <- st_simplify(layer1, preserveTopology = TRUE) |>
+  filter(grade != "")
 
 # Prepare a list to store results
 results <- list()
@@ -334,7 +303,7 @@ for (grade in c("A", "B", "C", "D")) {
   layer1_grade <- layer1[layer1$grade == grade, ]
 
   # Buffer the geometries of the current grade
-  buffered_layer1_grade <- st_buffer(layer1_grade, dist = 100)
+  buffered_layer1_grade <- st_buffer(layer1_grade, dist = 500)
 
   # Intersect with the second layer
   intersections <- st_intersects(layer2, buffered_layer1_grade, sparse = FALSE)
@@ -350,48 +319,53 @@ for (grade in c("A", "B", "C", "D")) {
 # Combine all selected polygons from different grades into one sf object
 final_selected_polygons <- do.call(rbind, results)
 
+  # Define colors for the grades
+  grade_colors <- c("A" = "grey", "B" = "grey", "C" = "grey", "D" = "grey")
+
+  # Create the plot
+  plot <- ggplot() +
+    geom_sf(data = roads, alpha = 0.05, lwd = 0.1) +
+    geom_sf(data = rivers, color = "blue", alpha = 0.1, lwd = 1.1) +
+    geom_sf(data = layer1, fill = "grey", color = "grey", size = 0.1) +
+    facet_wrap(~ grade, nrow = 1) +
+    geom_sf(data = final_selected_polygons,fill = "green", color = "green", size = 0.1) +
+    facet_wrap(~ grade, nrow = 1) +
+    #scale_fill_manual(values = grade_colors) +
+    #scale_color_manual(values = grade_colors) +
+    theme_minimal() +
+    labs(fill = 'HOLC Grade') +
+    theme_tufte() +
+    theme(plot.background = element_rect(fill = "white", color = NA),
+      panel.background = element_rect(fill = "white", color = NA),
+      legend.position = "none",
+          axis.text = element_blank(),
+          axis.title = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+
+  # Save the plot as a high-resolution PNG file
+  ggsave(output_file, plot, width = 10, height = 8, units = "in", dpi = 600)
+  
+  # Return the plot for optional further use
+  return(plot)
+}
+
+
 
 
 ```
+
 
 ```{r}
-library(ggplot2)
-
-grade_colors <- c("A" = "#76a865", "B" = "#7cb5bd", "C" = "#ffff00", "D" = "#d9838d")
-# Assuming 'final_selected_polygons' is your final sf object
-# Plot using ggplot2
-ggplot(data = final_selected_polygons) +
-  geom_sf(aes(fill = grade), color = "black", size = 0.2) +
-  scale_fill_manual(values = grade_colors) +
-  labs(title = "Selected Polygons by Grade",
-       fill = "Grade") +
-  theme_minimal() +
-  coord_sf()  # Use coord_sf to use the proper aspect ratio
-
+ layer1 <- denver_redlining
+ layer2 <- food
+ final_plot <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
+ print(final_plot)
 ```
 
 
-```{r}
-grade_colors_2 <- c("A" = "black", "B" = "black", "C" = "black", "D" = "black")
 
-# Create the plot with panels for each grade
-ggplot(data = sf_data_filtered) +
-  geom_sf(data=cropped_highway_network,alpha=0.1, lwd=0.1) +
-  geom_sf(data = cropped_river_network, col="blue", alpha=0.1, lwd=1.1) +
-  geom_sf(aes(fill = grade)) +
-  facet_wrap(~ grade, nrow = 1) +  # Free scales for different zoom levels if needed
-  scale_fill_manual(values = grade_colors_2) +
-  theme_minimal() +
-  labs(fill = 'HOLC Grade') +
-  theme_tufte()+
-  theme(legend.position = "none",  # Optionally hide the legend
-        axis.text = element_blank(),     # Remove axis text
-        axis.title = element_blank(),    # Remove axis titles
-        axis.ticks = element_blank(),    # Remove axis ticks
-        panel.grid.major = element_blank(),  # Remove major grid lines
-        panel.grid.minor = element_blank())+
-geom_sf(data = final_selected_polygons, aes(fill = grade), color = "limegreen",fill = "limegreen", size = 0.2) 
-```
 
 
 ```{r}
