@@ -165,6 +165,8 @@ print(denver_redlining)
 
 ``` r
 library(osmextract)
+## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright.
+## Check the package website, https://docs.ropensci.org/osmextract/, for more details.
 library(sf)
 library(ggplot2)
 library(ggthemes)
@@ -502,7 +504,7 @@ print(processing_time)
 
 
 
-yearly_average_ndvi <- function(polygon_layer, output_file = "ndvi.png") {
+yearly_average_ndvi <- function(polygon_layer, output_file = "ndvi.png", dx = 0.01, dy = 0.01) {
   # Record start time
   start_time <- Sys.time()
 
@@ -528,7 +530,7 @@ yearly_average_ndvi <- function(polygon_layer, output_file = "ndvi.png") {
                  extent = list(t0 = "2023-01-01", t1 = "2023-12-31",
                                left = bbox["xmin"], right = bbox["xmax"], 
                                top = bbox["ymax"], bottom = bbox["ymin"]),
-                 dx = 0.001, dy = 0.001, dt = "P1Y", 
+                 dx = dx, dy = dy, dt = "P1Y", 
                  aggregation = "median", resampling = "bilinear")
 
   # Process NDVI
@@ -568,29 +570,156 @@ ndvi_plot <-   ggplot() +
 ```
 
 ``` r
-ndvi <- yearly_average_ndvi(denver_redlining)
-print(ndvi$plot)
+ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
+print(ndvi_background$plot)
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-17-1.png)
 
 ``` r
-print(ndvi$processing_time)
+print(ndvi_background$processing_time)
 ```
 
-    Time difference of 3.842811 mins
+    Time difference of 15.31371 mins
 
 ``` r
-print(ndvi$raster)
+print(ndvi_background$raster)
 ```
 
     class       : SpatRaster 
-    dimensions  : 162, 186, 1  (nrow, ncol, nlyr)
-    resolution  : 0.001, 0.001  (x, y)
-    extent      : -105.0623, -104.8763, 39.62931, 39.79132  (xmin, xmax, ymin, ymax)
+    dimensions  : 1616, 1860, 1  (nrow, ncol, nlyr)
+    resolution  : 1e-04, 1e-04  (x, y)
+    extent      : -105.0623, -104.8763, 39.62951, 39.79112  (xmin, xmax, ymin, ymax)
     coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-    source      : cube_e57075bf4e0d2023-01-01.tif 
+    source      : cube_13d0a395eb7192023-01-01.tif 
     name        : NDVI 
+
+``` r
+library(basemapR)
+
+create_mask_and_plot <- function(redlining_sf, background_raster = ndvi$raster, roads = NULL, rivers = NULL){
+  start_time <- Sys.time()  # Start timing
+  
+  # Validate and prepare the redlining data
+  redlining_sf <- redlining_sf %>%
+    filter(grade != "") %>%
+    st_make_valid()
+  
+  
+bbox <- st_bbox(redlining_sf)  # Get original bounding box
+
+
+expanded_bbox <- expand_bbox(bbox, 6000, 1000)  # 
+
+   
+expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
+    st_make_valid()
+  
+  # Initialize an empty list to store masks
+  masks <- list()
+  
+  # Iterate over each grade to create masks
+  unique_grades <- unique(redlining_sf$grade)
+  for (grade in unique_grades) {
+    # Filter polygons by grade
+    grade_polygons <- redlining_sf[redlining_sf$grade == grade, ]
+    
+    # Create an "inverted" mask by subtracting these polygons from the background
+    mask <- st_difference(expanded_bbox_poly, st_union(grade_polygons))
+    
+    # Store the mask in the list with the grade as the name
+    masks[[grade]] <- st_sf(geometry = mask, grade = grade)
+  }
+  
+  # Combine all masks into a single sf object
+  mask_sf <- do.call(rbind, masks)
+  
+  # Normalize the grades so that C.2 becomes C, but correctly handle other grades
+  mask_sf$grade <- ifelse(mask_sf$grade == "C.2", "C", mask_sf$grade)
+
+  # Prepare the plot
+  plot <- ggplot() +
+    geom_spatraster(data = background_raster, aes(fill = NDVI)) +
+  scale_fill_viridis_c(name = "NDVI", option = "viridis", direction = -1) +
+   
+    geom_sf(data = mask_sf, aes(color = grade), fill = "white", size = 0.1, show.legend = FALSE) +
+    scale_color_manual(values = c("A" = "white", "B" = "white", "C" = "white", "D" = "white"), name = "Grade") +
+    facet_wrap(~ grade, nrow = 1) +
+     geom_sf(data = roads, alpha = 1, lwd = 0.1, color="white") +
+    geom_sf(data = rivers, color = "white", alpha = 0.5, lwd = 1.1) +
+    labs(title = "NDVI: Normalized Difference Vegetation Index") +
+    theme_minimal() +
+    coord_sf(xlim = c(bbox["xmin"], bbox["xmax"]), 
+           ylim = c(bbox["ymin"], bbox["ymax"]), 
+           expand = FALSE) + 
+    theme(plot.background = element_rect(fill = "white", color = NA),
+          panel.background = element_rect(fill = "white", color = NA),
+          legend.position = "bottom",
+          axis.text = element_blank(),
+          axis.title = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+
+  # Save the plot
+  ggsave("redlining_mask_ndvi.png", plot, width = 10, height = 4, dpi = 600)
+
+  end_time <- Sys.time()  # End timing
+  runtime <- end_time - start_time
+
+  # Return the plot and runtime
+  return(list(plot = plot, runtime = runtime, mask_sf = mask_sf))
+}
+```
+
+``` r
+ndvi_background_low <- yearly_average_ndvi(denver_redlining)
+print(ndvi_background_low$plot)
+```
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-19-1.png)
+
+``` r
+print(ndvi_background_low$processing_time)
+```
+
+    Time difference of 1.466374 mins
+
+``` r
+print(ndvi_background_low$raster)
+```
+
+    class       : SpatRaster 
+    dimensions  : 17, 19, 1  (nrow, ncol, nlyr)
+    resolution  : 0.01, 0.01  (x, y)
+    extent      : -105.0643, -104.8743, 39.62532, 39.79532  (xmin, xmax, ymin, ymax)
+    coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+    source      : cube_13d0a16b8d6c12023-01-01.tif 
+    name        : NDVI 
+
+``` r
+ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
+ndvi$mask_sf
+```
+
+    Simple feature collection with 4 features and 1 field
+    Geometry type: GEOMETRY
+    Dimension:     XY
+    Bounding box:  xmin: -105.0865 ymin: 39.62053 xmax: -104.8546 ymax: 39.8001
+    Geodetic CRS:  WGS 84
+      grade                       geometry
+    A     A MULTIPOLYGON (((-105.0865 3...
+    B     B POLYGON ((-105.0865 39.6205...
+    C     C MULTIPOLYGON (((-105.0865 3...
+    D     D MULTIPOLYGON (((-105.0865 3...
+
+``` r
+ndvi$plot
+```
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-20-1.png)
+
+![](redlining_mask_ndvi.png)
 
 ``` r
 library(sf)
