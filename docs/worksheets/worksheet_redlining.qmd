@@ -1,9 +1,9 @@
 ---
 title: "Redlining"
 format:
+  gfm: default
   html:
     theme: cosmo
-  gfm: default
 ---
 
 ```{r, collapse=TRUE}
@@ -294,7 +294,7 @@ roads <- get_places(denver_redlining, type="roads")
 
 rivers <- get_places(denver_redlining, type="rivers")
 
-water_bodies <- get_places(denver_redlining, type="water_bodies")
+#water_bodies <- get_places(denver_redlining, type="water_bodies")
 
 government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
@@ -497,7 +497,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 ```
 
 ```{r}
-processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =18)
+processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 
 ```
 ![](processed_food_word_cloud_per_grade.png)
@@ -511,11 +511,11 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
 ```
 
 ```{r}
-natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =18)
+natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 
 ```
 
-
+![](natural_habitats_word_cloud_per_grade.png)
 ```{r, collapse=TRUE}
 polygon_layer <- denver_redlining
 # Function to process satellite data based on an SF polygon's extent
