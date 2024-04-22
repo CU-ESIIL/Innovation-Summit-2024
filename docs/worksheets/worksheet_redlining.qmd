@@ -1,10 +1,16 @@
 ---
-title: "redlining"
-format: gfm
+title: "Redlining"
+format:
+  html:
+    theme: cosmo
+  gfm: default
 ---
 
 ```{r, collapse=TRUE}
-
+if (!requireNamespace("tidytext", quietly = TRUE)) {
+  install.packages("tidytext")
+}
+library(tidytext)
 library(sf)
 library(ggplot2)
 library(ggthemes)
@@ -16,6 +22,13 @@ library(gdalcubes)
 library(colorspace)
 library(terra)
 library(tidyterra)
+library(basemapR)
+library(tidytext)
+library(ggwordcloud)
+library(osmextract)
+library(sf)
+library(ggplot2)
+library(ggthemes)
 ```
 
 ```{r, collapse=TRUE}
@@ -86,10 +99,7 @@ print(denver_redlining)
 
 
 ```{r, collapse=TRUE}
-library(osmextract)
-library(sf)
-library(ggplot2)
-library(ggthemes)
+
 
 get_places <- function(polygon_layer, type = "food" ) {
   # Check if the input is an sf object
@@ -115,6 +125,15 @@ get_places <- function(polygon_layer, type = "food" ) {
     title <- "food"
   }
   
+  if (type == "processed_food") {
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
+                   amenity IN ('fast_food', 'cafe', 'pub') OR
+                   shop IN ('convenience', 'supermarket') OR
+                   shop = 'kiosk'
+                 )"
+    title <- "Processed Food Locations"
+}
   
   if(type == "natural_habitats"){
     my_layer <- "multipolygons"
@@ -141,6 +160,36 @@ get_places <- function(polygon_layer, type = "food" ) {
     title <- "Major rivers"
   }
   
+  if(type == "internet_access") {
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
+                 amenity IN ('library', 'cafe', 'community_centre', 'public_building') AND
+                 internet_access = 'yes' 
+               )"
+    title <- "Internet Access Locations"
+}
+
+  if(type == "water_bodies") {
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
+                 natural IN ('water', 'lake', 'pond') OR
+                 water IN ('lake', 'pond') OR
+                 landuse = 'reservoir'
+               )"
+    title <- "Water Bodies"
+}
+
+ if(type == "government_buildings") {
+    my_layer <- "multipolygons"
+    my_query <- "SELECT * FROM multipolygons WHERE (
+                 amenity IN ('townhall', 'courthouse', 'embassy', 'police', 'fire_station') OR
+                 building IN ('capitol', 'government')
+               )"
+    title <- "Government Buildings"
+}
+
+
+
   # Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for fresh food places
   tryCatch({
     places <- oe_get(
@@ -236,11 +285,18 @@ print(denver_plot)
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 food <- get_places(denver_redlining, type="food")
 
+food_processed <- get_places(denver_redlining, type="processed_food")
+
+
 natural_habitats <- get_places(denver_redlining, type="natural_habitats")
 
 roads <- get_places(denver_redlining, type="roads")
 
 rivers <- get_places(denver_redlining, type="rivers")
+
+water_bodies <- get_places(denver_redlining, type="water_bodies")
+
+government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
 
 ```{r, collapse=TRUE}
@@ -349,7 +405,67 @@ final_selected_polygons <- do.call(rbind, results)
   ggsave(output_file, plot, width = 10, height = 8, units = "in", dpi = 600)
   
   # Return the plot for optional further use
-  return(plot)
+  return(list(plot=plot, sf = final_selected_polygons))
+}
+
+
+
+
+```
+
+
+
+
+
+
+
+```{r}
+
+create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25) {
+    # Ensure the 'name' and 'grade' columns are present
+    if (!("name" %in% names(sf_object)) || !("grade" %in% names(sf_object))) {
+        stop("The sf object must contain 'name' and 'grade' columns.")
+    }
+    
+    # Extract relevant data and prepare text data
+    text_data <- sf_object %>%
+        select(grade, name) %>%
+        filter(!is.na(name)) %>%
+        unnest_tokens(output = "word", input = name, token = "words") %>%
+        count(grade, word, sort = TRUE) %>%
+        ungroup() %>%
+        filter(n() > 1)  # Filter to remove overly common or single-occurrence words
+    
+    # Ensure there are no NA values in the 'word' column
+    text_data <- text_data %>% filter(!is.na(word))
+
+    # Handle cases where text_data might be empty
+    if (nrow(text_data) == 0) {
+        stop("No data available for creating word clouds.")
+    }
+    
+    # Create a word cloud using ggplot2 and ggwordcloud
+    p <- ggplot( ) +
+        geom_text_wordcloud_area(data=text_data, aes(label = word, size = n),rm_outside = TRUE) +
+        scale_size_area(max_size = max_size) +
+        facet_wrap(~ grade, nrow = 1) +
+      scale_color_gradient(low = "darkred", high = "red") +
+        theme_minimal() +
+        theme(plot.background = element_rect(fill = "white", color = NA),
+          panel.background = element_rect(fill = "white", color = NA),
+          panel.spacing = unit(0.5, "lines"),
+              plot.title = element_text(size = 16, face = "bold"),
+              legend.position = "none") +
+        labs(title = title)
+    
+    # Attempt to save the plot and handle any errors
+    tryCatch({
+        ggsave(output_file, p, width = 10, height = 4, units = "in", dpi = 600)
+    }, error = function(e) {
+        cat("Error in saving the plot: ", e$message, "\n")
+    })
+    
+    return(p)
 }
 
 
@@ -361,8 +477,42 @@ final_selected_polygons <- do.call(rbind, results)
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- food
- final_plot <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
- print(final_plot)
+ food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
+ print(food_match$plot)
+```
+
+```{r}
+food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
+
+```
+
+
+![](food_word_cloud_per_grade.png)
+
+```{r, cache=TRUE, warning=FALSE, message=FALSE}
+ layer1 <- denver_redlining
+ layer2 <- food_processed
+ processed_food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
+ print(processed_food_match$plot)
+```
+
+```{r}
+processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =18)
+
+```
+![](processed_food_word_cloud_per_grade.png)
+
+
+```{r, cache=TRUE, warning=FALSE, message=FALSE}
+ layer1 <- denver_redlining
+ layer2 <- natural_habitats
+ natural_habitats_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
+ print(natural_habitats_match$plot)
+```
+
+```{r}
+natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =18)
+
 ```
 
 
@@ -523,8 +673,9 @@ print(ndvi_background$raster)
 
 
 
+
 ```{r, collapse=TRUE}
-library(basemapR)
+
 
 create_mask_and_plot <- function(redlining_sf, background_raster = ndvi$raster, roads = NULL, rivers = NULL){
   start_time <- Sys.time()  # Start timing
@@ -611,6 +762,7 @@ print(ndvi_background_low$raster)
 ```
 
 
+
 ```{r, cache=TRUE}
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ndvi$mask_sf
@@ -630,213 +782,6 @@ ndvi$plot
 
 
 
-```{r, eval=FALSE}
-
-library(sf)
-library(httr)
-
-# Assuming the polygon data is loaded into R as an sf object
-polygon_data <- colorado_redline |>
-  st_make_valid()
-
-# Calculate the centroid of the polygon
-centroid <- st_centroid(polygon_data)
-
-# Extract longitude and latitude
-coords <- st_coordinates(centroid)
-longitude <- coords[1]
-latitude <- coords[2]
-
-# Define the base URL for the Historypin API
-base_url <- "https://historypin.org/en/api/"
-
-# Construct the API endpoint for searching projects, collections, or pins (assuming pins here)
-# Note: Update `path` based on what type of data you are interested in (e.g., "pins")
-endpoint <- "pins/nearby"
-
-# Prepare the API URL with query parameters (assuming latitude, longitude, and a radius are valid parameters)
-api_url <- paste(base_url, endpoint, "?lat=", latitude, "&lon=", longitude, "&radius=10000", sep="")
-
-# Make the API request
-response <- GET(api_url)
-
-# Check the status of the response
-if (http_status(response)$category == "success") {
-  # Parse the response as JSON
-  data <- content(response, "parsed")
-  print(data)
-} else {
-  print("Failed to retrieve data: ")
-  print(content(response, "text"))
-}
-
-
-```
-
-
-```{r, eval=FALSE}
-# Load necessary libraries
-library(httr)
-library(jsonlite)
-
-# Define the base URL and parameters for the Historypin API
-base_url <- "http://www.historypin.org/en/api/"
-type <- "pin"
-
-# Parameters for the API call
-params <- list(
-  limit = 6,
-  page = 1,
-  sort = "-recent",  # Fetch the most recent pins
-  user = 11          # Optionally filter by user ID
-)
-
-# Construct the full API URL
-url <- paste0(base_url, type, "/listing.json")
-
-# Make the HTTP GET request
-response <- GET(url, query = params)
-
-response
-
-# Parse the JSON response
-data <- content(response, "parsed")
-
-# Check if 'results' is not empty
-if (!is.null(data$results) && length(data$results) > 0) {
-    # Extract relevant data into a data frame
-    pins_df <- data.frame(
-      ID = sapply(data$results, function(x) x$id),
-      Caption = sapply(data$results, function(x) x$caption),
-      Image_URL = sapply(data$results, function(x) {
-        if (!is.null(x$image)) {
-          return(paste0("https:", x$image))
-        } else {
-          return(NA)
-        }
-      }),
-      Description = sapply(data$results, function(x) x$desc),
-      User_Name = sapply(data$results, function(x) x$user$name),
-      Project = sapply(data$results, function(x) x$project),
-      stringsAsFactors = FALSE
-    )
-    
-    # Print the data frame
-    print(pins_df)
-} else {
-    print("No results found.")
-}
-
-pins_df
-```
-
-
-```{r, eval=FALSE}
-# Function to load images
-load_images <- function(url) {
-  tryCatch({
-    image <- magick::image_read(url)
-    image <- magick::image_scale(image, "100x100")  # Resize for uniformity
-    return(image)
-  }, error = function(e) {
-    return(NA)  # Return NA on error
-  })
-}
-
-# Apply function to Image_URL column
-pins_df$Image <- sapply(pins_df$Image_URL, load_images, USE.NAMES = FALSE)
-
-```
-
-```{r, eval=FALSE}
-# Install and load required packages
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("magick")) install.packages("magick", repos = "http://cran.us.r-project.org")
-if (!require("ggimage")) install.packages("ggimage")
-library(ggplot2)
-library(magick)
-library(ggimage)
-
-# Function to load and resize images
-load_images <- function(url) {
-  tryCatch({
-    image <- magick::image_read(url)
-    image <- magick::image_scale(image, "100x100")  # Resize images to 100x100 for uniformity
-    return(image)
-  }, error = function(e) {
-    return(NA)  # Return NA if the image fails to load
-  })
-}
-
-# Correcting the Image URLs in the dataframe
-pins_df$Image_URL <- gsub("https:/", "https://", pins_df$Image_URL)
-
-# Function to load and resize images safely
-load_images <- function(url) {
-  tryCatch({
-    # Attempt to read the image from the URL
-    image <- magick::image_read(url)
-    # Resize image for consistency in the plot
-    image <- magick::image_scale(image, "100x100")
-    return(image)
-  }, error = function(e) {
-    # Return NA if there's an error in loading the image
-    return(NA)
-  })
-}
-
-load_images(pins_df$Image_URL[1])
-
-# Apply the function to correct Image_URL column
-pins_df$Image <- sapply(pins_df$Image_URL, load_images, USE.NAMES = FALSE)
-
-# Checking if images are loaded (optional, can comment out in production)
-print(sum(!is.na(pins_df$Image)), "images loaded successfully.")
-
-# Plot the images using ggplot2 and ggimage
-library(ggplot2)
-library(ggimage)  # Ensure ggimage is installed and loaded
-
-ggplot(data = pins_df, aes(x = 1, y = ID)) +
-  geom_image(aes(image = Image), size = 0.1) +  # Plot images
-  theme_minimal() +
-  theme(axis.title.x = element_blank(),
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.title.y = element_blank(),
-        axis.text.y = element_text(size = 8)) +
-  labs(title = "Images from Historypin", y = "Image ID")
-
-```
-
-
-```{r, eval=FALSE}
-library(osmextract)
-library(sf)
-library(ggplot2)
-
-# Assuming colorado_redline is an sf object and bbox_here has been created with st_bbox()
-colorado_redline |>
-  st_bbox() |>
-  st_as_sfc() -> bbox_here
-
-# Use the bbox to get data with oe_get(), specifying the desired layer and a custom SQL query for environmental monitoring stations
-monitoring_stations <- oe_get(
-  place = bbox_here,
-  layer = "points",  # Assuming monitoring stations are best represented as points
-  query = "SELECT * FROM points WHERE man_made = 'monitoring_station'",
-  quiet = TRUE
-)
-
-# Crop the data to the bounding box
-cropped_monitoring_stations <- st_crop(monitoring_stations, bbox_here)
-
-# Plotting the cropped environmental monitoring stations
-ggplot(data = cropped_monitoring_stations) +
-  geom_sf() +
-  ggtitle("Environmental Monitoring Stations") +
-  theme_minimal()
 
 
 
-```
