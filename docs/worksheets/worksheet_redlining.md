@@ -1,35 +1,85 @@
----
-title: "Redlining"
-format: gfm
-  
----
+Redlining
+================
 
-```{r, collapse=TRUE}
+``` r
 if (!requireNamespace("tidytext", quietly = TRUE)) {
   install.packages("tidytext")
 }
 library(tidytext)
+## Warning: package 'tidytext' was built under R version 4.3.2
 library(sf)
+## Warning: package 'sf' was built under R version 4.3.2
+## Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
 library(ggplot2)
+## Warning: package 'ggplot2' was built under R version 4.3.2
 library(ggthemes)
+## Warning: package 'ggthemes' was built under R version 4.3.2
 library(dplyr)
+## 
+## Attaching package: 'dplyr'
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
 library(rstac)
+## Warning: package 'rstac' was built under R version 4.3.2
 library(gdalcubes)
+## Warning: package 'gdalcubes' was built under R version 4.3.2
 library(gdalUtils)
+## Please note that rgdal will be retired during October 2023,
+## plan transition to sf/stars/terra functions using GDAL and PROJ
+## at your earliest convenience.
+## See https://r-spatial.org/r/2023/05/15/evolution4.html and https://github.com/r-spatial/evolution
+## rgdal: version: 1.6-7, (SVN revision 1203)
+## Geospatial Data Abstraction Library extensions to R successfully loaded
+## Loaded GDAL runtime: GDAL 3.5.3, released 2022/10/21
+## Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/rgdal/gdal
+##  GDAL does not use iconv for recoding strings.
+## GDAL binary built with GEOS: TRUE 
+## Loaded PROJ runtime: Rel. 9.1.0, September 1st, 2022, [PJ_VERSION: 910]
+## Path to PROJ shared files: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/gdalcubes/proj
+## PROJ CDN enabled: FALSE
+## Linking to sp version:1.6-1
+## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+## use options("rgdal_show_exportToProj4_warnings"="none") before loading sp or rgdal.
+## 
+## Attaching package: 'gdalUtils'
+## The following object is masked from 'package:sf':
+## 
+##     gdal_rasterize
 library(gdalcubes)
 library(colorspace)
 library(terra)
+## Warning: package 'terra' was built under R version 4.3.2
+## terra 1.7.71
+## 
+## Attaching package: 'terra'
+## The following object is masked from 'package:colorspace':
+## 
+##     RGB
+## The following objects are masked from 'package:gdalcubes':
+## 
+##     animate, crop, size
 library(tidyterra)
+## 
+## Attaching package: 'tidyterra'
+## The following object is masked from 'package:stats':
+## 
+##     filter
 library(basemapR)
 library(tidytext)
 library(ggwordcloud)
 library(osmextract)
+## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright.
+## Check the package website, https://docs.ropensci.org/osmextract/, for more details.
 library(sf)
 library(ggplot2)
 library(ggthemes)
 ```
 
-```{r, collapse=TRUE}
+``` r
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
   # URL to the GeoJSON data
@@ -57,18 +107,30 @@ get_city_state_list_from_redlining_data <- function() {
   # Return the dataframe of unique city-state pairs
   return(city_state_df)
 }
-
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
 print(city_state_list)
-
 ```
 
+    # A tibble: 314 × 2
+       city        state
+       <chr>       <chr>
+     1 Birmingham  AL   
+     2 Mobile      AL   
+     3 Montgomery  AL   
+     4 Arkadelphia AR   
+     5 Batesville  AR   
+     6 Camden      AR   
+     7 Conway      AR   
+     8 El Dorado   AR   
+     9 Fort Smith  AR   
+    10 Little Rock AR   
+    # ℹ 304 more rows
 
-```{r, collapse=TRUE}
+``` r
 # Function to load and filter redlining data by city
 load_city_redlining_data <- function(city_name) {
   # URL to the GeoJSON data
@@ -87,16 +149,35 @@ load_city_redlining_data <- function(city_name) {
 }
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
-
+``` r
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
 print(denver_redlining)
-
 ```
 
+    Simple feature collection with 316 features and 15 fields
+    Geometry type: MULTIPOLYGON
+    Dimension:     XY
+    Bounding box:  xmin: -105.0622 ymin: 39.62952 xmax: -104.8763 ymax: 39.79111
+    Geodetic CRS:  WGS 84
+    # A tibble: 316 × 16
+       area_id city   state city_survey cat   grade label res   com   ind   fill   
+     *   <int> <chr>  <chr> <lgl>       <chr> <chr> <chr> <lgl> <lgl> <lgl> <chr>  
+     1    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
+     2    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
+     3    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
+     4    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
+     5    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
+     6    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
+     7    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
+     8    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
+     9    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
+    10    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
+    # ℹ 306 more rows
+    # ℹ 5 more variables: GEOID10 <chr>, GISJOIN <chr>, calc_area <dbl>,
+    #   pct_tract <dbl>, geometry <MULTIPOLYGON [°]>
 
-```{r, collapse=TRUE}
+``` r
 
 
 get_places <- function(polygon_layer, type = "food" ) {
@@ -227,12 +308,9 @@ get_places <- function(polygon_layer, type = "food" ) {
     stop("Failed to retrieve or plot data: ", e$message)
   })
 }
-
-
-
 ```
 
-```{r, warning=FALSE, collapse=TRUE}
+``` r
 
 
 plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png") {
@@ -269,18 +347,16 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
   # Return the plot object if needed for further manipulation or checking
   return(plot)
 }
-
-
-
-
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
 denver_plot <- plot_city_redlining(denver_redlining)
 print(denver_plot)
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
+
+``` r
 food <- get_places(denver_redlining, type="food")
 
 food_processed <- get_places(denver_redlining, type="processed_food")
@@ -297,7 +373,7 @@ rivers <- get_places(denver_redlining, type="rivers")
 government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
 
-```{r, collapse=TRUE}
+``` r
 split_plot <- function(sf_data, roads, rivers) {
   # Filter for grades A, B, C, and D
   sf_data_filtered <- sf_data %>% 
@@ -327,18 +403,16 @@ split_plot <- function(sf_data, roads, rivers) {
 
   return(plot)
 }
-
-
-
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
 plot_row <- split_plot(denver_redlining, roads, rivers)
 print(plot_row)
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-11-1.png)
 
-```{r, collapse=TRUE}
+``` r
 
 process_and_plot_sf_layers <- function(layer1, layer2, output_file = "output_plot.png") {
  # Make geometries valid
@@ -405,20 +479,9 @@ final_selected_polygons <- do.call(rbind, results)
   # Return the plot for optional further use
   return(list(plot=plot, sf = final_selected_polygons))
 }
-
-
-
-
 ```
 
-
-
-
-
-
-
-```{r}
-
+``` r
 create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25) {
     # Ensure the 'name' and 'grade' columns are present
     if (!("name" %in% names(sf_object)) || !("grade" %in% names(sf_object))) {
@@ -465,56 +528,57 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
     
     return(p)
 }
-
-
-
-
 ```
 
-
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
  layer1 <- denver_redlining
  layer2 <- food
  food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(food_match$plot)
 ```
 
-```{r}
-food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-14-1.png)
 
+``` r
+food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
 ```
 
+    Warning in wordcloud_boxes(data_points = points_valid_first, boxes = boxes, :
+    Some words could not fit on page. They have been removed.
 
 ![](food_word_cloud_per_grade.png)
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
  layer1 <- denver_redlining
  layer2 <- food_processed
  processed_food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(processed_food_match$plot)
 ```
 
-```{r}
-processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-16-1.png)
 
+``` r
+processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 ```
+
 ![](processed_food_word_cloud_per_grade.png)
 
-
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
  layer1 <- denver_redlining
  layer2 <- natural_habitats
  natural_habitats_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(natural_habitats_match$plot)
 ```
 
-```{r}
-natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-18-1.png)
 
+``` r
+natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 ```
 
 ![](natural_habitats_word_cloud_per_grade.png)
-```{r, collapse=TRUE}
+
+``` r
 polygon_layer <- denver_redlining
 # Function to process satellite data based on an SF polygon's extent
 process_satellite_data <- function(polygon_layer, start_date, end_date, assets, fps = 1, output_file = "anim.gif") {
@@ -568,22 +632,18 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
   # Return processing time
   return(processing_time)
 }
-
-
 ```
 
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
+``` r
 processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-05-31", c("B04", "B08"))
 print(processing_time)
-
 ```
 
-![](anim.gif) 
+    Time difference of 9.332093 mins
 
+![](anim.gif)
 
-
-
-```{r, collapse=TRUE}
+``` r
 
 
 
@@ -650,29 +710,34 @@ ndvi_plot <-   ggplot() +
   # Return the plot and processing time
   return(list(plot = ndvi_plot, processing_time = processing_time, raster = ndvi_rast))
 }
-
-
-
 ```
 
-
-
-
-```{r, warning=FALSE, message=FALSE, cache=TRUE}
+``` r
 ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
 print(ndvi_background$plot)
-print(ndvi_background$processing_time)
-print(ndvi_background$raster)
-
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-23-1.png)
 
+``` r
+print(ndvi_background$processing_time)
+```
 
+    Time difference of 15.54536 mins
 
+``` r
+print(ndvi_background$raster)
+```
 
+    class       : SpatRaster 
+    dimensions  : 1616, 1860, 1  (nrow, ncol, nlyr)
+    resolution  : 1e-04, 1e-04  (x, y)
+    extent      : -105.0623, -104.8763, 39.62951, 39.79112  (xmin, xmax, ymin, ymax)
+    coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+    source      : cube_9522eb956f52023-01-01.tif 
+    name        : NDVI 
 
-
-```{r, collapse=TRUE}
+``` r
 
 
 create_mask_and_plot <- function(redlining_sf, background_raster = ndvi$raster, roads = NULL, rivers = NULL){
@@ -748,38 +813,53 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
   # Return the plot and runtime
   return(list(plot = plot, runtime = runtime, mask_sf = mask_sf))
 }
-
 ```
 
-
-```{r, cache=TRUE}
+``` r
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 print(ndvi_background_low$plot)
+```
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-25-1.png)
+
+``` r
 print(ndvi_background_low$processing_time)
+```
+
+    Time difference of 1.710772 mins
+
+``` r
 print(ndvi_background_low$raster)
 ```
 
+    class       : SpatRaster 
+    dimensions  : 17, 19, 1  (nrow, ncol, nlyr)
+    resolution  : 0.01, 0.01  (x, y)
+    extent      : -105.0643, -104.8743, 39.62532, 39.79532  (xmin, xmax, ymin, ymax)
+    coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+    source      : cube_95216d405be2023-01-01.tif 
+    name        : NDVI 
 
-
-```{r, cache=TRUE}
+``` r
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ndvi$mask_sf
+```
+
+    Simple feature collection with 4 features and 1 field
+    Geometry type: GEOMETRY
+    Dimension:     XY
+    Bounding box:  xmin: -105.0865 ymin: 39.62053 xmax: -104.8546 ymax: 39.8001
+    Geodetic CRS:  WGS 84
+      grade                       geometry
+    A     A MULTIPOLYGON (((-105.0865 3...
+    B     B POLYGON ((-105.0865 39.6205...
+    C     C MULTIPOLYGON (((-105.0865 3...
+    D     D MULTIPOLYGON (((-105.0865 3...
+
+``` r
 ndvi$plot
 ```
 
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-26-1.png)
+
 ![](redlining_mask_ndvi.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
