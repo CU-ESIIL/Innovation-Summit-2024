@@ -27,6 +27,7 @@ library(osmextract)
 library(sf)
 library(ggplot2)
 library(ggthemes)
+library(glue)
 ```
 
 ```{r, collapse=TRUE}
@@ -419,17 +420,14 @@ final_selected_polygons <- do.call(rbind, results)
 
 ```{r}
 
-create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25) {
-    # Ensure the 'name' and 'grade' columns are present
-    if (!("name" %in% names(sf_object)) || !("grade" %in% names(sf_object))) {
-        stop("The sf object must contain 'name' and 'grade' columns.")
-    }
+create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25, col_select = "name") {
+   
     
     # Extract relevant data and prepare text data
     text_data <- sf_object %>%
-        select(grade, name) %>%
-        filter(!is.na(name)) %>%
-        unnest_tokens(output = "word", input = name, token = "words") %>%
+        select(grade, col_select) %>%
+        filter(!is.na(col_select)) %>%
+        unnest_tokens(output = "word", input = col_select, token = "words") %>%
         count(grade, word, sort = TRUE) %>%
         ungroup() %>%
         filter(n() > 1)  # Filter to remove overly common or single-occurrence words
@@ -479,7 +477,7 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
  print(food_match$plot)
 ```
 
-```{r}
+```{r, cache=TRUE}
 food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
 
 ```
@@ -494,7 +492,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
  print(processed_food_match$plot)
 ```
 
-```{r}
+```{r, cache=TRUE}
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 
 ```
@@ -508,7 +506,7 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
  print(natural_habitats_match$plot)
 ```
 
-```{r}
+```{r, cache=TRUE}
 natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 
 ```
@@ -775,11 +773,101 @@ ndvi$plot
 
 
 
+```{r}
+
+
+Denver_police_shootings <- glue(
+  "/vsizip/vsicurl/", #magic remote connection 
+  "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip", #copied link to download location
+  "/denver_police_officer_involved_shootings.shp") %>% #path inside zip file
+  st_read() 
+
+```
+
+
+```{r}
+
+ layer1 <- denver_redlining
+ layer2 <- Denver_police_shootings
+ police_shootings_match <- process_and_plot_sf_layers(layer1, layer2, "police_shootings.png")
+ print(police_shootings_match$plot)
+```
+
+```{r, cache=TRUE}
+Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings_match$sf, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
+
+```
+
+![](police_shootings_word_cloud_per_grade.png)
 
 
 
+```{r}
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(glue)
+library(purrr)
+
+process_tree_inventory_data <- function(address, inner_file, polygon_layer, output_filename) {
+  # Download and read the shapefile
+  full_path <- glue("/vsizip/vsicurl/{address}/{inner_file}")
+  shape_data <- st_read(full_path, quiet = TRUE) |> st_as_sf()
+
+  # Process the shape data with the provided polygon layer
+  processed_data <- process_and_plot_sf_layers(polygon_layer, shape_data, paste0(output_filename, ".png"))
+
+  # Extract trees from the processed data
+  trees <- processed_data$sf
+  denver_redlining_residential <- polygon_layer |> filter(grade != "")
+
+  # Generate the density plot
+  plot <- ggplot() +
+    geom_sf(data = roads, alpha = 0.05, lwd = 0.1) +
+    geom_sf(data = rivers, color = "blue", alpha = 0.1, lwd = 1.1) +
+    geom_sf(data = denver_redlining_residential, fill = "grey", color = "grey", size = 0.1) +
+    facet_wrap(~ grade, nrow = 1) +
+    stat_density_2d(data = trees, 
+                    mapping = aes(x = map_dbl(geometry, ~.[1]),
+                                  y = map_dbl(geometry, ~.[2]),
+                                  fill = stat(density)),
+                    geom = 'tile',
+                    contour = FALSE,
+                    alpha = 0.9) +
+    scale_fill_gradientn(colors = c("transparent", "white", "limegreen"),
+                         values = scales::rescale(c(0, 0.1, 1)),  # Adjust these based on your density range
+                         guide = "colourbar") +
+    theme_minimal() +
+    labs(fill = 'Tree Density') +
+    theme_tufte() +
+    theme(plot.background = element_rect(fill = "white", color = NA),
+          panel.background = element_rect(fill = "white", color = NA),
+          legend.position = "bottom",
+          axis.text = element_blank(),
+          axis.title = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+
+  # Save the plot
+  ggsave(paste0(output_filename, "_density_plot.png"), plot, width = 10, height = 4, units = "in", dpi = 600)
+
+  # Return the plot and the tree layer
+  return(list(plot = plot, tree_layer = trees))
+}
 
 
 
+```
+
+```{r}
+result <- process_tree_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
+  "tree_inventory.shp",
+  denver_redlining,
+  "Denver_tree_inventory_2023"
+)
+result
+```
 
 
