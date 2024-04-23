@@ -28,6 +28,8 @@ library(sf)
 library(ggplot2)
 library(ggthemes)
 library(glue)
+
+library(purrr)
 ```
 
 ```{r, collapse=TRUE}
@@ -794,7 +796,7 @@ Denver_police_shootings <- glue(
 ```
 
 ```{r, cache=TRUE}
-Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings_match$sf, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
+Denver_police_shootings_cloud <- create_wordclouds_by_grade(police_shootings_match$sf, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
 
 ```
 
@@ -803,13 +805,9 @@ Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shooti
 
 
 ```{r}
-library(sf)
-library(ggplot2)
-library(dplyr)
-library(glue)
-library(purrr)
 
-process_tree_inventory_data <- function(address, inner_file, polygon_layer, output_filename) {
+
+process_city_inventory_data <- function(address, inner_file, polygon_layer, output_filename,variable_label= 'Tree Density') {
   # Download and read the shapefile
   full_path <- glue("/vsizip/vsicurl/{address}/{inner_file}")
   shape_data <- st_read(full_path, quiet = TRUE) |> st_as_sf()
@@ -838,7 +836,7 @@ process_tree_inventory_data <- function(address, inner_file, polygon_layer, outp
                          values = scales::rescale(c(0, 0.1, 1)),  # Adjust these based on your density range
                          guide = "colourbar") +
     theme_minimal() +
-    labs(fill = 'Tree Density') +
+    labs(fill = variable_label) +
     theme_tufte() +
     theme(plot.background = element_rect(fill = "white", color = NA),
           panel.background = element_rect(fill = "white", color = NA),
@@ -853,15 +851,15 @@ process_tree_inventory_data <- function(address, inner_file, polygon_layer, outp
   ggsave(paste0(output_filename, "_density_plot.png"), plot, width = 10, height = 4, units = "in", dpi = 600)
 
   # Return the plot and the tree layer
-  return(list(plot = plot, tree_layer = trees))
+  return(list(plot = plot, layer = trees))
 }
 
 
 
 ```
 
-```{r}
-result <- process_tree_inventory_data(
+```{r, cache=TRUE}
+result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
   "tree_inventory.shp",
   denver_redlining,
@@ -870,4 +868,103 @@ result <- process_tree_inventory_data(
 result
 ```
 
+
+```{r, cache=TRUE}
+result <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/traffic_accidents/shape/traffic_accidents.zip",
+  "traffic_accidents.shp",
+  denver_redlining,
+  "Denver_traffic_accidents",
+  variable_label= 'Traffic accidents density'
+)
+result
+```
+
+
+```{r, cache=TRUE}
+Crime <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
+  "crime.shp",
+  denver_redlining,
+  "crime",
+  variable_label= 'Crime density'
+)
+Crime$layer
+Crime$plot
+
+
+```
+
+
+```{r, cache=TRUE}
+crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
+
+```
+
+![](Crime_word_cloud_per_grade.png)
+
+
+```{r, cache=TRUE}
+instream_sampling_sites <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/instream_sampling_sites/shape/instream_sampling_sites.zip",
+  "instream_sampling_sites.shp",
+  denver_redlining,
+  "instream_sampling_sites",
+  variable_label= 'Instream sampling sites density'
+)
+instream_sampling_sites$layer
+instream_sampling_sites$plot
+
+
+
+```
+
+
+
+```{r, cache=TRUE}
+soil_samples <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/soil_samples/shape/soil_samples.zip",
+  "soil_samples.shp",
+  denver_redlining,
+  "Soil samples",
+  variable_label= 'soil samples density'
+)
+soil_samples$layer
+soil_samples$plot
+
+
+
+```
+
+
+```{r, cache=TRUE}
+public_art <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/public_art/shape/public_art.zip",
+  "public_art.shp",
+  denver_redlining,
+  "Public art ",
+  variable_label= 'Public art density'
+)
+public_art$layer
+public_art$plot
+
+
+
+```
+
+
+```{r, cache=TRUE}
+liquor_licenses <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/liquor_licenses/shape/liquor_licenses.zip",
+  "liquor_licenses.shp",
+  denver_redlining,
+  "liquor licenses ",
+  variable_label= 'liquor licenses density'
+)
+liquor_licenses$layer
+liquor_licenses$plot
+
+
+
+```
 
