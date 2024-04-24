@@ -15,7 +15,10 @@ nav:
   - Home: index.md
   - Pre-Summit Virtual Trainings: 
        - Overview: virtual-meetings.md
-       - Head in the clouds: trainings/training_one.md
+       - Head in the clouds (markdown): resources/markdown_basics.md
+       - Head in the clouds (github): resources/github_basics.md
+       - Head in the clouds (cyverse): resources/cyverse_basics.md
+       - Head in the clouds (cyverse hacks): resources/cyverse_hacks.md
        - Feet on the ground: trainings/training_two.md
        - Hand in hand: trainings/training_three.md
   - Additional resources:
