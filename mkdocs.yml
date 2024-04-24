@@ -14,9 +14,9 @@ copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
 nav:
   - Home: index.md
   - Pre-Summit Virtual Trainings: virtual-meetings.md
-       - Head in the clouds: training_one.md
-       - Feet on the ground: training_two.md
-       - Hand in hand: training_three.md
+       - Head in the clouds: trainings/training_one.md
+       - Feet on the ground: trainings/training_two.md
+       - Hand in hand: trainings/training_three.md
   - Additional resources:
        - Code of Conduct: additional-resources/code-of-conduct.md
        - Cyverse hacks: additional-resources/cyverse_hacks.md
