@@ -773,37 +773,6 @@ ndvi$plot
 
 
 
-
-
-```{r}
-
-
-Denver_police_shootings <- glue(
-  "/vsizip/vsicurl/", #magic remote connection 
-  "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip", #copied link to download location
-  "/denver_police_officer_involved_shootings.shp") %>% #path inside zip file
-  st_read() 
-
-```
-
-
-```{r}
-
- layer1 <- denver_redlining
- layer2 <- Denver_police_shootings
- police_shootings_match <- process_and_plot_sf_layers(layer1, layer2, "police_shootings.png")
- print(police_shootings_match$plot)
-```
-
-```{r, cache=TRUE}
-Denver_police_shootings_cloud <- create_wordclouds_by_grade(police_shootings_match$sf, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
-
-```
-
-![](police_shootings_word_cloud_per_grade.png)
-
-
-
 ```{r}
 
 
@@ -857,6 +826,18 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
 
 
 ```
+
+
+```{r, cache=TRUE}
+result <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
+  "tree_inventory.shp",
+  denver_redlining,
+  "Denver_tree_inventory_2023"
+)
+result
+```
+
 
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
@@ -968,3 +949,30 @@ liquor_licenses$plot
 
 ```
 
+
+
+
+```{r, cache=TRUE}
+Denver_police_shootings <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip",
+  "denver_police_officer_involved_shootings.shp",
+  denver_redlining,
+  "Police shootings",
+  variable_label= 'Police shootings density'
+)
+Denver_police_shootings$layer
+
+
+
+
+```
+
+![](Police shootings.png)
+
+
+```{r, cache=TRUE}
+Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
+
+```
+
+![](police_shootings_word_cloud_per_grade.png)

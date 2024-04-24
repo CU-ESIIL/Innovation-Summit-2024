@@ -880,49 +880,6 @@ ndvi$plot
 ![](redlining_mask_ndvi.png)
 
 ``` r
-Denver_police_shootings <- glue(
-  "/vsizip/vsicurl/", #magic remote connection 
-  "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip", #copied link to download location
-  "/denver_police_officer_involved_shootings.shp") %>% #path inside zip file
-  st_read() 
-```
-
-    Reading layer `denver_police_officer_involved_shootings' from data source 
-      `/vsizip/vsicurl/https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip/denver_police_officer_involved_shootings.shp' 
-      using driver `ESRI Shapefile'
-    replacing null geometries with empty geometries
-    Simple feature collection with 209 features and 39 fields (with 2 geometries empty)
-    Geometry type: POINT
-    Dimension:     XY
-    Bounding box:  xmin: -105.1097 ymin: 39.66334 xmax: -104.7416 ymax: 39.92625
-    Geodetic CRS:  WGS 84
-
-``` r
- layer1 <- denver_redlining
- layer2 <- Denver_police_shootings
- police_shootings_match <- process_and_plot_sf_layers(layer1, layer2, "police_shootings.png")
- print(police_shootings_match$plot)
-```
-
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-28-1.png)
-
-``` r
-Denver_police_shootings_cloud <- create_wordclouds_by_grade(police_shootings_match$sf, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
-```
-
-    Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ℹ Please use `all_of()` or `any_of()` instead.
-      # Was:
-      data %>% select(col_select)
-
-      # Now:
-      data %>% select(all_of(col_select))
-
-    See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-
-![](police_shootings_word_cloud_per_grade.png)
-
-``` r
 process_city_inventory_data <- function(address, inner_file, polygon_layer, output_filename,variable_label= 'Tree Density') {
   # Download and read the shapefile
   full_path <- glue("/vsizip/vsicurl/{address}/{inner_file}")
@@ -989,7 +946,85 @@ result
 
     $plot
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-31-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-28-1.png)
+
+
+    $layer
+    Simple feature collection with 336999 features and 17 fields
+    Geometry type: POINT
+    Dimension:     XY
+    Bounding box:  xmin: -105.057 ymin: 39.66298 xmax: -104.8801 ymax: 39.7939
+    Geodetic CRS:  WGS 84
+    First 10 features:
+         SITE_ID                    SPECIES_CO                      SPECIES_BO
+    A.3    61362                  Oak, Shumard               Quercus shumardii
+    A.14  187865                 Maple, Norway                Acer platanoides
+    A.20  227501                   Honeylocust           Gleditsia triacanthos
+    A.23  185920                    Ash, White              Fraxinus americana
+    A.26  163730 Maple, Freeman 'Autumn Blaze' Acer x freemanii 'Autumn Blaze'
+    A.33  184376                 Maple, Norway                Acer platanoides
+    A.35  182758          Crabapple, Flowering                Malus sylvestris
+    A.37    1853                Oak, Chinkapin           Quercus muehlenbergii
+    A.43  113549               Pear, Flowering                Pyrus calleryana
+    A.53  129798                   Honeylocust           Gleditsia triacanthos
+         DIAMETER STEMS               LOCATION_N LOCATION_C
+    A.3   6 to 12     1             Mayfair Park        432
+    A.14 12 to 18     1          0 Non-park tree       <NA>
+    A.20 18 to 24     1          0 Non-park tree       <NA>
+    A.23  6 to 12     1          0 Non-park tree       <NA>
+    A.26   0 to 6     1          0 Non-park tree       <NA>
+    A.33 18 to 24     1          0 Non-park tree       <NA>
+    A.35  6 to 12     1          0 Non-park tree       <NA>
+    A.37   0 to 6     1 East 17th Avenue Parkway        412
+    A.43   0 to 6     8          0 Non-park tree       <NA>
+    A.53   0 to 6     1                E 6th Ave        411
+                             SITE_DESIG INVENTORY_ ADDRESS             STREET
+    A.3                            Park   2/9/2021    1000           N IVY ST
+    A.14 Private Maintained Street Tree  11/7/2016    1650       N NEWPORT ST
+    A.20 Private Maintained Street Tree  11/8/2016     525      S BELLAIRE ST
+    A.23 Private Maintained Street Tree 10/29/2020    1545         N HOLLY ST
+    A.26 Private Maintained Street Tree  10/4/2019     600          N VINE ST
+    A.33 Private Maintained Street Tree 10/29/2020    1550       N GLENCOE ST
+    A.35 Private Maintained Street Tree   4/3/2018    1350        N DAHLIA ST
+    A.37                         Median   2/9/2021    5100 E 17TH AVENUE PKWY
+    A.43 Private Maintained Street Tree  11/7/2016     894       S GAYLORD ST
+    A.53                         Median   2/9/2021    6500  E 6TH AVENUE PKWY
+                NEIGHBOR    X_LONG    Y_LAT   WORKGROUP NOTABLE grade
+    A.3        Montclair -104.9206 39.73237  Operations     N/A     A
+    A.14 South Park Hill -104.9093 39.74253 Inspections     N/A     A
+    A.20         Hilltop -104.9372 39.72485 Inspections     N/A     A
+    A.23 South Park Hill -104.9224 39.74107 Inspections     N/A     A
+    A.26    Country Club -104.9622 39.72567 Inspections     N/A     A
+    A.33 South Park Hill -104.9257 39.74126 Inspections     N/A     A
+    A.35            Hale -104.9315 39.73746 Inspections     N/A     A
+    A.37 South Park Hill -104.9277 39.74368  Operations     N/A     A
+    A.43 Washington Park -104.9614 39.70028 Inspections     N/A     A
+    A.53         Hilltop -104.9113 39.72560  Operations     N/A     A
+                           geometry
+    A.3  POINT (-104.9206 39.73237)
+    A.14 POINT (-104.9093 39.74253)
+    A.20 POINT (-104.9372 39.72485)
+    A.23 POINT (-104.9224 39.74107)
+    A.26 POINT (-104.9622 39.72567)
+    A.33 POINT (-104.9257 39.74126)
+    A.35 POINT (-104.9315 39.73746)
+    A.37 POINT (-104.9277 39.74368)
+    A.43 POINT (-104.9614 39.70028)
+    A.53  POINT (-104.9113 39.7256)
+
+``` r
+result <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
+  "tree_inventory.shp",
+  denver_redlining,
+  "Denver_tree_inventory_2023"
+)
+result
+```
+
+    $plot
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-29-1.png)
 
 
     $layer
@@ -1068,7 +1103,7 @@ result
 
     $plot
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-32-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-30-1.png)
 
 
     $layer
@@ -1233,7 +1268,7 @@ Crime <- process_city_inventory_data(
 Crime$layer
 ```
 
-    Simple feature collection with 324784 features and 21 fields
+    Simple feature collection with 325226 features and 21 fields
     Geometry type: POINT
     Dimension:     XY
     Bounding box:  xmin: -105.0566 ymin: 39.66314 xmax: -104.8827 ymax: 39.79459
@@ -1299,11 +1334,21 @@ Crime$layer
 Crime$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-33-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-31-1.png)
 
 ``` r
 crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
 ```
+
+    Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+    ℹ Please use `all_of()` or `any_of()` instead.
+      # Was:
+      data %>% select(col_select)
+
+      # Now:
+      data %>% select(all_of(col_select))
+
+    See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
 
 ![](Crime_word_cloud_per_grade.png)
 
@@ -1395,7 +1440,7 @@ instream_sampling_sites$layer
 instream_sampling_sites$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-33-1.png)
 
 ``` r
 soil_samples <- process_city_inventory_data(
@@ -1562,7 +1607,7 @@ soil_samples$layer
 soil_samples$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
 
 ``` r
 public_art <- process_city_inventory_data(
@@ -1641,7 +1686,7 @@ public_art$layer
 public_art$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-37-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
 
 ``` r
 liquor_licenses <- process_city_inventory_data(
@@ -1742,4 +1787,129 @@ liquor_licenses$layer
 liquor_licenses$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-38-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+
+``` r
+Denver_police_shootings <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip",
+  "denver_police_officer_involved_shootings.shp",
+  denver_redlining,
+  "Police shootings",
+  variable_label= 'Police shootings density'
+)
+Denver_police_shootings$layer
+```
+
+    Simple feature collection with 204 features and 40 fields
+    Geometry type: POINT
+    Dimension:     XY
+    Bounding box:  xmin: -105.0498 ymin: 39.67174 xmax: -104.8849 ymax: 39.79096
+    Geodetic CRS:  WGS 84
+    First 10 features:
+         INCIDENT_I INCIDENT_D YEAR        TIME TIME_RANGE          HOURS       DAY
+    A.2   201549266 2015-01-26 2015  7:02:00 PM    Morning 6:00am-11:59am    Monday
+    A.3   201549266 2015-01-26 2015  7:02:00 PM    Morning 6:00am-11:59am    Monday
+    A.15 2015726322 2015-12-14 2015  3:25:00 PM  Afternoon 12:00pm-5:59pm    Monday
+    A.50 2018276764 2018-04-25 2018  4:47:00 PM  Afternoon 12:00pm-5:59pm Wednesday
+    A.51 2018276764 2018-04-25 2018  4:47:00 PM  Afternoon 12:00pm-5:59pm Wednesday
+    A.52 2018276764 2018-04-25 2018  4:47:00 PM  Afternoon 12:00pm-5:59pm Wednesday
+    A.67 2019222960 2019-04-10 2019 12:55:00 AM      Night 12:00am-5:59am Wednesday
+    A.96 2020749889 2020-12-28 2020 11:22:00 AM    Morning 6:00am-11:59am    Monday
+    A.97 2020749889 2020-12-28 2020 11:22:00 AM    Morning 6:00am-11:59am    Monday
+    A.98 2020749889 2020-12-28 2020 11:22:00 AM    Morning 6:00am-11:59am    Monday
+         POLICE_DIS        CONTACT_TY            CONTACT_BA
+    A.2  District 2 Citizen-Initiated    Suspicious Vehicle
+    A.3  District 2 Citizen-Initiated    Suspicious Vehicle
+    A.15 District 2 Citizen-Initiated Burglary - In Progess
+    A.50 District 2 Officer-Initiated  Bank Robbery Suspect
+    A.51 District 2 Officer-Initiated  Bank Robbery Suspect
+    A.52 District 2 Officer-Initiated  Bank Robbery Suspect
+    A.67 District 2 Officer-Initiated Robbery - Car Jacking
+    A.96 District 2 Citizen-Initiated   Residential Robbery
+    A.97 District 2 Citizen-Initiated   Residential Robbery
+    A.98 District 2 Citizen-Initiated   Residential Robbery
+                                             STREET       CITY      NEIGHBORHO
+    A.2  2500 blk N Newport St / N Niagara St Alley Denver, CO North Park Hill
+    A.3  2500 blk N Newport St / N Niagara St Alley Denver, CO North Park Hill
+    A.15                         1101 N Bellaire St Denver, CO            Hale
+    A.50                 E Colfax Ave / N Quebec St Denver, CO     East Colfax
+    A.51                 E Colfax Ave / N Quebec St Denver, CO     East Colfax
+    A.52                 E Colfax Ave / N Quebec St Denver, CO     East Colfax
+    A.67                   N Quebec St / E 16th Ave Denver, CO       Park Hill
+    A.96                         1000 N Monaco Pkwy Denver, CO       Montclair
+    A.97                         1000 N Monaco Pkwy Denver, CO       Montclair
+    A.98                         1000 N Monaco Pkwy Denver, CO       Montclair
+                  BOUNDARY      LAT       LON       OFFFICER_N    ROLE     RANK
+    A.2  Inside City Limit 39.75376 -104.9091   Greene, Daniel Officer  Officer
+    A.3  Inside City Limit 39.75376 -104.9091  Jordan, Gabriel Officer  Officer
+    A.15 Inside City Limit 39.73326 -104.9377  Richter, Curtis Officer  Officer
+    A.50 Inside City Limit 39.74176 -104.9033    Bishop, Blake Officer  Officer
+    A.51 Inside City Limit 39.74176 -104.9033  Nielsen, Andrew Officer  Officer
+    A.52 Inside City Limit 39.74176 -104.9033 Valentine, Keith Officer  Officer
+    A.67 Inside City Limit 39.74162 -104.9035  Nielsen, Andrew Officer  Officer
+    A.96 Inside City Limit 39.73199 -104.9121   Crystal Thomas Officer  Officer
+    A.97 Inside City Limit 39.73199 -104.9121      John Repjar Officer  Officer
+    A.98 Inside City Limit 39.73199 -104.9121  Jeffrey Jenkins Officer Corporal
+         BADGE_NO AGENCY OFFICER_TE  TENURE_RAN        DUTY_STATU        UNIFORM
+    A.2    P98016 Denver         24 21-30 Years On-Duty City Paid Police Uniform
+    A.3    P05076 Denver         17 11-20 Years On-Duty City Paid Police Uniform
+    A.15   P99034 Denver         23 21-30 Years On-Duty City Paid Police Uniform
+    A.50   P14067 Denver          8  5-10 Years On-Duty City Paid Police Uniform
+    A.51   P14076    N/A          8  5-10 Years On-Duty City Paid Police Uniform
+    A.52   P15060 Denver          7  5-10 Years On-Duty City Paid Police Uniform
+    A.67   P14076 Denver          8  5-10 Years On-Duty City Paid Police Uniform
+    A.96   P14087 Denver          8  5-10 Years On-Duty City Paid Police Uniform
+    A.97   P00094 Denver         22 21-30 Years On-Duty City Paid Police Uniform
+    A.98   P00040 Denver         22 21-30 Years On-Duty City Paid Police Uniform
+         GENDER AGE AGE_RANGE  RACE     ETHNICTY SUB_ARMED SUB_WEAPON WEAPON_FIR
+    A.2    Male  46     35-49 White Non-Hispanic       Yes    Firearm         No
+    A.3    Male  37     35-49 White Non-Hispanic       Yes    Firearm         No
+    A.15   Male  53     50-64 White Non-Hispanic       N/A    Firearm        Yes
+    A.50   Male  27     25-34 White Non-Hispanic       Yes    Firearm        Yes
+    A.51   Male  30     25-34 White Non-Hispanic       N/A    Firearm        Yes
+    A.52   Male  30     25-34 White Non-Hispanic       N/A    Firearm        Yes
+    A.67   Male  31     25-34 White Non-Hispanic       N/A    Firearm        Yes
+    A.96 Female  39     35-49 Black Non-Hispanic       Yes    Firearm        Yes
+    A.97   Male  47     35-49 White     Hispanic       Yes    Firearm        Yes
+    A.98   Male  48     35-49 White Non-Hispanic       N/A    Firearm        Yes
+                                       SHOOT_REAS      SHOOT_ACTI      INJURY
+    A.2       Subject struck officer with vehicle      Auto Theft Not Injured
+    A.3   Subject threatened officer with vehicle      Auto Theft     Injured
+    A.15         Subject simulated use of firearm        Burglary Not Injured
+    A.50 Subject pointed firearm at officer/other  Arrest Warrant Not Injured
+    A.51 Subject pointed firearm at officer/other  Arrest Warrant Not Injured
+    A.52 Subject pointed firearm at officer/other  Arrest Warrant Not Injured
+    A.67    Subject fired weapon at officer/other Vehicle Pursuit Not Injured
+    A.96    Subject fired weapon at officer/other         Robbery Not Injured
+    A.97    Subject fired weapon at officer/other         Robbery Not Injured
+    A.98    Subject fired weapon at officer/other         Robbery Not Injured
+                                                                                                                                                               LETTER
+    A.2                                                                https://www.denverda.org/wp-content/uploads/decision-letter/2015/2015letterJordanandGreene.pdf
+    A.3                                                                https://www.denverda.org/wp-content/uploads/decision-letter/2015/2015letterJordanandGreene.pdf
+    A.15                                                                                                                                               None available
+    A.50 https://www.denverda.org/wp-content/uploads/decision-letter/2018/Decision-Letter-for-Officer-Involved-Shooting-Death-of-Charles-Boeh-Death-April-25-2018.pdf
+    A.51 https://www.denverda.org/wp-content/uploads/decision-letter/2018/Decision-Letter-for-Officer-Involved-Shooting-Death-of-Charles-Boeh-Death-April-25-2018.pdf
+    A.52 https://www.denverda.org/wp-content/uploads/decision-letter/2018/Decision-Letter-for-Officer-Involved-Shooting-Death-of-Charles-Boeh-Death-April-25-2018.pdf
+    A.67   https://www.denverda.org/wp-content/uploads/decision-letter/2019/Decision-Letter-for-Officer-Involved-Shooting-of-Anthony-Solano-Vasquez-April-10-2019.pdf
+    A.96              https://www.denverda.org/wp-content/uploads/decision-letter/2021/051921-Decsion-Letter-for-Officer-Involved-Shooting-Larry-Hamm-Dec-28-2020.pdf
+    A.97              https://www.denverda.org/wp-content/uploads/decision-letter/2021/051921-Decsion-Letter-for-Officer-Involved-Shooting-Larry-Hamm-Dec-28-2020.pdf
+    A.98              https://www.denverda.org/wp-content/uploads/decision-letter/2021/051921-Decsion-Letter-for-Officer-Involved-Shooting-Larry-Hamm-Dec-28-2020.pdf
+               X       Y grade                   geometry
+    A.2  3165976 1700000     A POINT (-104.9091 39.75376)
+    A.3  3165976 1700000     A POINT (-104.9091 39.75376)
+    A.15 3158168 1692420     A POINT (-104.9377 39.73326)
+    A.50 3167761 1695030     A POINT (-104.9033 39.74176)
+    A.51 3167761 1695030     A POINT (-104.9033 39.74176)
+    A.52 3167761 1695030     A POINT (-104.9033 39.74176)
+    A.67 3167756 1695514     A POINT (-104.9035 39.74162)
+    A.96       0       0     A POINT (-104.9121 39.73199)
+    A.97       0       0     A POINT (-104.9121 39.73199)
+    A.98       0       0     A POINT (-104.9121 39.73199)
+
+![](Police%20shootings.png)
+
+``` r
+Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
+```
+
+![](police_shootings_word_cloud_per_grade.png)
