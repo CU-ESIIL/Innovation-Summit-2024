@@ -1,5 +1,6 @@
 # Markdown for the Modern Researcher at ESIIL
 
+Join us on a HackMD page to practice Markdown: https://hackmd.io/Y6t8bRbdT2GUbFGxwyVz9Q?both
 
 ## Section 1: Mastering Markdown Syntax
 
