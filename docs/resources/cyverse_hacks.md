@@ -1,4 +1,4 @@
-# Transitioning Workflows to CyVerse: A Guide for ESIIL Postdocs
+# Cyverse fixes
 
 ## Earth Lab Data Storage
 - **Path:** `/home/jovyan/data-store/iplant/home/shared/earthlab/`
