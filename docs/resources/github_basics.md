@@ -12,6 +12,12 @@ code, and efficiently manage different versions of the project. GitHub
 is widely used in the software development industry and is an essential
 tool for collaborative projects and maintaining code quality.
 
+![A basic git workflow represented as two islands, one with "local repo" and "working directory", and another with "remote repo." Bunnies move file boxes from the working directory to the staging area, then with Commit move them to the local repo. Bunnies in rowboats move changes from the local repo to the remote repo (labeled "PUSH") and from the remote repo to the working directory (labeled "PULL"). ](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/68739659-fb6f-41e8-9813-32e1de3d82c0_rw_3840.png?h=5c36d3c50c350a440567a1f8f72ac028)
+
+> Image source: [Artwork by @allison_horst](https://twitter.com/allison_horst)
+
+
+
 ### B. Introduce GitHub Desktop and JupyterHub GitHub widget:
 
 GitHub Desktop is a graphical user interface (GUI) application that
