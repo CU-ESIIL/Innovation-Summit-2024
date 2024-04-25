@@ -1,6 +1,7 @@
 # Pre-Summit Virtual Meetings
 
 There are three virtual meetings associated with the 2024 ESIIL Summit. The recordings of those meetings are available here:
+
 **Virtual Meeting #1 Recording**: [https://www.youtube.com/watch?v=JxVPjDtIBmU](https://www.youtube.com/watch?v=JxVPjDtIBmU)
 
 ## Virtual meeting #1
