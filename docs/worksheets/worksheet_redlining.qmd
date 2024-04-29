@@ -4,6 +4,9 @@ format: gfm
   
 ---
 
+<details>
+<summary>Click to expand/collapse R code</summary>
+
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
   install.packages("tidytext")

@@ -1,6 +1,11 @@
 Redlining
 ================
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 if (!requireNamespace("tidytext", quietly = TRUE)) {
   install.packages("tidytext")
