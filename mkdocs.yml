@@ -42,9 +42,10 @@ theme:
   favicon: 'assets/esiil_content/favicon.ico'
   # setting features for the navigation tab
   features:
-    - navigation.sections
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.indexes
     - navigation.top
     - toc.integrate
