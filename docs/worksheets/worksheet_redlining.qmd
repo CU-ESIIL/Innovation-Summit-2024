@@ -6,6 +6,10 @@ format: gfm
 
 
 <style>
+img {
+    width: 100%;
+}
+
 details summary {
   color: grey;
 }
@@ -132,12 +136,8 @@ load_city_redlining_data <- function(city_name) {
 <details open>
 <summary>Stream HOLC data for Denver, CO</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
-
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
-
-
-
 ```
 ```{r, echo=FALSE, cache=TRUE}
 library(knitr)
@@ -614,6 +614,8 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
  print(natural_habitats_match$plot)
 ```
 </details>
+![](../worksheets/ndvi_00001.png)
+
 
 <details>
 <summary>WORD CLOUD: Name of natural habitat area</summary>
@@ -686,11 +688,10 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
 ```
 </details>
 
-<details>
+<details open>
 <summary>Stream NDVI data: animation</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-05-31", c("B04", "B08"))
-print(processing_time)
 
 ```
 
@@ -774,18 +775,15 @@ ndvi_plot <-   ggplot() +
 </details>
 
 
-<details>
+<details open>
 <summary>Stream NDVI: high resolution</summary>
 ```{r, warning=FALSE, message=FALSE, cache=TRUE}
 ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
-print(ndvi_background$plot)
-print(ndvi_background$processing_time)
-print(ndvi_background$raster)
 
 ```
 </details>
 
-
+![](../worksheets/ndvi_00001.png)
 
 
 
@@ -871,13 +869,13 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
 ```
 </details>
 
-<details>
+<details open>
 <summary>Stream NDVI: low resolution</summary>
 ```{r, cache=TRUE}
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 ```
 </details>
-
+![](../worksheets/ndvi.png)
 <details>
 <summary>Map low resolution NDVI per HOLC grade </summary>
 ```{r, cache=TRUE}
@@ -890,7 +888,7 @@ ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_backgrou
 
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>FUNCTION: Map Denver City provided data per HOLC grade</summary>
 ```{r}
 
 
@@ -947,18 +945,6 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
 </details>
 
 
-<details>
-<summary>Map tree density per HOLC grade</summary>
-```{r, cache=TRUE}
-result <- process_city_inventory_data(
-  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
-  "tree_inventory.shp",
-  denver_redlining,
-  "Denver_tree_inventory_2023"
-)
-result
-```
-</details>
 
 
 <details>
@@ -970,13 +956,13 @@ result <- process_city_inventory_data(
   denver_redlining,
   "Denver_tree_inventory_2023"
 )
-result
 ```
 </details>
 
+![](../worksheets/Denver_tree_inventory_2023.png)
+![](../worksheets/Denver_tree_inventory_2023_density_plot.png)
 
-
-<details>
+<details open>
 <summary>Map traffic accidents per HOLC grade</summary>
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
@@ -986,10 +972,10 @@ result <- process_city_inventory_data(
   "Denver_traffic_accidents",
   variable_label= 'Traffic accidents density'
 )
-result
 ```
 </details>
-
+![](../worksheets/Denver_traffic_accidents.png)
+![](../worksheets/Denver_traffic_accidents_density_plot.png)
 
 <details>
 <summary>Map stream sampling effort per HOLC grade</summary>
@@ -1001,17 +987,12 @@ instream_sampling_sites <- process_city_inventory_data(
   "instream_sampling_sites",
   variable_label= 'Instream sampling sites density'
 )
-instream_sampling_sites$layer
-instream_sampling_sites$plot
-
-
-
 ```
 </details>
+![](../worksheets/instream_sampling_sites.png)
+![](../worksheets/instream_sampling_sites_density_plot.png)
 
-
-
-<details>
+<details open>
 <summary>Map soil sampling effort per HOLC grade</summary>
 ```{r, cache=TRUE}
 soil_samples <- process_city_inventory_data(
@@ -1021,14 +1002,10 @@ soil_samples <- process_city_inventory_data(
   "Soil samples",
   variable_label= 'soil samples density'
 )
-soil_samples$layer
-soil_samples$plot
-
-
-
 ```
 </details>
-
+![](../worksheets/Soil samples.png)
+![](../worksheets/Soil samples_density_plot.png)
 
 <details>
 <summary>Map public art density per HOLC grade</summary>
@@ -1040,14 +1017,11 @@ public_art <- process_city_inventory_data(
   "Public art ",
   variable_label= 'Public art density'
 )
-public_art$layer
-public_art$plot
-
-
-
 ```
 </details>
 
+![](../worksheets/Public art .png)
+![](../worksheets/Public art _density_plot.png)
 
 <details>
 <summary>Map liquor licenses density per HOLC grade</summary>
@@ -1059,16 +1033,13 @@ liquor_licenses <- process_city_inventory_data(
   "liquor licenses ",
   variable_label= 'liquor licenses density'
 )
-liquor_licenses$layer
-liquor_licenses$plot
-
-
-
 ```
 </details>
+![](../worksheets/liquor licenses .png)
+![](../worksheets/liquor licenses _density_plot.png) 
 
 
-<details>
+<details open>
 <summary>Map crime density per HOLC grade</summary>
 ```{r, cache=TRUE}
 Crime <- process_city_inventory_data(
@@ -1078,28 +1049,24 @@ Crime <- process_city_inventory_data(
   "crime",
   variable_label= 'Crime density'
 )
-Crime$layer
-Crime$plot
-
-
 ```
 </details>
 
-
-<details>
+![](../worksheets/crime.png)
+![](../worksheets/crime_density_plot.png)
+<details open>
 <summary>WORD CLOUD: Types of crimes</summary>
 ```{r, cache=TRUE}
 crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
 
 ```
-
-![](../worksheets/Crime_word_cloud_per_grade.png)
 </details>
 
+![](../worksheets/Crime_word_cloud_per_grade.png)
 
 
 
-<details>
+<details open>
 <summary>Map police shooting density per HOLC grade</summary>
 ```{r, cache=TRUE}
 Denver_police_shootings <- process_city_inventory_data(
@@ -1109,18 +1076,15 @@ Denver_police_shootings <- process_city_inventory_data(
   "Police shootings",
   variable_label= 'Police shootings density'
 )
-Denver_police_shootings$layer
-
-
-
 
 ```
-
-![](../worksheets/Police shootings.png)
 </details>
 
+![](../worksheets/Police shootings.png)
 
-<details>
+**Not enough data for density across all 4**
+
+<details open>
 <summary>WORD CLOUD: Police involved shootings</summary>
 ```{r, cache=TRUE}
 Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
