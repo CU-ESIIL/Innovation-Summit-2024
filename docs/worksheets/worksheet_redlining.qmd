@@ -592,7 +592,7 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
  natural_habitats_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(natural_habitats_match$plot)
 ```
-
+</details>
 
 <details>
 <summary>Click to expand/collapse R code</summary>
