@@ -2,11 +2,9 @@ Redlining
 ================
 
 <style>
-details[open] summary {
-  background-color: green;
-
-details[open] summary {
+details summary {
   background-color: grey;
+  color: white;
 }
 </style>
 <details>
