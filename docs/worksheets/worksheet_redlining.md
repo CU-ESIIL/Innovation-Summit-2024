@@ -92,6 +92,11 @@ library(glue)
 library(purrr)
 ```
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -122,6 +127,11 @@ get_city_state_list_from_redlining_data <- function() {
 }
 ```
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
@@ -143,6 +153,11 @@ print(city_state_list)
     10 Little Rock AR   
     # ℹ 304 more rows
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 # Function to load and filter redlining data by city
 load_city_redlining_data <- function(city_name) {
@@ -161,6 +176,11 @@ load_city_redlining_data <- function(city_name) {
   return(city_redline)
 }
 ```
+
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 # Load redlining data for Denver
@@ -189,6 +209,11 @@ print(denver_redlining)
     # ℹ 306 more rows
     # ℹ 5 more variables: GEOID10 <chr>, GISJOIN <chr>, calc_area <dbl>,
     #   pct_tract <dbl>, geometry <MULTIPOLYGON [°]>
+
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 
@@ -323,6 +348,11 @@ get_places <- function(polygon_layer, type = "food" ) {
 }
 ```
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 
 
@@ -361,6 +391,11 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
   return(plot)
 }
 ```
+
+<details open>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 denver_plot <- plot_city_redlining(denver_redlining)

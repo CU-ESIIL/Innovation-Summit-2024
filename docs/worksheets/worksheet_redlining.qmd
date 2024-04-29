@@ -35,6 +35,9 @@ library(glue)
 library(purrr)
 ```
 
+<details>
+<summary>Click to expand/collapse R code</summary>
+
 ```{r, collapse=TRUE}
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -66,12 +69,18 @@ get_city_state_list_from_redlining_data <- function() {
 
 ```
 
+<details>
+<summary>Click to expand/collapse R code</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
 print(city_state_list)
 
 ```
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 
 
 ```{r, collapse=TRUE}
@@ -93,6 +102,10 @@ load_city_redlining_data <- function(city_name) {
 }
 ```
 
+<details>
+<summary>Click to expand/collapse R code</summary>
+
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 
 # Load redlining data for Denver
@@ -100,6 +113,9 @@ denver_redlining <- load_city_redlining_data("Denver")
 print(denver_redlining)
 
 ```
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 
 
 ```{r, collapse=TRUE}
@@ -238,6 +254,11 @@ get_places <- function(polygon_layer, type = "food" ) {
 
 ```
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
+
+
 ```{r, warning=FALSE, collapse=TRUE}
 
 
@@ -280,6 +301,10 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 
 
 ```
+
+<details open>
+<summary>Click to expand/collapse R code</summary>
+
 
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
