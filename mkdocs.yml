@@ -114,6 +114,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: collapsible
+          class: collapsible
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
