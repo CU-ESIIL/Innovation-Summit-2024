@@ -92,6 +92,7 @@ library(glue)
 library(purrr)
 ```
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -127,6 +128,7 @@ get_city_state_list_from_redlining_data <- function() {
 }
 ```
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -153,6 +155,7 @@ print(city_state_list)
     10 Little Rock AR   
     # ℹ 304 more rows
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -177,6 +180,7 @@ load_city_redlining_data <- function(city_name) {
 }
 ```
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -210,6 +214,7 @@ print(denver_redlining)
     # ℹ 5 more variables: GEOID10 <chr>, GISJOIN <chr>, calc_area <dbl>,
     #   pct_tract <dbl>, geometry <MULTIPOLYGON [°]>
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -348,6 +353,7 @@ get_places <- function(polygon_layer, type = "food" ) {
 }
 ```
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
@@ -392,6 +398,7 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 }
 ```
 
+</details>
 <details open>
 <summary>
 Click to expand/collapse R code
@@ -403,6 +410,11 @@ print(denver_plot)
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
+
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 food <- get_places(denver_redlining, type="food")
@@ -420,6 +432,12 @@ rivers <- get_places(denver_redlining, type="rivers")
 
 government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 split_plot <- function(sf_data, roads, rivers) {
@@ -453,12 +471,24 @@ split_plot <- function(sf_data, roads, rivers) {
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 plot_row <- split_plot(denver_redlining, roads, rivers)
 print(plot_row)
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-11-1.png)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 
@@ -529,6 +559,12 @@ final_selected_polygons <- do.call(rbind, results)
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25, col_select = "name") {
    
@@ -575,6 +611,12 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
  layer1 <- denver_redlining
  layer2 <- food
@@ -583,6 +625,12 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-14-1.png)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
@@ -602,6 +650,11 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
     Some words could not fit on page. They have been removed.
 
 ![](food_word_cloud_per_grade.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
  layer1 <- denver_redlining
@@ -612,11 +665,22 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-16-1.png)
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 ```
 
 ![](processed_food_word_cloud_per_grade.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
  layer1 <- denver_redlining
@@ -627,11 +691,21 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-18-1.png)
 
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 ```
 
 ![](natural_habitats_word_cloud_per_grade.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 polygon_layer <- denver_redlining
@@ -689,6 +763,12 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-05-31", c("B04", "B08"))
 print(processing_time)
@@ -697,6 +777,11 @@ print(processing_time)
     Time difference of 9.332093 mins
 
 ![](anim.gif)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 
@@ -767,6 +852,12 @@ ndvi_plot <-   ggplot() +
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
 print(ndvi_background$plot)
@@ -791,6 +882,12 @@ print(ndvi_background$raster)
     coord. ref. : lon/lat WGS 84 (EPSG:4326) 
     source      : cube_9522eb956f52023-01-01.tif 
     name        : NDVI 
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 
@@ -870,6 +967,12 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
 }
 ```
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 print(ndvi_background_low$plot)
@@ -895,6 +998,12 @@ print(ndvi_background_low$raster)
     source      : cube_95216d405be2023-01-01.tif 
     name        : NDVI 
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ndvi$mask_sf
@@ -918,6 +1027,11 @@ ndvi$plot
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-26-1.png)
 
 ![](redlining_mask_ndvi.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 process_city_inventory_data <- function(address, inner_file, polygon_layer, output_filename,variable_label= 'Tree Density') {
@@ -967,6 +1081,12 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
   return(list(plot = plot, layer = trees))
 }
 ```
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 result <- process_city_inventory_data(
@@ -1052,6 +1172,12 @@ result
     A.43 POINT (-104.9614 39.70028)
     A.53  POINT (-104.9113 39.7256)
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
@@ -1129,6 +1255,12 @@ result
     A.37 POINT (-104.9277 39.74368)
     A.43 POINT (-104.9614 39.70028)
     A.53  POINT (-104.9113 39.7256)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 result <- process_city_inventory_data(
@@ -1297,6 +1429,12 @@ result
     A.94  POINT (-104.9035 39.74014)
     A.102 POINT (-104.9418 39.73048)
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 Crime <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
@@ -1376,6 +1514,12 @@ Crime$plot
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-31-1.png)
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
 ```
@@ -1391,6 +1535,11 @@ crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word
     See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
 
 ![](Crime_word_cloud_per_grade.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 instream_sampling_sites <- process_city_inventory_data(
@@ -1481,6 +1630,12 @@ instream_sampling_sites$plot
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-33-1.png)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 soil_samples <- process_city_inventory_data(
@@ -1649,6 +1804,12 @@ soil_samples$plot
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
 
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
 ``` r
 public_art <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/public_art/shape/public_art.zip",
@@ -1727,6 +1888,12 @@ public_art$plot
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 liquor_licenses <- process_city_inventory_data(
@@ -1828,6 +1995,12 @@ liquor_licenses$plot
 ```
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 Denver_police_shootings <- process_city_inventory_data(
@@ -1947,9 +2120,15 @@ Denver_police_shootings$layer
     A.98       0       0     A POINT (-104.9121 39.73199)
 
 ![](Police%20shootings.png)
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
 
 ``` r
 Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
 ```
 
 ![](police_shootings_word_cloud_per_grade.png)
+</details>

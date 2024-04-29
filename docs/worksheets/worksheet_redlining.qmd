@@ -34,10 +34,12 @@ library(glue)
 
 library(purrr)
 ```
+</details>
+
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
 ```{r, collapse=TRUE}
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -68,21 +70,31 @@ get_city_state_list_from_redlining_data <- function() {
 }
 
 ```
+</details>
+
+
+
+
+
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
 print(city_state_list)
 
 ```
+</details>
+
+
+
+
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
-
 ```{r, collapse=TRUE}
 # Function to load and filter redlining data by city
 load_city_redlining_data <- function(city_name) {
@@ -101,11 +113,12 @@ load_city_redlining_data <- function(city_name) {
   return(city_redline)
 }
 ```
+</details>
+
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
-
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 
 # Load redlining data for Denver
@@ -113,11 +126,11 @@ denver_redlining <- load_city_redlining_data("Denver")
 print(denver_redlining)
 
 ```
+</details>
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
-
 ```{r, collapse=TRUE}
 
 
@@ -253,12 +266,10 @@ get_places <- function(polygon_layer, type = "food" ) {
 
 
 ```
-
+</details>
 
 <details>
 <summary>Click to expand/collapse R code</summary>
-
-
 ```{r, warning=FALSE, collapse=TRUE}
 
 
@@ -301,16 +312,19 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 
 
 ```
+</details>
+
 
 <details open>
 <summary>Click to expand/collapse R code</summary>
-
-
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
 print(denver_plot)
 ```
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 food <- get_places(denver_redlining, type="food")
 
@@ -327,7 +341,11 @@ rivers <- get_places(denver_redlining, type="rivers")
 
 government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
+</details>
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, collapse=TRUE}
 split_plot <- function(sf_data, roads, rivers) {
   # Filter for grades A, B, C, and D
@@ -362,13 +380,20 @@ split_plot <- function(sf_data, roads, rivers) {
 
 
 ```
+</details>
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 plot_row <- split_plot(denver_redlining, roads, rivers)
 print(plot_row)
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, collapse=TRUE}
 
 process_and_plot_sf_layers <- function(layer1, layer2, output_file = "output_plot.png") {
@@ -441,6 +466,7 @@ final_selected_polygons <- do.call(rbind, results)
 
 
 ```
+</details>
 
 
 
@@ -448,6 +474,8 @@ final_selected_polygons <- do.call(rbind, results)
 
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r}
 
 create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25, col_select = "name") {
@@ -498,37 +526,53 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
 
 
 ```
+</details>
 
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- food
  food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(food_match$plot)
 ```
+</details>
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
 
 ```
 
 
-![](food_word_cloud_per_grade.png)
 
+
+![](food_word_cloud_per_grade.png)
+</details>
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- food_processed
  processed_food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(processed_food_match$plot)
 ```
+</details>
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 
 ```
 ![](processed_food_word_cloud_per_grade.png)
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- natural_habitats
@@ -536,12 +580,19 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
  print(natural_habitats_match$plot)
 ```
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 
 ```
 
 ![](natural_habitats_word_cloud_per_grade.png)
+</details>
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, collapse=TRUE}
 polygon_layer <- denver_redlining
 # Function to process satellite data based on an SF polygon's extent
@@ -599,7 +650,10 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
 
 
 ```
+</details>
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-05-31", c("B04", "B08"))
 print(processing_time)
@@ -607,10 +661,11 @@ print(processing_time)
 ```
 
 ![](anim.gif) 
+</details>
 
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, collapse=TRUE}
 
 
@@ -682,10 +737,11 @@ ndvi_plot <-   ggplot() +
 
 
 ```
+</details>
 
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, warning=FALSE, message=FALSE, cache=TRUE}
 ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
 print(ndvi_background$plot)
@@ -693,13 +749,14 @@ print(ndvi_background$processing_time)
 print(ndvi_background$raster)
 
 ```
+</details>
 
 
 
 
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, collapse=TRUE}
 
 
@@ -778,17 +835,20 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
 }
 
 ```
+</details>
 
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 print(ndvi_background_low$plot)
 print(ndvi_background_low$processing_time)
 print(ndvi_background_low$raster)
 ```
+</details>
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ndvi$mask_sf
@@ -796,11 +856,12 @@ ndvi$plot
 ```
 
 ![](redlining_mask_ndvi.png)
+</details>
 
 
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r}
 
 
@@ -854,8 +915,11 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
 
 
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
@@ -865,8 +929,11 @@ result <- process_city_inventory_data(
 )
 result
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
@@ -876,8 +943,12 @@ result <- process_city_inventory_data(
 )
 result
 ```
+</details>
 
 
+
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/traffic_accidents/shape/traffic_accidents.zip",
@@ -888,8 +959,11 @@ result <- process_city_inventory_data(
 )
 result
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 Crime <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
@@ -903,16 +977,22 @@ Crime$plot
 
 
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
 
 ```
 
 ![](Crime_word_cloud_per_grade.png)
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 instream_sampling_sites <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/instream_sampling_sites/shape/instream_sampling_sites.zip",
@@ -927,9 +1007,12 @@ instream_sampling_sites$plot
 
 
 ```
+</details>
 
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 soil_samples <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/soil_samples/shape/soil_samples.zip",
@@ -944,8 +1027,11 @@ soil_samples$plot
 
 
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 public_art <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/public_art/shape/public_art.zip",
@@ -960,8 +1046,11 @@ public_art$plot
 
 
 ```
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 liquor_licenses <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/liquor_licenses/shape/liquor_licenses.zip",
@@ -976,10 +1065,11 @@ liquor_licenses$plot
 
 
 ```
+</details>
 
 
-
-
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 Denver_police_shootings <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip",
@@ -996,11 +1086,16 @@ Denver_police_shootings$layer
 ```
 
 ![](Police shootings.png)
+</details>
 
 
+<details>
+<summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
 
 ```
 
 ![](police_shootings_word_cloud_per_grade.png)
+</details>
+
