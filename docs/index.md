@@ -2,7 +2,7 @@
 
 # Big Data for Environmental Resilience and Adaptation 
 
-!!! :soon: "Almost here!"
+!!! :alarm_clock: "Almost here!"
 
     May 14th-16th, 2024
 
