@@ -415,10 +415,9 @@ Plot Denver Redlining
 
 ``` r
 denver_plot <- plot_city_redlining(denver_redlining)
-print(denver_plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
+![](../worksheets/redlining_plot.png)
 
 </details>
 <details>
