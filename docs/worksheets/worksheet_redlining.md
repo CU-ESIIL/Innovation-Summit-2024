@@ -3,8 +3,7 @@ Redlining
 
 <style>
 details summary {
-  background-color: black;
-  color: white;
+  color: grey;
 }
 
 details[open] summary {
