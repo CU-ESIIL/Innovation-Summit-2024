@@ -135,9 +135,17 @@ load_city_redlining_data <- function(city_name) {
 
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
-print(denver_redlining)
+
+
 
 ```
+```{r, echo=FALSE, cache=TRUE}
+library(knitr)
+library(kableExtra)
+kable(denver_redlining, format = "html", table.attr = "style='width:100%'") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
 </details>
 
 
@@ -345,7 +353,6 @@ food <- get_places(denver_redlining, type="food")
 
 food_processed <- get_places(denver_redlining, type="processed_food")
 
-
 natural_habitats <- get_places(denver_redlining, type="natural_habitats")
 
 roads <- get_places(denver_redlining, type="roads")
@@ -391,9 +398,6 @@ split_plot <- function(sf_data, roads, rivers) {
 
   return(plot)
 }
-
-
-
 ```
 </details>
 
@@ -563,7 +567,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 
 
 
-![](food_word_cloud_per_grade.png)
+![](../worksheets/food_word_cloud_per_grade.png)
 </details>
 
 <details>
@@ -582,7 +586,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 
 ```
-![](processed_food_word_cloud_per_grade.png)
+![](../worksheets/processed_food_word_cloud_per_grade.png)
 </details>
 
 
@@ -603,7 +607,7 @@ natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, 
 
 ```
 
-![](natural_habitats_word_cloud_per_grade.png)
+![](../worksheets/natural_habitats_word_cloud_per_grade.png)
 </details>
 
 <details>
@@ -675,7 +679,7 @@ print(processing_time)
 
 ```
 
-![](anim.gif) 
+![](../worksheets/anim.gif) 
 </details>
 
 
@@ -866,11 +870,9 @@ print(ndvi_background_low$raster)
 <summary>Click to expand/collapse R code</summary>
 ```{r, cache=TRUE}
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
-ndvi$mask_sf
-ndvi$plot
 ```
 
-![](redlining_mask_ndvi.png)
+![](../worksheets/redlining_mask_ndvi.png)
 </details>
 
 
@@ -1002,7 +1004,7 @@ crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word
 
 ```
 
-![](Crime_word_cloud_per_grade.png)
+![](../worksheets/Crime_word_cloud_per_grade.png)
 </details>
 
 
@@ -1100,7 +1102,7 @@ Denver_police_shootings$layer
 
 ```
 
-![](Police shootings.png)
+![](../worksheets/Police shootings.png)
 </details>
 
 
@@ -1111,6 +1113,8 @@ Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shooti
 
 ```
 
-![](police_shootings_word_cloud_per_grade.png)
 </details>
+
+![](../worksheets/police_shootings_word_cloud_per_grade.png)
+
 
