@@ -204,7 +204,8 @@ denver_redlining <- load_city_redlining_data("Denver")
 
 </details>
 
-![Styled Table](../docs/worksheets/table.html)
+![Styled Table](../docs/worksheets/table.html) ![Styled
+Table](../docs/worksheets/table.png)
 
 <details>
 <summary>

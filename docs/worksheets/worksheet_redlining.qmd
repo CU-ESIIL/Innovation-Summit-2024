@@ -162,7 +162,7 @@ webshot2::webshot(url = html_file, file = image_file, vwidth = 1000, vheight = 5
 </details>
 
 ![Styled Table](../docs/worksheets/table.html)
-
+![Styled Table](../docs/worksheets/table.png)
 
 <details>
 <summary>FUNCTION: Get Points-of-Interest from city of interest</summary>
