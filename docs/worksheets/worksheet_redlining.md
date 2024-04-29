@@ -406,7 +406,7 @@ denver_plot <- plot_city_redlining(denver_redlining)
 
 <details>
 <summary>
-Click to expand/collapse R code
+Stream amenities by category
 </summary>
 
 ``` r
@@ -428,7 +428,7 @@ government_buildings <- get_places(denver_redlining, type="government_buildings"
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Plot the 4 HOLC grades individually
 </summary>
 
 ``` r
@@ -466,7 +466,7 @@ split_plot <- function(sf_data, roads, rivers) {
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Plot 4 HOLC grades individually
 </summary>
 
 ``` r
@@ -479,7 +479,7 @@ print(plot_row)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Map an amenity over each grade individually
 </summary>
 
 ``` r
@@ -554,7 +554,7 @@ final_selected_polygons <- do.call(rbind, results)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Create word cloud per grade
 </summary>
 
 ``` r
@@ -606,7 +606,7 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map food over each grade individually
 </summary>
 
 ``` r
@@ -621,7 +621,7 @@ Click to expand/collapse R code
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+WORD CLOUD: Names of places with fresh food
 </summary>
 
 ``` r
@@ -645,7 +645,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map processed food over each grade individually
 </summary>
 
 ``` r
@@ -660,7 +660,7 @@ Click to expand/collapse R code
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+WORD CLOUD: Names of places with processed food
 </summary>
 
 ``` r
@@ -671,7 +671,7 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map natural habitats over each grade individually
 </summary>
 
 ``` r
@@ -686,7 +686,7 @@ Click to expand/collapse R code
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+WORD CLOUD: Name of natural habitat area
 </summary>
 
 ``` r
@@ -697,7 +697,7 @@ natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Stream NDVI data
 </summary>
 
 ``` r
@@ -759,7 +759,7 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Stream NDVI data: animation
 </summary>
 
 ``` r
@@ -773,7 +773,7 @@ print(processing_time)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Stream year average NDVI
 </summary>
 
 ``` r
@@ -848,7 +848,7 @@ ndvi_plot <-   ggplot() +
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Stream NDVI: high resolution
 </summary>
 
 ``` r
@@ -879,7 +879,7 @@ print(ndvi_background$raster)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Map NDVI per HOLC grade individually
 </summary>
 
 ``` r
@@ -963,46 +963,27 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Stream NDVI: low resolution
 </summary>
 
 ``` r
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
-print(ndvi_background_low$plot)
 ```
-
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-26-1.png)
-
-``` r
-print(ndvi_background_low$processing_time)
-```
-
-    Time difference of 1.48584 mins
-
-``` r
-print(ndvi_background_low$raster)
-```
-
-    class       : SpatRaster 
-    dimensions  : 17, 19, 1  (nrow, ncol, nlyr)
-    resolution  : 0.01, 0.01  (x, y)
-    extent      : -105.0643, -104.8743, 39.62532, 39.79532  (xmin, xmax, ymin, ymax)
-    coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-    source      : cube_83dd6ce50f522023-01-01.tif 
-    name        : NDVI 
 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map low resolution NDVI per HOLC grade
 </summary>
 
 ``` r
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ```
 
-![](../worksheets/redlining_mask_ndvi.png)
 </details>
+
+![](../worksheets/redlining_mask_ndvi.png)
+
 <details>
 <summary>
 Click to expand/collapse R code
@@ -1060,7 +1041,7 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map tree density per HOLC grade
 </summary>
 
 ``` r
@@ -1144,7 +1125,7 @@ result
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map tree inventory per HOLC grade
 </summary>
 
 ``` r
@@ -1234,7 +1215,7 @@ result
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map traffic accidents per HOLC grade
 </summary>
 
 ``` r
@@ -1407,113 +1388,7 @@ result
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
-</summary>
-
-``` r
-Crime <- process_city_inventory_data(
-  "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
-  "crime.shp",
-  denver_redlining,
-  "crime",
-  variable_label= 'Crime density'
-)
-Crime$layer
-```
-
-    Simple feature collection with 325661 features and 21 fields
-    Geometry type: POINT
-    Dimension:     XY
-    Bounding box:  xmin: -105.0566 ymin: 39.66314 xmax: -104.8827 ymax: 39.79459
-    Geodetic CRS:  WGS 84
-    First 10 features:
-           INCIDENT_I        OFFENSE_ID OFFENSE_CO OFFENSE__1
-    A.103  2021367586  2021367586299900       2999          0
-    A.105  2022346453  2022346453299900       2999          0
-    A.130 20226011890 20226011890299900       2999          0
-    A.157  2021263186  2021263186299900       2999          0
-    A.250  2021255918  2021255918299900       2999          0
-    A.336 20216022999 20216022999299900       2999          0
-    A.403 20216008289 20216008289299900       2999          0
-    A.467 20226011021 20226011021299900       2999          0
-    A.471 20206006868 20206006868299900       2999          0
-    A.484 20226007222 20226007222299900       2999          0
-                       OFFENSE_TY      OFFENSE_CA FIRST_OCCU LAST_OCCUR REPORTED_D
-    A.103 criminal-mischief-other public-disorder 2021-06-26 2021-06-28 2021-06-28
-    A.105 criminal-mischief-other public-disorder 2022-07-08       <NA> 2022-07-08
-    A.130 criminal-mischief-other public-disorder 2022-06-26 2022-06-26 2022-06-26
-    A.157 criminal-mischief-other public-disorder 2021-05-08 2021-05-10 2021-05-10
-    A.250 criminal-mischief-other public-disorder 2021-05-04 2021-05-05 2021-05-06
-    A.336 criminal-mischief-other public-disorder 2021-11-23 2021-11-23 2021-11-23
-    A.403 criminal-mischief-other public-disorder 2021-04-02 2021-04-03 2021-04-03
-    A.467 criminal-mischief-other public-disorder 2022-06-13 2022-06-13 2022-06-13
-    A.471 criminal-mischief-other public-disorder 2020-06-06 2020-06-06 2020-06-06
-    A.484 criminal-mischief-other public-disorder 2022-04-20 2022-04-21 2022-04-21
-                   INCIDENT_A GEO_X GEO_Y   GEO_LON  GEO_LAT DISTRICT_I PRECINCT_I
-    A.103   221 S GARFIELD ST     0     0 -104.9441 39.71258          3        311
-    A.105    1552 N EUDORA ST     0     0 -104.9306 39.74118          2        222
-    A.130     612 N MARION ST     0     0 -104.9714 39.72589          3        311
-    A.157 888 N COLORADO BLVD     0     0 -104.9404 39.73087          2        222
-    A.250 985 N COLORADO BLVD     0     0 -104.9408 39.73184          2        213
-    A.336    1522 N QUEBEC ST     0     0 -104.9031 39.74077          2        223
-    A.403    2295 N EUDORA ST     0     0 -104.9308 39.75088          2        222
-    A.467 100 N COLORADO BLVD     0     0 -104.9403 39.71818          3        321
-    A.471    900 N MADISON ST     0     0 -104.9459 39.73067          2        213
-    A.484     2909 E OHIO WAY     0     0 -104.9532 39.70308          3        312
-               NEIGHBORHO IS_CRIME IS_TRAFFIC VICTIM_COU grade
-    A.103    cherry-creek        1          0          1     A
-    A.105 south-park-hill        1          0          1     A
-    A.130    country-club        1          0          1     A
-    A.157            hale        1          0          1     A
-    A.250   congress-park        1          0          1     A
-    A.336     east-colfax        1          0          1     A
-    A.403 south-park-hill        1          0          1     A
-    A.467         hilltop        1          0          1     A
-    A.471   congress-park        1          0          1     A
-    A.484         belcaro        1          0          1     A
-                            geometry
-    A.103 POINT (-104.9441 39.71258)
-    A.105 POINT (-104.9306 39.74118)
-    A.130 POINT (-104.9714 39.72589)
-    A.157 POINT (-104.9404 39.73087)
-    A.250 POINT (-104.9408 39.73184)
-    A.336 POINT (-104.9031 39.74077)
-    A.403 POINT (-104.9308 39.75088)
-    A.467 POINT (-104.9403 39.71818)
-    A.471 POINT (-104.9459 39.73067)
-    A.484 POINT (-104.9532 39.70308)
-
-``` r
-Crime$plot
-```
-
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-32-1.png)
-
-</details>
-<details>
-<summary>
-Click to expand/collapse R code
-</summary>
-
-``` r
-crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
-```
-
-    Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ℹ Please use `all_of()` or `any_of()` instead.
-      # Was:
-      data %>% select(col_select)
-
-      # Now:
-      data %>% select(all_of(col_select))
-
-    See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-
-![](../worksheets/Crime_word_cloud_per_grade.png)
-</details>
-<details>
-<summary>
-Click to expand/collapse R code
+Map stream sampling effort per HOLC grade
 </summary>
 
 ``` r
@@ -1524,6 +1399,12 @@ instream_sampling_sites <- process_city_inventory_data(
   "instream_sampling_sites",
   variable_label= 'Instream sampling sites density'
 )
+```
+
+    Warning: `stat(density)` was deprecated in ggplot2 3.4.0.
+    ℹ Please use `after_stat(density)` instead.
+
+``` r
 instream_sampling_sites$layer
 ```
 
@@ -1604,12 +1485,12 @@ instream_sampling_sites$layer
 instream_sampling_sites$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-32-1.png)
 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map soil sampling effort per HOLC grade
 </summary>
 
 ``` r
@@ -1777,12 +1658,12 @@ soil_samples$layer
 soil_samples$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-33-1.png)
 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map public art density per HOLC grade
 </summary>
 
 ``` r
@@ -1862,12 +1743,12 @@ public_art$layer
 public_art$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map liquor licenses density per HOLC grade
 </summary>
 
 ``` r
@@ -1969,12 +1850,118 @@ liquor_licenses$layer
 liquor_licenses$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-37-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
 
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+Map crime density per HOLC grade
+</summary>
+
+``` r
+Crime <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
+  "crime.shp",
+  denver_redlining,
+  "crime",
+  variable_label= 'Crime density'
+)
+Crime$layer
+```
+
+    Simple feature collection with 325661 features and 21 fields
+    Geometry type: POINT
+    Dimension:     XY
+    Bounding box:  xmin: -105.0566 ymin: 39.66314 xmax: -104.8827 ymax: 39.79459
+    Geodetic CRS:  WGS 84
+    First 10 features:
+           INCIDENT_I        OFFENSE_ID OFFENSE_CO OFFENSE__1
+    A.103  2021367586  2021367586299900       2999          0
+    A.105  2022346453  2022346453299900       2999          0
+    A.130 20226011890 20226011890299900       2999          0
+    A.157  2021263186  2021263186299900       2999          0
+    A.250  2021255918  2021255918299900       2999          0
+    A.336 20216022999 20216022999299900       2999          0
+    A.403 20216008289 20216008289299900       2999          0
+    A.467 20226011021 20226011021299900       2999          0
+    A.471 20206006868 20206006868299900       2999          0
+    A.484 20226007222 20226007222299900       2999          0
+                       OFFENSE_TY      OFFENSE_CA FIRST_OCCU LAST_OCCUR REPORTED_D
+    A.103 criminal-mischief-other public-disorder 2021-06-26 2021-06-28 2021-06-28
+    A.105 criminal-mischief-other public-disorder 2022-07-08       <NA> 2022-07-08
+    A.130 criminal-mischief-other public-disorder 2022-06-26 2022-06-26 2022-06-26
+    A.157 criminal-mischief-other public-disorder 2021-05-08 2021-05-10 2021-05-10
+    A.250 criminal-mischief-other public-disorder 2021-05-04 2021-05-05 2021-05-06
+    A.336 criminal-mischief-other public-disorder 2021-11-23 2021-11-23 2021-11-23
+    A.403 criminal-mischief-other public-disorder 2021-04-02 2021-04-03 2021-04-03
+    A.467 criminal-mischief-other public-disorder 2022-06-13 2022-06-13 2022-06-13
+    A.471 criminal-mischief-other public-disorder 2020-06-06 2020-06-06 2020-06-06
+    A.484 criminal-mischief-other public-disorder 2022-04-20 2022-04-21 2022-04-21
+                   INCIDENT_A GEO_X GEO_Y   GEO_LON  GEO_LAT DISTRICT_I PRECINCT_I
+    A.103   221 S GARFIELD ST     0     0 -104.9441 39.71258          3        311
+    A.105    1552 N EUDORA ST     0     0 -104.9306 39.74118          2        222
+    A.130     612 N MARION ST     0     0 -104.9714 39.72589          3        311
+    A.157 888 N COLORADO BLVD     0     0 -104.9404 39.73087          2        222
+    A.250 985 N COLORADO BLVD     0     0 -104.9408 39.73184          2        213
+    A.336    1522 N QUEBEC ST     0     0 -104.9031 39.74077          2        223
+    A.403    2295 N EUDORA ST     0     0 -104.9308 39.75088          2        222
+    A.467 100 N COLORADO BLVD     0     0 -104.9403 39.71818          3        321
+    A.471    900 N MADISON ST     0     0 -104.9459 39.73067          2        213
+    A.484     2909 E OHIO WAY     0     0 -104.9532 39.70308          3        312
+               NEIGHBORHO IS_CRIME IS_TRAFFIC VICTIM_COU grade
+    A.103    cherry-creek        1          0          1     A
+    A.105 south-park-hill        1          0          1     A
+    A.130    country-club        1          0          1     A
+    A.157            hale        1          0          1     A
+    A.250   congress-park        1          0          1     A
+    A.336     east-colfax        1          0          1     A
+    A.403 south-park-hill        1          0          1     A
+    A.467         hilltop        1          0          1     A
+    A.471   congress-park        1          0          1     A
+    A.484         belcaro        1          0          1     A
+                            geometry
+    A.103 POINT (-104.9441 39.71258)
+    A.105 POINT (-104.9306 39.74118)
+    A.130 POINT (-104.9714 39.72589)
+    A.157 POINT (-104.9404 39.73087)
+    A.250 POINT (-104.9408 39.73184)
+    A.336 POINT (-104.9031 39.74077)
+    A.403 POINT (-104.9308 39.75088)
+    A.467 POINT (-104.9403 39.71818)
+    A.471 POINT (-104.9459 39.73067)
+    A.484 POINT (-104.9532 39.70308)
+
+``` r
+Crime$plot
+```
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+
+</details>
+<details>
+<summary>
+WORD CLOUD: Types of crimes
+</summary>
+
+``` r
+crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
+```
+
+    Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+    ℹ Please use `all_of()` or `any_of()` instead.
+      # Was:
+      data %>% select(col_select)
+
+      # Now:
+      data %>% select(all_of(col_select))
+
+    See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+
+![](../worksheets/Crime_word_cloud_per_grade.png)
+</details>
+<details>
+<summary>
+Map police shooting density per HOLC grade
 </summary>
 
 ``` r
@@ -2098,7 +2085,7 @@ Denver_police_shootings$layer
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+WORD CLOUD: Police involved shootings
 </summary>
 
 ``` r
