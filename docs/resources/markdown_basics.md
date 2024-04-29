@@ -5,19 +5,6 @@
 
 ## Section 1: Mastering Markdown Syntax
 
-!!! Success "Objectives"
-
-        After this section, you should be able to:
-        
-        * Explain what Open Science is
-        * Explain the components of Open Science
-        * Describe the behaviors of Open Science
-        * Explain why Open Science matters in education, research, and society
-        * Understand the advantages and the challenges to Open Science
-        * Identify who the practitioners of Open Science are
-        * Understand the underlying Ethos of Open Science
-
-
 ### 1. Fundamentals of Text Formatting
 
 - **Headings**: Use `#` for different levels of headings.
