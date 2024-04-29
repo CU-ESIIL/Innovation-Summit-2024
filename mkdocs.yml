@@ -17,10 +17,11 @@ nav:
        - Overview: virtual-meetings.md
        - Head in the clouds:
            - Markdown: resources/markdown_basics.md
-           - Github): resources/github_basics.md
-           - Cyverse): resources/cyverse_basics.md
-           - Cyverse hacks): resources/cyverse_hacks.md
-       - Feet on the ground: trainings/training_two.md
+           - Github: resources/github_basics.md
+           - Cyverse: resources/cyverse_basics.md
+           - Cyverse hacks: resources/cyverse_hacks.md
+       - Feet on the ground: 
+           - Startup procedure: trainings/training_two.md
        - Hand in hand: trainings/training_three.md
   - Additional resources:
        - Code of Conduct: additional-resources/code-of-conduct.md
