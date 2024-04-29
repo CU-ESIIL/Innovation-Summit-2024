@@ -1,9 +1,14 @@
 Redlining
 ================
 
+<style>
+details[open] summary {
+  color: green;
+}
+</style>
 <details>
 <summary>
-Read in libraries
+R libraries we use in this analysis
 </summary>
 
 ``` r
@@ -131,7 +136,7 @@ get_city_state_list_from_redlining_data <- function() {
 </details>
 <details open>
 <summary>
-Stream HOLC data
+Stream available cities
 </summary>
 
 ``` r
@@ -409,9 +414,8 @@ denver_plot <- plot_city_redlining(denver_redlining)
 print(denver_plot)
 ```
 
-![](../worksheets/worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
 
-</details>
 <details>
 <summary>
 Click to expand/collapse R code

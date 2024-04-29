@@ -4,8 +4,16 @@ format: gfm
   
 ---
 
+
+<style>
+details[open] summary {
+  color: green;
+}
+</style>
+
+
 <details>
-<summary>Read in libraries</summary>
+<summary>R libraries we use in this analysis</summary>
 
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
@@ -79,7 +87,7 @@ get_city_state_list_from_redlining_data <- function() {
 
 
 <details open>
-<summary>Stream HOLC data</summary>
+<summary>Stream available cities</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
