@@ -5,6 +5,7 @@ format: gfm
 ---
 
 
+
 <style>
 details summary {
   color: grey;
@@ -18,6 +19,7 @@ details[open] summary {
 
 <details>
 <summary>R libraries we use in this analysis</summary>
+
 
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
@@ -46,12 +48,14 @@ library(glue)
 
 library(purrr)
 ```
+
 </details>
 
 
 
 <details>
 <summary>FUNCTION: Cities where HOLC data are available</summary>
+
 ```{r, collapse=TRUE}
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -82,6 +86,7 @@ get_city_state_list_from_redlining_data <- function() {
 }
 
 ```
+
 </details>
 
 
@@ -92,12 +97,14 @@ get_city_state_list_from_redlining_data <- function() {
 
 <details open>
 <summary>Stream available cities</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
 print(city_state_list)
 
 ```
+
 </details>
 
 
@@ -107,6 +114,7 @@ print(city_state_list)
 
 <details>
 <summary>FUNCTION: Stream HOLC data from a city</summary>
+
 ```{r, collapse=TRUE}
 # Function to load and filter redlining data by city
 load_city_redlining_data <- function(city_name) {
@@ -125,12 +133,14 @@ load_city_redlining_data <- function(city_name) {
   return(city_redline)
 }
 ```
+
 </details>
 
 
 
 <details open>
 <summary>Stream HOLC data for Denver, CO</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 
 # Load redlining data for Denver
@@ -139,6 +149,7 @@ denver_redlining <- load_city_redlining_data("Denver")
 
 
 ```
+
 ```{r, echo=FALSE, cache=TRUE}
 library(knitr)
 library(kableExtra)
@@ -159,6 +170,7 @@ webshot2::webshot(url = html_file, file = image_file, vwidth = 1000, vheight = 5
 
 ```
 
+
 </details>
 
 ![Styled Table](../docs/worksheets/table.html)
@@ -166,6 +178,7 @@ webshot2::webshot(url = html_file, file = image_file, vwidth = 1000, vheight = 5
 
 <details>
 <summary>FUNCTION: Get Points-of-Interest from city of interest</summary>
+
 ```{r, collapse=TRUE}
 
 
@@ -301,10 +314,12 @@ get_places <- function(polygon_layer, type = "food" ) {
 
 
 ```
+
 </details>
 
 <details>
 <summary>FUNCTION: Plot POI with HOLC </summary>
+
 ```{r, warning=FALSE, collapse=TRUE}
 
 
@@ -347,14 +362,17 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 
 
 ```
+
 </details>
 
 
 <details open>
 <summary>Plot Denver Redlining</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
 ```
+
 
 </details>
 ![](../worksheets/redlining_plot.png)
@@ -363,6 +381,7 @@ denver_plot <- plot_city_redlining(denver_redlining)
 
 <details>
 <summary>Stream amenities by category</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 food <- get_places(denver_redlining, type="food")
 
@@ -378,11 +397,13 @@ rivers <- get_places(denver_redlining, type="rivers")
 
 government_buildings <- get_places(denver_redlining, type="government_buildings")
 ```
+
 </details>
 
 
 <details>
 <summary>FUNCTION: Plot the 4 HOLC grades individually</summary>
+
 ```{r, collapse=TRUE}
 split_plot <- function(sf_data, roads, rivers) {
   # Filter for grades A, B, C, and D
@@ -414,20 +435,24 @@ split_plot <- function(sf_data, roads, rivers) {
   return(plot)
 }
 ```
+
 </details>
 
 
 <details>
 <summary>Plot 4 HOLC grades individually</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 plot_row <- split_plot(denver_redlining, roads, rivers)
 print(plot_row)
 ```
+
 </details>
 
 
 <details>
 <summary>FUNCTION: Map an amenity over each grade individually</summary>
+
 ```{r, collapse=TRUE}
 
 process_and_plot_sf_layers <- function(layer1, layer2, output_file = "output_plot.png") {
@@ -500,6 +525,7 @@ final_selected_polygons <- do.call(rbind, results)
 
 
 ```
+
 </details>
 
 
@@ -510,6 +536,7 @@ final_selected_polygons <- do.call(rbind, results)
 
 <details>
 <summary>FUNCTION: Create word cloud per grade</summary>
+
 ```{r}
 
 create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud_per_grade.png",title = "Healthy food place names word cloud", max_size =25, col_select = "name") {
@@ -560,24 +587,29 @@ create_wordclouds_by_grade <- function(sf_object, output_file = "food_word_cloud
 
 
 ```
+
 </details>
 
 <details>
 <summary>Map food over each grade individually</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- food
  food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(food_match$plot)
 ```
+
 </details>
 
 <details>
 <summary>WORD CLOUD: Names of places with fresh food</summary>
+
 ```{r, cache=TRUE}
 food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food_word_cloud_per_grade.png")
 
 ```
+
 
 
 
@@ -587,46 +619,55 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
 
 <details>
 <summary>Map processed food over each grade individually</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- food_processed
  processed_food_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(processed_food_match$plot)
 ```
+
 </details>
 
 <details>
 <summary>WORD CLOUD: Names of places with processed food</summary>
+
 ```{r, cache=TRUE}
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 
 ```
+
 ![](../worksheets/processed_food_word_cloud_per_grade.png)
 </details>
 
 
 <details>
 <summary>Map natural habitats over each grade individually</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
  layer1 <- denver_redlining
  layer2 <- natural_habitats
  natural_habitats_match <- process_and_plot_sf_layers(layer1, layer2, "final_redlining_plot.png")
  print(natural_habitats_match$plot)
 ```
+
 </details>
 
 <details>
 <summary>WORD CLOUD: Name of natural habitat area</summary>
+
 ```{r, cache=TRUE}
 natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 
 ```
+
 
 ![](../worksheets/natural_habitats_word_cloud_per_grade.png)
 </details>
 
 <details>
 <summary>FUNCTION: Stream NDVI data</summary>
+
 ```{r, collapse=TRUE}
 polygon_layer <- denver_redlining
 # Function to process satellite data based on an SF polygon's extent
@@ -684,15 +725,18 @@ process_satellite_data <- function(polygon_layer, start_date, end_date, assets, 
 
 
 ```
+
 </details>
 
 <details>
 <summary>Stream NDVI data: animation</summary>
+
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-05-31", c("B04", "B08"))
 print(processing_time)
 
 ```
+
 
 ![](../worksheets/anim.gif) 
 </details>
@@ -700,6 +744,7 @@ print(processing_time)
 
 <details>
 <summary>FUNCTION: Stream year average NDVI</summary>
+
 ```{r, collapse=TRUE}
 
 
@@ -771,11 +816,13 @@ ndvi_plot <-   ggplot() +
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>Stream NDVI: high resolution</summary>
+
 ```{r, warning=FALSE, message=FALSE, cache=TRUE}
 ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001)
 print(ndvi_background$plot)
@@ -783,6 +830,7 @@ print(ndvi_background$processing_time)
 print(ndvi_background$raster)
 
 ```
+
 </details>
 
 
@@ -791,6 +839,7 @@ print(ndvi_background$raster)
 
 <details>
 <summary>FUNCTION: Map NDVI per HOLC grade individually</summary>
+
 ```{r, collapse=TRUE}
 
 
@@ -869,20 +918,25 @@ expanded_bbox_poly <- st_as_sfc(expanded_bbox, crs = st_crs(redlining_sf)) %>%
 }
 
 ```
+
 </details>
 
 <details>
 <summary>Stream NDVI: low resolution</summary>
+
 ```{r, cache=TRUE}
 ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 ```
+
 </details>
 
 <details>
 <summary>Map low resolution NDVI per HOLC grade </summary>
+
 ```{r, cache=TRUE}
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
 ```
+
 </details>
 ![](../worksheets/redlining_mask_ndvi.png)
 
@@ -891,6 +945,7 @@ ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_backgrou
 
 <details>
 <summary>Click to expand/collapse R code</summary>
+
 ```{r}
 
 
@@ -944,11 +999,13 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>Map tree density per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
@@ -958,11 +1015,13 @@ result <- process_city_inventory_data(
 )
 result
 ```
+
 </details>
 
 
 <details>
 <summary>Map tree inventory per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
@@ -972,12 +1031,14 @@ result <- process_city_inventory_data(
 )
 result
 ```
+
 </details>
 
 
 
 <details>
 <summary>Map traffic accidents per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/traffic_accidents/shape/traffic_accidents.zip",
@@ -988,11 +1049,13 @@ result <- process_city_inventory_data(
 )
 result
 ```
+
 </details>
 
 
 <details>
 <summary>Map stream sampling effort per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 instream_sampling_sites <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/instream_sampling_sites/shape/instream_sampling_sites.zip",
@@ -1007,12 +1070,14 @@ instream_sampling_sites$plot
 
 
 ```
+
 </details>
 
 
 
 <details>
 <summary>Map soil sampling effort per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 soil_samples <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/soil_samples/shape/soil_samples.zip",
@@ -1027,11 +1092,13 @@ soil_samples$plot
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>Map public art density per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 public_art <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/public_art/shape/public_art.zip",
@@ -1046,11 +1113,13 @@ public_art$plot
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>Map liquor licenses density per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 liquor_licenses <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/liquor_licenses/shape/liquor_licenses.zip",
@@ -1065,11 +1134,13 @@ liquor_licenses$plot
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>Map crime density per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 Crime <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/crime/shape/crime.zip",
@@ -1083,15 +1154,18 @@ Crime$plot
 
 
 ```
+
 </details>
 
 
 <details>
 <summary>WORD CLOUD: Types of crimes</summary>
+
 ```{r, cache=TRUE}
 crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word_cloud_per_grade.png",title = "Crime type where larger text is more frequent", max_size =25, col_select = "OFFENSE_TY")
 
 ```
+
 
 ![](../worksheets/Crime_word_cloud_per_grade.png)
 </details>
@@ -1101,6 +1175,7 @@ crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word
 
 <details>
 <summary>Map police shooting density per HOLC grade</summary>
+
 ```{r, cache=TRUE}
 Denver_police_shootings <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/denver_police_officer_involved_shootings/shape/denver_police_officer_involved_shootings.zip",
@@ -1116,19 +1191,23 @@ Denver_police_shootings$layer
 
 ```
 
+
 ![](../worksheets/Police shootings.png)
 </details>
 
 
 <details>
 <summary>WORD CLOUD: Police involved shootings</summary>
+
 ```{r, cache=TRUE}
 Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
 
 ```
 
+
 </details>
 
 ![](../worksheets/police_shootings_word_cloud_per_grade.png)
+
 
 
