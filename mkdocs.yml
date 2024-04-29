@@ -43,6 +43,8 @@ theme:
   logo: 'assets/esiil_content/ESIIL_logo.png'
   favicon: 'assets/esiil_content/favicon.ico'
   # setting features for the navigation tab
+  toc:
+    position: right
   features:
     - navigation.instant
     - navigation.tracking
