@@ -1,6 +1,6 @@
 # Markdown for the Modern Researcher at ESIIL
 
- ??? Example "Six Pillars :material-pillar: of Open Science"
+ !!! Example "Six Pillars :material-pillar: of Open Science"
 
         **:material-pillar: Open Access Publications**
 
