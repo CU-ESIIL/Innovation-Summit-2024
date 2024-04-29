@@ -142,11 +142,26 @@ denver_redlining <- load_city_redlining_data("Denver")
 ```{r, echo=FALSE, cache=TRUE}
 library(knitr)
 library(kableExtra)
-kable(denver_redlining, format = "html", table.attr = "style='width:100%'") %>% 
+
+
+kable_output <- kable(head(denver_redlining), format = "html", table.attr = "style='width:100%'") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
+
+# Save the HTML table to a file
+html_file <- "table.html"
+writeLines(as.character(kable_output), con = html_file)
+
+# Use webshot to take a screenshot of the HTML file
+image_file <- "table.png"
+webshot2::webshot(url = html_file, file = image_file, vwidth = 1000, vheight = 500)
+
+
+
 ```
 
 </details>
+
+![Styled Table](../docs/worksheets/table.html)
 
 
 <details>

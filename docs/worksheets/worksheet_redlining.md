@@ -198,32 +198,14 @@ Stream HOLC data for Denver, CO
 ``` r
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
-print(denver_redlining)
 ```
 
-    Simple feature collection with 316 features and 15 fields
-    Geometry type: MULTIPOLYGON
-    Dimension:     XY
-    Bounding box:  xmin: -105.0622 ymin: 39.62952 xmax: -104.8763 ymax: 39.79111
-    Geodetic CRS:  WGS 84
-    # A tibble: 316 × 16
-       area_id city   state city_survey cat   grade label res   com   ind   fill   
-     *   <int> <chr>  <chr> <lgl>       <chr> <chr> <chr> <lgl> <lgl> <lgl> <chr>  
-     1    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
-     2    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
-     3    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
-     4    6525 Denver CO    TRUE        Best  A     A1    TRUE  FALSE FALSE #76a865
-     5    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
-     6    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
-     7    6529 Denver CO    TRUE        Best  A     A2    TRUE  FALSE FALSE #76a865
-     8    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
-     9    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
-    10    6537 Denver CO    TRUE        Best  A     A3    TRUE  FALSE FALSE #76a865
-    # ℹ 306 more rows
-    # ℹ 5 more variables: GEOID10 <chr>, GISJOIN <chr>, calc_area <dbl>,
-    #   pct_tract <dbl>, geometry <MULTIPOLYGON [°]>
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-6-1.png)
 
 </details>
+
+![Styled Table](../docs/worksheets/table.html)
+
 <details>
 <summary>
 FUNCTION: Get Points-of-Interest from city of interest
@@ -431,7 +413,6 @@ food <- get_places(denver_redlining, type="food")
 
 food_processed <- get_places(denver_redlining, type="processed_food")
 
-
 natural_habitats <- get_places(denver_redlining, type="natural_habitats")
 
 roads <- get_places(denver_redlining, type="roads")
@@ -492,7 +473,7 @@ plot_row <- split_plot(denver_redlining, roads, rivers)
 print(plot_row)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-11-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-12-1.png)
 
 </details>
 <details>
@@ -634,7 +615,7 @@ Click to expand/collapse R code
  print(food_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-14-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-15-1.png)
 
 </details>
 <details>
@@ -659,7 +640,7 @@ food_word_cloud <- create_wordclouds_by_grade(food_match$sf, output_file = "food
     Warning in wordcloud_boxes(data_points = points_valid_first, boxes = boxes, :
     Some words could not fit on page. They have been removed.
 
-![](food_word_cloud_per_grade.png)
+![](../worksheets/food_word_cloud_per_grade.png)
 </details>
 <details>
 <summary>
@@ -673,7 +654,7 @@ Click to expand/collapse R code
  print(processed_food_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-16-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-17-1.png)
 
 </details>
 <details>
@@ -685,7 +666,7 @@ Click to expand/collapse R code
 processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, output_file = "processed_food_word_cloud_per_grade.png",title = "Processed food place names where larger text is more frequent", max_size =17)
 ```
 
-![](processed_food_word_cloud_per_grade.png)
+![](../worksheets/processed_food_word_cloud_per_grade.png)
 </details>
 <details>
 <summary>
@@ -699,7 +680,7 @@ Click to expand/collapse R code
  print(natural_habitats_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-18-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-19-1.png)
 
 </details>
 <details>
@@ -711,7 +692,7 @@ Click to expand/collapse R code
 natural_habitats_cloud <- create_wordclouds_by_grade(natural_habitats_match$sf, output_file = "natural_habitats_word_cloud_per_grade.png",title = "Natural habitats place names where larger text is more frequent", max_size =35)
 ```
 
-![](natural_habitats_word_cloud_per_grade.png)
+![](../worksheets/natural_habitats_word_cloud_per_grade.png)
 </details>
 <details>
 <summary>
@@ -785,9 +766,9 @@ processing_time <- process_satellite_data(denver_redlining, "2022-05-31", "2023-
 print(processing_time)
 ```
 
-    Time difference of 9.332093 mins
+    Time difference of 9.447832 mins
 
-![](anim.gif)
+![](../worksheets/anim.gif)
 </details>
 <details>
 <summary>
@@ -874,13 +855,13 @@ ndvi_background <- yearly_average_ndvi(denver_redlining,dx = 0.0001, dy = 0.0001
 print(ndvi_background$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-23-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-24-1.png)
 
 ``` r
 print(ndvi_background$processing_time)
 ```
 
-    Time difference of 15.54536 mins
+    Time difference of 14.85356 mins
 
 ``` r
 print(ndvi_background$raster)
@@ -891,7 +872,7 @@ print(ndvi_background$raster)
     resolution  : 1e-04, 1e-04  (x, y)
     extent      : -105.0623, -104.8763, 39.62951, 39.79112  (xmin, xmax, ymin, ymax)
     coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-    source      : cube_9522eb956f52023-01-01.tif 
+    source      : cube_83dd7c6ea8f02023-01-01.tif 
     name        : NDVI 
 
 </details>
@@ -989,13 +970,13 @@ ndvi_background_low <- yearly_average_ndvi(denver_redlining)
 print(ndvi_background_low$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-25-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-26-1.png)
 
 ``` r
 print(ndvi_background_low$processing_time)
 ```
 
-    Time difference of 1.710772 mins
+    Time difference of 1.48584 mins
 
 ``` r
 print(ndvi_background_low$raster)
@@ -1006,7 +987,7 @@ print(ndvi_background_low$raster)
     resolution  : 0.01, 0.01  (x, y)
     extent      : -105.0643, -104.8743, 39.62532, 39.79532  (xmin, xmax, ymin, ymax)
     coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-    source      : cube_95216d405be2023-01-01.tif 
+    source      : cube_83dd6ce50f522023-01-01.tif 
     name        : NDVI 
 
 </details>
@@ -1017,27 +998,9 @@ Click to expand/collapse R code
 
 ``` r
 ndvi <- create_mask_and_plot(denver_redlining, background_raster = ndvi_background_low$raster, roads = roads, rivers = rivers)
-ndvi$mask_sf
 ```
 
-    Simple feature collection with 4 features and 1 field
-    Geometry type: GEOMETRY
-    Dimension:     XY
-    Bounding box:  xmin: -105.0865 ymin: 39.62053 xmax: -104.8546 ymax: 39.8001
-    Geodetic CRS:  WGS 84
-      grade                       geometry
-    A     A MULTIPOLYGON (((-105.0865 3...
-    B     B POLYGON ((-105.0865 39.6205...
-    C     C MULTIPOLYGON (((-105.0865 3...
-    D     D MULTIPOLYGON (((-105.0865 3...
-
-``` r
-ndvi$plot
-```
-
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-26-1.png)
-
-![](redlining_mask_ndvi.png)
+![](../worksheets/redlining_mask_ndvi.png)
 </details>
 <details>
 <summary>
@@ -1092,96 +1055,6 @@ process_city_inventory_data <- function(address, inner_file, polygon_layer, outp
   return(list(plot = plot, layer = trees))
 }
 ```
-
-</details>
-<details>
-<summary>
-Click to expand/collapse R code
-</summary>
-
-``` r
-result <- process_city_inventory_data(
-  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
-  "tree_inventory.shp",
-  denver_redlining,
-  "Denver_tree_inventory_2023"
-)
-```
-
-    Warning: `stat(density)` was deprecated in ggplot2 3.4.0.
-    ℹ Please use `after_stat(density)` instead.
-
-``` r
-result
-```
-
-    $plot
-
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-28-1.png)
-
-
-    $layer
-    Simple feature collection with 336999 features and 17 fields
-    Geometry type: POINT
-    Dimension:     XY
-    Bounding box:  xmin: -105.057 ymin: 39.66298 xmax: -104.8801 ymax: 39.7939
-    Geodetic CRS:  WGS 84
-    First 10 features:
-         SITE_ID                    SPECIES_CO                      SPECIES_BO
-    A.3    61362                  Oak, Shumard               Quercus shumardii
-    A.14  187865                 Maple, Norway                Acer platanoides
-    A.20  227501                   Honeylocust           Gleditsia triacanthos
-    A.23  185920                    Ash, White              Fraxinus americana
-    A.26  163730 Maple, Freeman 'Autumn Blaze' Acer x freemanii 'Autumn Blaze'
-    A.33  184376                 Maple, Norway                Acer platanoides
-    A.35  182758          Crabapple, Flowering                Malus sylvestris
-    A.37    1853                Oak, Chinkapin           Quercus muehlenbergii
-    A.43  113549               Pear, Flowering                Pyrus calleryana
-    A.53  129798                   Honeylocust           Gleditsia triacanthos
-         DIAMETER STEMS               LOCATION_N LOCATION_C
-    A.3   6 to 12     1             Mayfair Park        432
-    A.14 12 to 18     1          0 Non-park tree       <NA>
-    A.20 18 to 24     1          0 Non-park tree       <NA>
-    A.23  6 to 12     1          0 Non-park tree       <NA>
-    A.26   0 to 6     1          0 Non-park tree       <NA>
-    A.33 18 to 24     1          0 Non-park tree       <NA>
-    A.35  6 to 12     1          0 Non-park tree       <NA>
-    A.37   0 to 6     1 East 17th Avenue Parkway        412
-    A.43   0 to 6     8          0 Non-park tree       <NA>
-    A.53   0 to 6     1                E 6th Ave        411
-                             SITE_DESIG INVENTORY_ ADDRESS             STREET
-    A.3                            Park   2/9/2021    1000           N IVY ST
-    A.14 Private Maintained Street Tree  11/7/2016    1650       N NEWPORT ST
-    A.20 Private Maintained Street Tree  11/8/2016     525      S BELLAIRE ST
-    A.23 Private Maintained Street Tree 10/29/2020    1545         N HOLLY ST
-    A.26 Private Maintained Street Tree  10/4/2019     600          N VINE ST
-    A.33 Private Maintained Street Tree 10/29/2020    1550       N GLENCOE ST
-    A.35 Private Maintained Street Tree   4/3/2018    1350        N DAHLIA ST
-    A.37                         Median   2/9/2021    5100 E 17TH AVENUE PKWY
-    A.43 Private Maintained Street Tree  11/7/2016     894       S GAYLORD ST
-    A.53                         Median   2/9/2021    6500  E 6TH AVENUE PKWY
-                NEIGHBOR    X_LONG    Y_LAT   WORKGROUP NOTABLE grade
-    A.3        Montclair -104.9206 39.73237  Operations     N/A     A
-    A.14 South Park Hill -104.9093 39.74253 Inspections     N/A     A
-    A.20         Hilltop -104.9372 39.72485 Inspections     N/A     A
-    A.23 South Park Hill -104.9224 39.74107 Inspections     N/A     A
-    A.26    Country Club -104.9622 39.72567 Inspections     N/A     A
-    A.33 South Park Hill -104.9257 39.74126 Inspections     N/A     A
-    A.35            Hale -104.9315 39.73746 Inspections     N/A     A
-    A.37 South Park Hill -104.9277 39.74368  Operations     N/A     A
-    A.43 Washington Park -104.9614 39.70028 Inspections     N/A     A
-    A.53         Hilltop -104.9113 39.72560  Operations     N/A     A
-                           geometry
-    A.3  POINT (-104.9206 39.73237)
-    A.14 POINT (-104.9093 39.74253)
-    A.20 POINT (-104.9372 39.72485)
-    A.23 POINT (-104.9224 39.74107)
-    A.26 POINT (-104.9622 39.72567)
-    A.33 POINT (-104.9257 39.74126)
-    A.35 POINT (-104.9315 39.73746)
-    A.37 POINT (-104.9277 39.74368)
-    A.43 POINT (-104.9614 39.70028)
-    A.53  POINT (-104.9113 39.7256)
 
 </details>
 <details>
@@ -1275,6 +1148,96 @@ Click to expand/collapse R code
 
 ``` r
 result <- process_city_inventory_data(
+  "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip",
+  "tree_inventory.shp",
+  denver_redlining,
+  "Denver_tree_inventory_2023"
+)
+```
+
+    Warning: `stat(density)` was deprecated in ggplot2 3.4.0.
+    ℹ Please use `after_stat(density)` instead.
+
+``` r
+result
+```
+
+    $plot
+
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-30-1.png)
+
+
+    $layer
+    Simple feature collection with 336999 features and 17 fields
+    Geometry type: POINT
+    Dimension:     XY
+    Bounding box:  xmin: -105.057 ymin: 39.66298 xmax: -104.8801 ymax: 39.7939
+    Geodetic CRS:  WGS 84
+    First 10 features:
+         SITE_ID                    SPECIES_CO                      SPECIES_BO
+    A.3    61362                  Oak, Shumard               Quercus shumardii
+    A.14  187865                 Maple, Norway                Acer platanoides
+    A.20  227501                   Honeylocust           Gleditsia triacanthos
+    A.23  185920                    Ash, White              Fraxinus americana
+    A.26  163730 Maple, Freeman 'Autumn Blaze' Acer x freemanii 'Autumn Blaze'
+    A.33  184376                 Maple, Norway                Acer platanoides
+    A.35  182758          Crabapple, Flowering                Malus sylvestris
+    A.37    1853                Oak, Chinkapin           Quercus muehlenbergii
+    A.43  113549               Pear, Flowering                Pyrus calleryana
+    A.53  129798                   Honeylocust           Gleditsia triacanthos
+         DIAMETER STEMS               LOCATION_N LOCATION_C
+    A.3   6 to 12     1             Mayfair Park        432
+    A.14 12 to 18     1          0 Non-park tree       <NA>
+    A.20 18 to 24     1          0 Non-park tree       <NA>
+    A.23  6 to 12     1          0 Non-park tree       <NA>
+    A.26   0 to 6     1          0 Non-park tree       <NA>
+    A.33 18 to 24     1          0 Non-park tree       <NA>
+    A.35  6 to 12     1          0 Non-park tree       <NA>
+    A.37   0 to 6     1 East 17th Avenue Parkway        412
+    A.43   0 to 6     8          0 Non-park tree       <NA>
+    A.53   0 to 6     1                E 6th Ave        411
+                             SITE_DESIG INVENTORY_ ADDRESS             STREET
+    A.3                            Park   2/9/2021    1000           N IVY ST
+    A.14 Private Maintained Street Tree  11/7/2016    1650       N NEWPORT ST
+    A.20 Private Maintained Street Tree  11/8/2016     525      S BELLAIRE ST
+    A.23 Private Maintained Street Tree 10/29/2020    1545         N HOLLY ST
+    A.26 Private Maintained Street Tree  10/4/2019     600          N VINE ST
+    A.33 Private Maintained Street Tree 10/29/2020    1550       N GLENCOE ST
+    A.35 Private Maintained Street Tree   4/3/2018    1350        N DAHLIA ST
+    A.37                         Median   2/9/2021    5100 E 17TH AVENUE PKWY
+    A.43 Private Maintained Street Tree  11/7/2016     894       S GAYLORD ST
+    A.53                         Median   2/9/2021    6500  E 6TH AVENUE PKWY
+                NEIGHBOR    X_LONG    Y_LAT   WORKGROUP NOTABLE grade
+    A.3        Montclair -104.9206 39.73237  Operations     N/A     A
+    A.14 South Park Hill -104.9093 39.74253 Inspections     N/A     A
+    A.20         Hilltop -104.9372 39.72485 Inspections     N/A     A
+    A.23 South Park Hill -104.9224 39.74107 Inspections     N/A     A
+    A.26    Country Club -104.9622 39.72567 Inspections     N/A     A
+    A.33 South Park Hill -104.9257 39.74126 Inspections     N/A     A
+    A.35            Hale -104.9315 39.73746 Inspections     N/A     A
+    A.37 South Park Hill -104.9277 39.74368  Operations     N/A     A
+    A.43 Washington Park -104.9614 39.70028 Inspections     N/A     A
+    A.53         Hilltop -104.9113 39.72560  Operations     N/A     A
+                           geometry
+    A.3  POINT (-104.9206 39.73237)
+    A.14 POINT (-104.9093 39.74253)
+    A.20 POINT (-104.9372 39.72485)
+    A.23 POINT (-104.9224 39.74107)
+    A.26 POINT (-104.9622 39.72567)
+    A.33 POINT (-104.9257 39.74126)
+    A.35 POINT (-104.9315 39.73746)
+    A.37 POINT (-104.9277 39.74368)
+    A.43 POINT (-104.9614 39.70028)
+    A.53  POINT (-104.9113 39.7256)
+
+</details>
+<details>
+<summary>
+Click to expand/collapse R code
+</summary>
+
+``` r
+result <- process_city_inventory_data(
   "https://www.denvergov.org/media/gis/DataCatalog/traffic_accidents/shape/traffic_accidents.zip",
   "traffic_accidents.shp",
   denver_redlining,
@@ -1286,7 +1249,7 @@ result
 
     $plot
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-30-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-31-1.png)
 
 
     $layer
@@ -1457,7 +1420,7 @@ Crime <- process_city_inventory_data(
 Crime$layer
 ```
 
-    Simple feature collection with 325226 features and 21 fields
+    Simple feature collection with 325661 features and 21 fields
     Geometry type: POINT
     Dimension:     XY
     Bounding box:  xmin: -105.0566 ymin: 39.66314 xmax: -104.8827 ymax: 39.79459
@@ -1523,7 +1486,7 @@ Crime$layer
 Crime$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-31-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-32-1.png)
 
 </details>
 <details>
@@ -1545,7 +1508,7 @@ crime_cloud <- create_wordclouds_by_grade(Crime$layer, output_file = "Crime_word
 
     See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
 
-![](Crime_word_cloud_per_grade.png)
+![](../worksheets/Crime_word_cloud_per_grade.png)
 </details>
 <details>
 <summary>
@@ -1640,7 +1603,7 @@ instream_sampling_sites$layer
 instream_sampling_sites$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-33-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
 
 </details>
 <details>
@@ -1813,7 +1776,7 @@ soil_samples$layer
 soil_samples$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-34-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
 
 </details>
 <details>
@@ -1898,7 +1861,7 @@ public_art$layer
 public_art$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-35-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
 
 </details>
 <details>
@@ -2005,7 +1968,7 @@ liquor_licenses$layer
 liquor_licenses$plot
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-36-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-37-1.png)
 
 </details>
 <details>
@@ -2130,7 +2093,7 @@ Denver_police_shootings$layer
     A.97       0       0     A POINT (-104.9121 39.73199)
     A.98       0       0     A POINT (-104.9121 39.73199)
 
-![](Police%20shootings.png)
+![](../worksheets/Police%20shootings.png)
 </details>
 <details>
 <summary>
@@ -2141,5 +2104,6 @@ Click to expand/collapse R code
 Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shootings$layer, output_file = "police_shootings_word_cloud_per_grade.png",title = "police involved shooting per crime type where larger text is more frequent", max_size =35, col_select = "SHOOT_ACTI")
 ```
 
-![](police_shootings_word_cloud_per_grade.png)
 </details>
+
+![](../worksheets/police_shootings_word_cloud_per_grade.png)
