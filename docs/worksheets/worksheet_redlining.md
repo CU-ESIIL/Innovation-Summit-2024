@@ -417,6 +417,7 @@ print(denver_plot)
 
 ![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
