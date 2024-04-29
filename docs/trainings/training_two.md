@@ -1,5 +1,19 @@
 # Markdown for the Modern Researcher at ESIIL
 
+ ??? Example "Six Pillars :material-pillar: of Open Science"
+
+        **:material-pillar: Open Access Publications**
+
+        **:material-pillar: Open Data**
+
+        **:material-pillar: Open Educational Resources**
+
+        **:material-pillar: Open Methodology**
+      
+        **:material-pillar: Open Peer Review**
+
+        **:material-pillar: Open Source Software**
+
 ## Introduction
 
 - Overview of Markdown's relevance and utility in modern research.
