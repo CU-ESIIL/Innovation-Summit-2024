@@ -5,7 +5,7 @@ format: gfm
 ---
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>Read in libraries</summary>
 
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
@@ -39,7 +39,7 @@ library(purrr)
 
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>FUNCTION: Cities where HOLC data are available</summary>
 ```{r, collapse=TRUE}
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -78,8 +78,8 @@ get_city_state_list_from_redlining_data <- function() {
 
 
 
-<details>
-<summary>Click to expand/collapse R code</summary>
+<details open>
+<summary>Stream HOLC data</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
@@ -94,7 +94,7 @@ print(city_state_list)
 
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>FUNCTION: Stream HOLC data from a city</summary>
 ```{r, collapse=TRUE}
 # Function to load and filter redlining data by city
 load_city_redlining_data <- function(city_name) {
@@ -117,8 +117,8 @@ load_city_redlining_data <- function(city_name) {
 
 
 
-<details>
-<summary>Click to expand/collapse R code</summary>
+<details open>
+<summary>Stream HOLC data for Denver, CO</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 
 # Load redlining data for Denver
@@ -130,7 +130,7 @@ print(denver_redlining)
 
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>FUNCTION: Get Points-of-Interest from city of interest</summary>
 ```{r, collapse=TRUE}
 
 
@@ -269,7 +269,7 @@ get_places <- function(polygon_layer, type = "food" ) {
 </details>
 
 <details>
-<summary>Click to expand/collapse R code</summary>
+<summary>FUNCTION: Plot POI with HOLC </summary>
 ```{r, warning=FALSE, collapse=TRUE}
 
 
@@ -316,7 +316,7 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 
 
 <details open>
-<summary>Click to expand/collapse R code</summary>
+<summary>Plot Denver Redlining</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
 print(denver_plot)

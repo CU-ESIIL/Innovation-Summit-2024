@@ -3,7 +3,7 @@ Redlining
 
 <details>
 <summary>
-Click to expand/collapse R code
+Read in libraries
 </summary>
 
 ``` r
@@ -95,7 +95,7 @@ library(purrr)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Cities where HOLC data are available
 </summary>
 
 ``` r
@@ -129,9 +129,9 @@ get_city_state_list_from_redlining_data <- function() {
 ```
 
 </details>
-<details>
+<details open>
 <summary>
-Click to expand/collapse R code
+Stream HOLC data
 </summary>
 
 ``` r
@@ -158,7 +158,7 @@ print(city_state_list)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Stream HOLC data from a city
 </summary>
 
 ``` r
@@ -181,9 +181,9 @@ load_city_redlining_data <- function(city_name) {
 ```
 
 </details>
-<details>
+<details open>
 <summary>
-Click to expand/collapse R code
+Stream HOLC data for Denver, CO
 </summary>
 
 ``` r
@@ -217,7 +217,7 @@ print(denver_redlining)
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Get Points-of-Interest from city of interest
 </summary>
 
 ``` r
@@ -356,7 +356,7 @@ get_places <- function(polygon_layer, type = "food" ) {
 </details>
 <details>
 <summary>
-Click to expand/collapse R code
+FUNCTION: Plot POI with HOLC
 </summary>
 
 ``` r
@@ -401,7 +401,7 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 </details>
 <details open>
 <summary>
-Click to expand/collapse R code
+Plot Denver Redlining
 </summary>
 
 ``` r
