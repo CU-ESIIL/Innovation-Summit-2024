@@ -417,9 +417,10 @@ Plot Denver Redlining
 denver_plot <- plot_city_redlining(denver_redlining)
 ```
 
+</details>
+
 ![](../worksheets/redlining_plot.png)
 
-</details>
 <details>
 <summary>
 Click to expand/collapse R code

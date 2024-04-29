@@ -332,9 +332,11 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
 ```
-![](../worksheets/redlining_plot.png)
 
 </details>
+![](../worksheets/redlining_plot.png)
+
+
 
 <details>
 <summary>Click to expand/collapse R code</summary>
