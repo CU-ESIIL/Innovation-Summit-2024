@@ -409,8 +409,9 @@ denver_plot <- plot_city_redlining(denver_redlining)
 print(denver_plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
+![](../worksheets/worksheet_redlining_files/figure-gfm/unnamed-chunk-8-1.png)
 
+</details>
 <details>
 <summary>
 Click to expand/collapse R code
