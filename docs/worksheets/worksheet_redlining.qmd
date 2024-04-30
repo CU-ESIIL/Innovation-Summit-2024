@@ -69,25 +69,9 @@ We will begin by accessing HOLC maps from the Mapping Inequality project and ove
 - Replicate the approach used by Nardone et al. to calculate NDVI values for each HOLC neighborhood, assessing greenspace as a health-promoting resource.
 - Employ statistical methods such as propensity score matching to control for confounding variables and estimate the true impact of HOLC grades on urban greenspace.
 
-## Part 2: Integrating Environmental Data
 
-### Data Processing
-- Use satellite data from 2010 to analyze greenspace using NDVI, an index that measures the quantity of vegetation in an area.
-- Apply methods to adjust for potential confounders as described in the study, ensuring that comparisons of greenspace across HOLC grades are valid and not biased by historical or socio-demographic factors.
 
-## Part 3: Comparative Analysis and Visualization
 
-### Statistical Analysis
-- Conduct a detailed statistical analysis to compare greenspace across different HOLC grades, using techniques like Targeted Maximum Likelihood Estimation (TMLE) to assess the association between historical redlining and current greenspace levels.
-- Visualize the disparities in greenspace distribution using GIS tools, highlighting how redlining has shaped urban ecological landscapes.
-
-## Conclusion
-
-This tutorial provides tools and methodologies to explore the lingering effects of historic redlining on urban greenspace, offering insights into the intersection of urban planning, environmental justice, and public health.
-
-### References
-
-- Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. *Environmental Health Perspectives*, 129(1), 017006. DOI:10.1289/EHP7495. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7839347/pdf/ehp7495.pdf)
 
 
 <style>
@@ -675,7 +659,11 @@ processed_food_cloud <- create_wordclouds_by_grade(processed_food_match$sf, outp
 
 ![](../worksheets/processed_food_word_cloud_per_grade.png)
 
+## Part 2: Integrating Environmental Data
 
+### Data Processing
+- Use satellite data from 2010 to analyze greenspace using NDVI, an index that measures the quantity of vegetation in an area.
+- Apply methods to adjust for potential confounders as described in the study, ensuring that comparisons of greenspace across HOLC grades are valid and not biased by historical or socio-demographic factors.
 
 <details>
 <summary>Map natural habitats over each grade individually</summary>
@@ -1168,3 +1156,18 @@ Denver_police_shootings_cloud <- create_wordclouds_by_grade(Denver_police_shooti
 ![](../worksheets/police_shootings_word_cloud_per_grade.png)
 
 
+
+
+## Part 3: Comparative Analysis and Visualization
+
+### Statistical Analysis
+- Conduct a detailed statistical analysis to compare greenspace across different HOLC grades, using techniques like Targeted Maximum Likelihood Estimation (TMLE) to assess the association between historical redlining and current greenspace levels.
+- Visualize the disparities in greenspace distribution using GIS tools, highlighting how redlining has shaped urban ecological landscapes.
+
+## Conclusion
+
+This tutorial provides tools and methodologies to explore the lingering effects of historic redlining on urban greenspace, offering insights into the intersection of urban planning, environmental justice, and public health.
+
+### References
+
+- Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. *Environmental Health Perspectives*, 129(1), 017006. DOI:10.1289/EHP7495. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7839347/pdf/ehp7495.pdf)
