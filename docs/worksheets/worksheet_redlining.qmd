@@ -11,7 +11,8 @@ img {
 }
 
 details summary {
-  color: grey;
+  color: black;
+  background-color: white;
 }
 
 details[open] summary {
@@ -55,7 +56,7 @@ library(purrr)
 
 
 <details>
-<summary>FUNCTION: Cities where HOLC data are available</summary>
+<summary>FUNCTION: List cities where HOLC data are available</summary>
 ```{r, collapse=TRUE}
 # Function to get a list of unique cities and states from the redlining data
 get_city_state_list_from_redlining_data <- function() {
@@ -95,12 +96,12 @@ get_city_state_list_from_redlining_data <- function() {
 
 
 <details open>
-<summary>Stream available cities</summary>
+<summary>Stream list of available HOLC cities</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
 city_state_list <- get_city_state_list_from_redlining_data()
-print(city_state_list)
 
+knitr::kable(city_state_list, format = "markdown")
 ```
 </details>
 
@@ -138,6 +139,7 @@ load_city_redlining_data <- function(city_name) {
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
+knitr::kable(denver_redlining, format = "markdown")
 ```
 ```{r, echo=FALSE, cache=TRUE}
 library(knitr)
