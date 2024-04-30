@@ -41,12 +41,13 @@ of community infrastructure.
 neighborhoods. The red swaths identify each area with large
 African-American populations that were deemed “less safe.”
 
+<div>
 
 [![](../assets/redlining/georectified-thumbnail.png)](https://storymaps.arcgis.com/stories/0f58d49c566b486482b3e64e9e5f7ac9)
 
 ArcGIS Story Map
 
-
+</div>
 
 **Explore the Story Map:** Click on the image above to explore the
 interactive story map about \[subject of the story map\].
@@ -72,13 +73,13 @@ environmental policies, these communities strive to increase their
 resilience against both historical inequities and environmental
 challenges.
 
-
+<div>
 
 [![](https://img.youtube.com/vi/O5FBJyqfoLM/hqdefault.jpg)](https://youtu.be/O5FBJyqfoLM)
 
 Watch the video
 
-
+</div>
 
 **Video Title:** Exploring the Impacts of Historical Redlining on Urban
 Development  
