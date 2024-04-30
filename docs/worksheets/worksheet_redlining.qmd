@@ -24,6 +24,7 @@ Maps serve as powerful tools beyond navigation; they communicate and enforce con
 
 [![ArcGIS Story Map](../assets/redlining/georectified-thumbnail.png)](https://storymaps.arcgis.com/stories/0f58d49c566b486482b3e64e9e5f7ac9)
 
+
 **Explore the Story Map:** Click on the image above to explore the interactive story map about [subject of the story map].
 
 
@@ -33,7 +34,9 @@ The legacy of redlining presents both a challenge and an opportunity for resilie
 
 Despite these adversities, urban communities have continually demonstrated remarkable resilience. Adaptation strategies, such as community-led green initiatives, urban agriculture, and grassroots activism, have emerged as responses to these systemic disturbances. By enhancing green infrastructure and advocating for equitable environmental policies, these communities strive to increase their resilience against both historical inequities and environmental challenges.
 
+
 [![Watch the video](https://img.youtube.com/vi/O5FBJyqfoLM/hqdefault.jpg)](https://youtu.be/O5FBJyqfoLM)
+
 
 **Video Title:** Exploring the Impacts of Historical Redlining on Urban Development  
 **Description:** Click on the image above to watch a video that delves into the consequences of historical redlining and its ongoing impact on urban environments. This educational piece offers insights into how such discriminatory practices have shaped cities and what can be learned from them.
