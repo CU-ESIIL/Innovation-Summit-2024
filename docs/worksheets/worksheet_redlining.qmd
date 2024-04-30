@@ -95,7 +95,7 @@ get_city_state_list_from_redlining_data <- function() {
 
 
 
-<details open>
+<details>
 <summary>Stream list of available HOLC cities</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 #Retrieve the list of cities and states
@@ -134,37 +134,16 @@ load_city_redlining_data <- function(city_name) {
 
 
 
-<details open>
+<details>
 <summary>Stream HOLC data for Denver, CO</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 # Load redlining data for Denver
 denver_redlining <- load_city_redlining_data("Denver")
 knitr::kable(denver_redlining, format = "markdown")
 ```
-```{r, echo=FALSE, cache=TRUE}
-library(knitr)
-library(kableExtra)
-
-
-kable_output <- kable(head(denver_redlining), format = "html", table.attr = "style='width:100%'") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-
-# Save the HTML table to a file
-html_file <- "table.html"
-writeLines(as.character(kable_output), con = html_file)
-
-# Use webshot to take a screenshot of the HTML file
-image_file <- "table.png"
-webshot2::webshot(url = html_file, file = image_file, vwidth = 1000, vheight = 500)
-
-
-
-```
-
 </details>
 
-![Styled Table](../docs/worksheets/table.html)
-![Styled Table](../docs/worksheets/table.png)
+
 
 <details>
 <summary>FUNCTION: Get Points-of-Interest from city of interest</summary>
@@ -306,7 +285,7 @@ get_places <- function(polygon_layer, type = "food" ) {
 </details>
 
 <details>
-<summary>FUNCTION: Plot POI with HOLC </summary>
+<summary>FUNCTION: Plot POI over HOLC grades </summary>
 ```{r, warning=FALSE, collapse=TRUE}
 
 
@@ -352,7 +331,7 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 </details>
 
 
-<details open>
+<details>
 <summary>Plot Denver Redlining</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 denver_plot <- plot_city_redlining(denver_redlining)
@@ -384,7 +363,7 @@ government_buildings <- get_places(denver_redlining, type="government_buildings"
 
 
 <details>
-<summary>FUNCTION: Plot the 4 HOLC grades individually</summary>
+<summary>FUNCTION: Plot the HOLC grades individually</summary>
 ```{r, collapse=TRUE}
 split_plot <- function(sf_data, roads, rivers) {
   # Filter for grades A, B, C, and D
@@ -413,6 +392,7 @@ split_plot <- function(sf_data, roads, rivers) {
           panel.grid.major = element_blank(),  # Remove major grid lines
           panel.grid.minor = element_blank())  
 
+  ggsave(plot, filename = "HOLC_grades_individually.png", width = 10, height = 6, units = "in", dpi = 1200)
   return(plot)
 }
 ```
@@ -423,10 +403,10 @@ split_plot <- function(sf_data, roads, rivers) {
 <summary>Plot 4 HOLC grades individually</summary>
 ```{r, cache=TRUE, warning=FALSE, message=FALSE}
 plot_row <- split_plot(denver_redlining, roads, rivers)
-print(plot_row)
+
 ```
 </details>
-
+![](../worksheets/HOLC_grades_individually.png)
 
 <details>
 <summary>FUNCTION: Map an amenity over each grade individually</summary>

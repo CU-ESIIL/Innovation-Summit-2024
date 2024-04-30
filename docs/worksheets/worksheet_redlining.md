@@ -143,7 +143,7 @@ get_city_state_list_from_redlining_data <- function() {
 ```
 
 </details>
-<details open>
+<details>
 <summary>
 Stream list of available HOLC cities
 </summary>
@@ -498,7 +498,7 @@ load_city_redlining_data <- function(city_name) {
 ```
 
 </details>
-<details open>
+<details>
 <summary>
 Stream HOLC data for Denver, CO
 </summary>
@@ -828,13 +828,7 @@ knitr::kable(denver_redlining, format = "markdown")
 |   11171 | Denver | CO    | TRUE        | Industrial           | NA    | Industrial | FALSE | FALSE | TRUE  | \#000000 | 08031000702 | G0800310000702 | 8.928204e+02 |   0.00063 | MULTIPOLYGON (((-105.0252 3… |
 |   11171 | Denver | CO    | TRUE        | Industrial           | NA    | Industrial | FALSE | FALSE | TRUE  | \#000000 | 08031002100 | G0800310002100 | 1.173355e+06 |   0.30411 | MULTIPOLYGON (((-104.992 39… |
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-6-1.png)
-
 </details>
-
-![Styled Table](../docs/worksheets/table.html) ![Styled
-Table](../docs/worksheets/table.png)
-
 <details>
 <summary>
 FUNCTION: Get Points-of-Interest from city of interest
@@ -976,7 +970,7 @@ get_places <- function(polygon_layer, type = "food" ) {
 </details>
 <details>
 <summary>
-FUNCTION: Plot POI with HOLC
+FUNCTION: Plot POI over HOLC grades
 </summary>
 
 ``` r
@@ -1019,7 +1013,7 @@ plot_city_redlining <- function(redlining_data, filename = "redlining_plot.png")
 ```
 
 </details>
-<details open>
+<details>
 <summary>
 Plot Denver Redlining
 </summary>
@@ -1056,7 +1050,7 @@ government_buildings <- get_places(denver_redlining, type="government_buildings"
 </details>
 <details>
 <summary>
-FUNCTION: Plot the 4 HOLC grades individually
+FUNCTION: Plot the HOLC grades individually
 </summary>
 
 ``` r
@@ -1087,6 +1081,7 @@ split_plot <- function(sf_data, roads, rivers) {
           panel.grid.major = element_blank(),  # Remove major grid lines
           panel.grid.minor = element_blank())  
 
+  ggsave(plot, filename = "HOLC_grades_individually.png", width = 10, height = 6, units = "in", dpi = 1200)
   return(plot)
 }
 ```
@@ -1099,12 +1094,12 @@ Plot 4 HOLC grades individually
 
 ``` r
 plot_row <- split_plot(denver_redlining, roads, rivers)
-print(plot_row)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-12-1.png)
-
 </details>
+
+![](../worksheets/HOLC_grades_individually.png)
+
 <details>
 <summary>
 FUNCTION: Map an amenity over each grade individually
@@ -1244,7 +1239,7 @@ Map food over each grade individually
  print(food_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-15-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-14-1.png)
 
 </details>
 <details>
@@ -1283,7 +1278,7 @@ Map processed food over each grade individually
  print(processed_food_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-17-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-16-1.png)
 
 </details>
 <details>
@@ -1309,7 +1304,7 @@ Map natural habitats over each grade individually
  print(natural_habitats_match$plot)
 ```
 
-![](worksheet_redlining_files/figure-gfm/unnamed-chunk-19-1.png)
+![](worksheet_redlining_files/figure-gfm/unnamed-chunk-18-1.png)
 
 </details>
 
@@ -1686,9 +1681,6 @@ result <- process_city_inventory_data(
   variable_label= 'Traffic accidents density'
 )
 ```
-
-    Warning: `stat(density)` was deprecated in ggplot2 3.4.0.
-    ℹ Please use `after_stat(density)` instead.
 
 </details>
 
