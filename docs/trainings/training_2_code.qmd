@@ -3,6 +3,7 @@ title: "Pre-summit training"
 format: gfm
 ---
 
+# Here is a header
 
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
@@ -20,7 +21,6 @@ library(gdalcubes)
 library(colorspace)
 library(terra)
 library(tidyterra)
-library(basemapR)
 library(tidytext)
 library(ggwordcloud)
 library(osmextract)
@@ -31,8 +31,14 @@ library(glue)
 
 library(purrr)
 ```
-
-
+```{r}
+require(terra)
+require(tictoc)
+system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap") #move the data first!!
+tictoc::tic()
+treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
+terra::plot(treemap)
+```
 
 ```{r}
  address <- "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip"
@@ -40,6 +46,14 @@ inner_file <- "tree_inventory.shp"
  full_path <- glue("/vsizip/vsicurl/{address}/{inner_file}")
   shape_data <- st_read(full_path, quiet = TRUE) |> st_as_sf()
   shape_data
+```
+
+```{r}
+redlining_data <- read_sf(url)
+  city_redline <- redlining_data |>
+    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
+  
+city_redline
 ```
 
 
@@ -57,15 +71,6 @@ city_state_df
 
 ```
 
-
-
-```{r}
-redlining_data <- read_sf(url)
-  city_redline <- redlining_data |>
-    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
-  
-city_redline
-```
 
 
 
