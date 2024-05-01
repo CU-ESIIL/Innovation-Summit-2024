@@ -38,7 +38,7 @@ May 15: 9am-5pm MT
 
 May 16: 9am-12pm MT
 
-## RSVP for Optional Activities
+## RSVP for Optional May 13th Activities
 Are you arriving early and eager to explore Boulder? Join one of our Summit social events from 1:30-3:30 pm on Monday, May 13th. 
 
 **Explore Pearl Street:** In the heart of Boulder lies Pearl Street, a bustling thoroughfare adorned with restaurants, stores, and people-watching spots. This lively street has been the pulse of Boulder for over forty years. At the core of the historic downtown area, both locals and tourists leisurely walk along the brick-paved pedestrian path, relax on sunlit benches and restaurant terraces, indulge in shopping, and pause to enjoy the unique street performers that Boulder offers. While four blocks of Pearl Street are car-free, the vibrant atmosphere extends for blocks in every direction.
