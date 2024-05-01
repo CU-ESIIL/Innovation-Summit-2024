@@ -22,7 +22,7 @@ nav:
            - Cyverse hacks: resources/cyverse_hacks.md
        - Feet on the ground: 
            - Startup procedure: resources/cyverse_startup.md
-           - Move and Save data: resources/cyverse_move_and_save_data.md
+           - Move and Save data: data-library/move-data-to-instance.md
            - Stream data: data-library/stac_mount_save.md
            - Stream data (light): data-library/stac_simple.md
            - Shutdown procedure: resources/cyverse_shutdown.md
