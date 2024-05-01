@@ -61,7 +61,7 @@ The Summit will give participants an opportunity to collaborate with each other 
 Access wireless service on campus by selecting UCB Guest Wireless from your available Wi-Fi network options and accepting the terms and conditions upon opening your web browser. You will be prompted to re-accept these terms and conditions periodically. If you encounter difficulty accessing the Internet, call 303-735-HELP (4357) or email help@colorado.edu for assistance during their business hours. Check firewalls or security settings on your computer that could possibly complicate accessing the campus Wi-Fi system before you arrive.
 
 ### Parking
-Permits are required to park on CU Boulder campus. For any non-CU employees/students who will need to park a vehicle on campus, please email esiil@colorado for parking pass information. The nearest to the SEEC building is Lot 556 (Campus Map).
+Permits are required to park on CU Boulder campus. For any non-CU employees/students who will need to park a vehicle on campus, please complete this [form](https://forms.gle/Py9L17c74tjNwK3i9) to receive an email with event parking permit instructions, map, and voucher code for lot 556. Once the email is received, follow the permit instructions to claim your $0 permit. Guests only need to claim one permit for the week as it will last from 05/13-05/16. 
 
 ## Hotels 
 **[Fairfield Inn and Suites Boulder](https://www.marriott.com/en-us/hotels/vboff-fairfield-inn-and-suites-boulder/overview/?gclid=CjwKCAiArfauBhApEiwAeoB7qMAiU5fx2MLcvIu6_IzEGkfX_GXVtOJQkOGWaU63o8dVHRqDfwUKChoCQhUQAvD_BwE&gclsrc=aw.ds&cid=PAI_GLB0004YXD_GLE000BIM5_GLF000OETA)**
