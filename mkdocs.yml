@@ -22,8 +22,8 @@ nav:
            - Cyverse hacks: resources/cyverse_hacks.md
        - Feet on the ground: 
            - Startup procedure: resources/cyverse_startup.md
-           - Move and Save: resources/cyverse_move_and_save_data.md
-           - Stream: resources/cyverse_stream_data.md
+           - Move and Save data: resources/cyverse_move_and_save_data.md
+           - Stream data: resources/cyverse_stream_data.md
            - Shutdown procedure: resources/cyverse_shutdown.md
        - Hand in hand: trainings/training_three.md
   - Additional resources:
