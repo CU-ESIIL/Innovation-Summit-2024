@@ -26,15 +26,19 @@ nav:
            - Stream data: resources/cyverse_stream_data.md
            - Shutdown procedure: resources/cyverse_shutdown.md
        - Hand in hand: trainings/training_three.md
-  - Additional resources:
-       - Code of Conduct: additional-resources/code-of-conduct.md
-       - Cyverse hacks: additional-resources/cyverse_hacks.md
-       - Useful links: additional-resources/useful_links.md
-  - Group worksheets:
+  - Group activities:
        - Day 1: 
            - Explore an example (student edition): worksheets/worksheet_0.md
            - Explore an example (teacher edition): worksheets/worksheet_redlining.md
            - Make a plan: worksheets/worksheet_2.md
+      - Day 2: 
+           - Innovate as a team: worksheets/worksheet_3.md
+      - Day 3: 
+           - Produce a deliverable: worksheets/worksheet_4.md
+  - Additional resources:
+       - Code of Conduct: additional-resources/code-of-conduct.md
+       - Cyverse hacks: additional-resources/cyverse_hacks.md
+       - Useful links: additional-resources/useful_links.md
 
 # Configuration
 theme:
