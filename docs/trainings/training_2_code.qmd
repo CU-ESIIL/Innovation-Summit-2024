@@ -42,6 +42,13 @@ inner_file <- "tree_inventory.shp"
   shape_data
 ```
 
+```{r}
+redlining_data <- read_sf(url)
+  city_redline <- redlining_data |>
+    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
+  
+city_redline
+```
 
 ```{r}
  url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
@@ -59,13 +66,7 @@ city_state_df
 
 
 
-```{r}
-redlining_data <- read_sf(url)
-  city_redline <- redlining_data |>
-    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
-  
-city_redline
-```
+
 
 
 
