@@ -35,6 +35,8 @@ library(glue)
 library(purrr)
 ```
 
+This copies data into local storage (not persistent data-store).
+
 ```{r message=FALSE}
 require(terra)
 require(tictoc)
@@ -47,7 +49,7 @@ terra::plot(treemap)
 tictoc::toc()
 ```
 
-
+Notice how glue sets up stream.
 
 ```{r}
  address <- "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip"
