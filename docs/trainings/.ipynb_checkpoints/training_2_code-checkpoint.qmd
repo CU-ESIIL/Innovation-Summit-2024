@@ -1,0 +1,215 @@
+---
+title: "Pre-summit training"
+format: gfm
+---
+
+
+```{r, collapse=TRUE}
+if (!requireNamespace("tidytext", quietly = TRUE)) {
+  install.packages("tidytext")
+}
+library(tidytext)
+library(sf)
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+library(rstac)
+library(gdalcubes)
+library(gdalUtils)
+library(gdalcubes)
+library(colorspace)
+library(terra)
+library(tidyterra)
+library(basemapR)
+library(tidytext)
+library(ggwordcloud)
+library(osmextract)
+library(sf)
+library(ggplot2)
+library(ggthemes)
+library(glue)
+
+library(purrr)
+```
+
+
+
+```{r}
+ address <- "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip"
+inner_file <- "tree_inventory.shp"
+ full_path <- glue("/vsizip/vsicurl/{address}/{inner_file}")
+  shape_data <- st_read(full_path, quiet = TRUE) |> st_as_sf()
+  shape_data
+```
+
+
+```{r}
+ url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
+
+city_state_df <- redlining_data |>
+    select(city, state) |>
+    st_set_geometry(NULL) |>  # Drop the geometry to avoid issues with invalid shapes
+    distinct(city, state) |>
+    arrange(state, city )  # Arrange the list alphabetically by state, then by city
+
+city_state_df 
+
+
+```
+
+
+
+```{r}
+redlining_data <- read_sf(url)
+  city_redline <- redlining_data |>
+    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
+  
+city_redline
+```
+
+
+
+```{r}
+bbox_here <- st_bbox(city_redline) |>
+    st_as_sfc()
+
+
+ 
+my_layer <- "lines"
+my_query <- "SELECT * FROM lines WHERE (
+             highway IN ('motorway', 'trunk', 'primary', 'secondary', 'tertiary') )"
+title <- "Major roads"
+   
+places <- oe_get(
+      place = bbox_here,
+      layer = my_layer,  # Adjusted layer; change as per actual data availability
+      query = my_query,
+      quiet = TRUE
+    )
+    
+places <- st_make_valid(places)
+    
+    # Crop the data to the bounding box
+roads <- st_crop(places, bbox_here)
+    
+roads
+  
+    
+my_layer <- "lines"
+my_query <- "SELECT * FROM lines WHERE (
+             waterway IN ('river'))"
+title <- "Major rivers"
+    
+places <- oe_get(
+      place = bbox_here,
+      layer = my_layer,  # Adjusted layer; change as per actual data availability
+      query = my_query,
+      quiet = TRUE
+    )
+    
+places <- st_make_valid(places)
+    
+    # Crop the data to the bounding box
+rivers <- st_crop(places, bbox_here)
+    
+rivers
+```
+
+
+```{r}
+# Colors for the grades
+  colors <- c("#76a865", "#7cb5bd", "#ffff00", "#d9838d")
+
+  # Plot the data using ggplot2
+  plot <- ggplot() +
+    geom_sf(data = roads, lwd = 0.1) +
+    geom_sf(data = rivers, color = "blue", alpha = 0.5, lwd = 1.1) +
+    geom_sf(data = city_redline, aes(fill = grade), alpha = 0.5) +
+    theme_tufte() +
+    scale_fill_manual(values = colors) +
+    labs(fill = 'HOLC Categories') +
+    theme(
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.background = element_rect(fill = "white", color = NA),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      legend.position = "right"
+    )
+  
+  # Save the plot as a high-resolution PNG file
+  ggsave("Denver_redline.png", plot, width = 10, height = 8, units = "in", dpi = 600)
+  
+  plot
+```
+
+
+
+
+```{r, collapse=TRUE}
+
+process_satellite_data <- function(polygon_layer, start_date, end_date, assets, fps = 1, output_file = "anim.gif") {
+  # Record start time
+  start_time <- Sys.time()
+  
+  # Calculate the bbox from the polygon layer
+  bbox <- st_bbox(polygon_layer)
+  
+  s = stac("https://earth-search.aws.element84.com/v0")
+
+  
+  # Use stacR to search for Sentinel-2 images within the bbox and date range
+  items = s |> stac_search(
+    collections = "sentinel-s2-l2a-cogs",
+    bbox = c(bbox["xmin"], bbox["ymin"], bbox["xmax"], bbox["ymax"]),
+    datetime = paste(start_date, end_date, sep = "/"),
+    limit = 500
+  ) %>% 
+  post_request()
+  
+  # Define mask for Sentinel-2 image quality
+  #S2.mask <- image_mask("SCL", values = c(3, 8, 9))
+  
+  # Create a collection of images filtering by cloud cover
+  col <- stac_image_collection(items$features, asset_names = assets, property_filter = function(x) {x[["eo:cloud_cover"]] < 30})
+  
+  # Define a view for processing the data
+  v <- cube_view(srs = "EPSG:4326", 
+                 extent = list(t0 = start_date, t1 = end_date,
+                               left = bbox["xmin"], right = bbox["xmax"], 
+                               top = bbox["ymax"], bottom = bbox["ymin"]),
+                 dx = 0.001, dy = 0.001, dt = "P1M", 
+                 aggregation = "median", resampling = "bilinear")
+  
+  # Calculate NDVI and create an animation
+  ndvi_col <- function(n) {
+    rev(sequential_hcl(n, "Green-Yellow"))
+  }
+  
+  #raster_cube(col, v, mask = S2.mask) %>%
+  raster_cube(col, v) %>%
+    select_bands(c("B04", "B08")) %>%
+    apply_pixel("(B08-B04)/(B08+B04)", "NDVI") %>%
+    gdalcubes::animate(col = ndvi_col, zlim = c(-0.2, 1), key.pos = 1, save_as = output_file, fps = fps)
+  
+  # Calculate processing time
+  end_time <- Sys.time()
+  processing_time <- difftime(end_time, start_time)
+  
+  # Return processing time
+  return(processing_time)
+}
+
+
+```
+
+
+
+```{r, cache=TRUE, warning=FALSE, message=FALSE}
+processing_time <- process_satellite_data(city_redline, "2022-05-31", "2023-05-31", c("B04", "B08"))
+
+```
+
+![](anim.gif)
+
+
+
