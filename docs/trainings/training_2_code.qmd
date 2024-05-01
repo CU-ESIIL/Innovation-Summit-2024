@@ -3,6 +3,7 @@ title: "Pre-summit training"
 format: gfm
 ---
 
+# My section
 
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
@@ -20,7 +21,7 @@ library(gdalcubes)
 library(colorspace)
 library(terra)
 library(tidyterra)
-library(basemapR)
+#library(basemapR)
 library(tidytext)
 library(ggwordcloud)
 library(osmextract)
