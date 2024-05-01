@@ -38,6 +38,18 @@ May 15: 9am-5pm MT
 
 May 16: 9am-12pm MT
 
+## RSVP for Optional Activities
+Are you arriving early and eager to explore Boulder? Join one of our Summit social events from 1:30-3:30 pm on Monday, May 13th. 
+
+**Explore Pearl Street:** In the heart of Boulder lies Pearl Street, a bustling thoroughfare adorned with restaurants, stores, and people-watching spots. This lively street has been the pulse of Boulder for over forty years. At the core of the historic downtown area, both locals and tourists leisurely walk along the brick-paved pedestrian path, relax on sunlit benches and restaurant terraces, indulge in shopping, and pause to enjoy the unique street performers that Boulder offers. While four blocks of Pearl Street are car-free, the vibrant atmosphere extends for blocks in every direction.
+
+**Walk Through Nature:** The Red Rocks Trail in Boulder is a captivating spot offering an inspiring short hike. Take the outer perimeter trail to create a roughly 1-mile loop around the sandstone formations that stand out in the park's center. For more adventure, extend your hike by 0.8 miles on the Anemone trail to the west, climbing an additional 400 feet to reach a hilltop with panoramic views of Boulder City, Red Rocks Park, and the Colorado Front Range.
+
+**Tour NEON:** Learn all about NEON! Located a 15-minute/0.5 mi walk from CU Boulder’s east campus is the National Science Foundation's National Ecological Observatory Network (NEON) headquarters. This continental-scale observatory network is operated by Battelle and designed to collect long-term open access ecological data to understand how U.S. ecosystems are changing. Join us on this inside tour of NEON, to learn about its past, present, and future endeavors.
+
+At 4 pm, ESIIL will host a **social hour** at the SEEC Cafe (4001 Discovery Drive, Boulder CO). Register for the event, mingle with other Summit attendees and enjoy some finger food and non-alcoholic drinks. 
+
+**[RSVP HERE](https://docs.google.com/forms/d/e/1FAIpQLScRBSXTCmWLbVAV55TB4VqoCFMbDsDUm3NtAbsY3EbVeUyI-w/viewform)** by May 8th. We will email further details to those who sign up.
 ## Join our Slack Workspace
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ). 
 ## Venue Information
