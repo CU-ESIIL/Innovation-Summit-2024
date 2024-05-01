@@ -20,7 +20,7 @@ library(gdalcubes)
 library(colorspace)
 library(terra)
 library(tidyterra)
-# library(basemapR)
+library(basemapR)
 library(tidytext)
 library(ggwordcloud)
 library(osmextract)
@@ -32,26 +32,7 @@ library(glue)
 library(purrr)
 ```
 
-```{r}
 
-# compare streaming data vs. copying data over to the ephemeral computer
-
-require(terra)
-require(tictoc)
-tictoc::tic()
-treemap <- terra::rast("~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap/treemap2016_southernrockies.tif")
-terra::plot(treemap)
-tictoc::toc()
-
-
-system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap") #move the data first!!
-tictoc::tic()
-treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
-terra::plot(treemap)
-tictoc::toc()
-```
-
-Streaming data instead of downloading 
 
 ```{r}
  address <- "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip"
