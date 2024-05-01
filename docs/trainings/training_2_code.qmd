@@ -5,6 +5,8 @@ format: gfm
 
 # My section
 
+And some blah blah
+
 ```{r, collapse=TRUE}
 if (!requireNamespace("tidytext", quietly = TRUE)) {
   install.packages("tidytext")
