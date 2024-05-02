@@ -26,7 +26,7 @@ nav:
            - Stream data: data-library/stac_mount_save.md
            - Stream data (light): data-library/stac_simple.md
            - Shutdown procedure: resources/cyverse_shutdown.md
-       - Hand in hand: trainings/training_three.md
+       - Voices in Concert: trainings/training_three.md
   - Group activities:
        - Day 1: 
            - Explore an example (student edition): worksheets/worksheet_0.md
