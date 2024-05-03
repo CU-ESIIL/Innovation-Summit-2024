@@ -1,5 +1,6 @@
 # Pre-Summit Virtual Meetings
 
+
 There are three virtual meetings associated with the 2024 ESIIL Summit.
 ## Virtual Meeting 1
 
@@ -21,7 +22,9 @@ Date:  May 1, 2024
 
 Time: 12:00-2:00 PM MST
 
+
 **Virtual Meeting 2 Recording**: [https://www.youtube.com/watch?v=213C7faZVFQ](https://www.youtube.com/watch?v=213C7faZVFQ)
+
 
 
 ## Virtual Meeting 3
