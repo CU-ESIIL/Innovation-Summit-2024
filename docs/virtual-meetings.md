@@ -35,4 +35,4 @@ Date: May 6, 2024
 
 Time: 9-11 AM MST
 
-Zoom Link: [https://cuboulder.zoom.us/j/99754742074](https://cuboulder.zoom.us/j/99754742074)
+**Virtual Meeting 3 Recording**: [https://youtu.be/Ea21i3do9sA](https://youtu.be/Ea21i3do9sA)
