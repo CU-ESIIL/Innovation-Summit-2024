@@ -32,27 +32,11 @@ The Summit Assets are provided “as is” without warranty of any kind, either 
 ## 5.3 Restrictions
 You agree not to access or use the Summit Assets in a manner that may interfere with any other participants’ or users’ use of such assets, unless provided with express written consent by the University. Your access to and use of the Summit Assets may be limited, throttled, or terminated at any time at the sole discretion of the University.
 
-# Intellectual Property
-
-For purposes of this Agreement, “Intellectual Property” includes all copyright, patent, trademark, trade secret and other intellectual property rights.
-
-## 6.1 Solution Publication
-You agree to make Your Solution publicly available in GitHub under the MIT open-source license within five (5) months from the end of the Summit.
-
-## 6.2 Government Rights
-In consideration of the funding provided by NSF for the Summit, You hereby grant and agree to grant to the U.S. Government (i) a nonexclusive, non-transferable, irrevocable, royalty-free license to exercise or have exercised for or on behalf of the U.S. throughout the world all the exclusive rights provided by copyright in any copyrightable intellectual property that You create during the Summit and (ii) a nonexclusive, non-transferable, irrevocable, paid-up license to practice, or have practiced for or on its behalf, any invention created by You during the Summit throughout the world.
-
-## 6.3 NSF Agreement and Invention Ownership
-You acknowledge that the Summit is subject to NSF’s Cooperative Agreement Terms and Conditions effective May 12, 2023. As such, the U.S. Government may be entitled to own any invention that You create during the Summit as further outlined within 37 CFR 401 and the NSF Proposal & Award Policies and Procedures Guide. In such event, You agree to assign any invention created by You during the Summit to the U.S. Government and to reasonably cooperate with the University and NSF to accomplish the same.
-
-## 6.4 Representations and Warranties
-You represent and warrant that You are legally entitled to grant the above licenses and other intellectual property rights as outlined in Sections 6.1, 6.2, and 6.3. If You are an individual, and if Your employer(s) and/or another third party has rights to Intellectual Property that You create that includes Your Solution, You represent that You have received permission to participate in the Summit on behalf of that employer or third party and that Your employer or the third party has waived such rights for Your contributions.
-
-## 6.5 Originality and Third-Party Materials
+## 5.4 Originality and Third-Party Materials
 You represent that Your Solution is Your original creation. If you obtain permission under Section 6.5 to include third-party materials, You represent that Your Solution includes complete details of any third-party license or other restriction (including, but not limited to, related patents and trademarks) of which You are aware and which are associated with any part of Your Solution. You represent and warrant that You will not submit any materials to the University that You know or believe to have components that are malicious or harmful. You represent that You will perform a reasonable amount of due diligence in order to be properly informed of third-party licenses, infringing materials, or harmful content associated with any part of Your Solution.
 
-## 6.6 Notification of Changes
-You agree to notify the University of any facts or circumstances of which You become aware that would make these representations inaccurate in any respect. You agree to notify the University of any administrative or court proceeding which involve Your Solution.
+## 5.5 Work Publication
+You agree to make Your Work publicly available in GitHub under the MIT open-source license within five (5) months from the end of the Summit.
 
 # Limitation of Liability
 
