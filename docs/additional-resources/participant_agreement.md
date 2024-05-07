@@ -51,10 +51,7 @@ You represent and warrant that You are legally entitled to grant the above licen
 ## 6.5 Originality and Third-Party Materials
 You represent that Your Solution is Your original creation. If you obtain permission under Section 6.5 to include third-party materials, You represent that Your Solution includes complete details of any third-party license or other restriction (including, but not limited to, related patents and trademarks) of which You are aware and which are associated with any part of Your Solution. You represent and warrant that You will not submit any materials to the University that You know or believe to have components that are malicious or harmful. You represent that You will perform a reasonable amount of due diligence in order to be properly informed of third-party licenses, infringing materials, or harmful content associated with any part of Your Solution.
 
-## 6.6 Submission of External Work
-Should You wish to submit work that is not Your original creation during the Summit (and that is not a Summit Asset), You may ask for permission from the University to incorporate such work. To request such permission, identify the complete details of the materials you wish to use, including any licenses or other restrictions (including, but not limited to, related patents, trademarks, and license agreements) of which You are personally aware. Request for permission to add materials created outside of the Codefest must be submitted in advance of the SUmmit to: Ty Tuff; [ty.tuff@colorado.edu](mailto:ty.tuff@colorado.edu).
-
-## 6.7 Notification of Changes
+## 6.6 Notification of Changes
 You agree to notify the University of any facts or circumstances of which You become aware that would make these representations inaccurate in any respect. You agree to notify the University of any administrative or court proceeding which involve Your Solution.
 
 # Limitation of Liability
