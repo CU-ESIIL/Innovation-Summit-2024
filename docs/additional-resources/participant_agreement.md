@@ -16,21 +16,21 @@ You will join a team of environmental scientists, data experts, and coders to ex
 
 ## Representations and Warranties
 
-By and through Your participation in the Codefest, You represent and warrant the following:
+By and through Your participation in the Summit, You represent and warrant the following:
 
 - You have read, understand, and agree to abide by the Code of Conduct and Respectful Inclusive Collaboration Guidelines for the 2024 ESIIL Innovation Summit (“Code of Conduct”).
-- Any decisions concerning the Code of Conduct, Official Rules, or any other matter relating to this Codefest by the University is final and binding on all Participants.
+- Any decisions concerning the Code of Conduct, Official Rules, or any other matter relating to this Summit by the University is final and binding on all Participants.
 
-# Codefest Assets
+# Summit Assets
 
 ## 5.1 Access and Use
 By participating in the Innovation Summit, You may receive access to certain datasets, webinars, and/or other copyrighted materials (collectively, the “Summit Assets”). You agree to follow all licenses, restrictions, and other instructions provided to You with the SUmmit Assets.
 
 ## 5.2 Disclaimer
-The Summit Assets are provided “as is” without warranty of any kind, either express or implied, including, without limitation, any implied warranties of merchantability and fitness for a particular purpose. Without limiting the foregoing, the University does not warrant that the Materials will be suitable for Your Solution or that the operation or supply of the Codefest Assets will be uninterrupted or error free.
+The Summit Assets are provided “as is” without warranty of any kind, either express or implied, including, without limitation, any implied warranties of merchantability and fitness for a particular purpose. Without limiting the foregoing, the University does not warrant that the Materials will be suitable for Your Solution or that the operation or supply of the Summit Assets will be uninterrupted or error free.
 
 ## 5.3 Restrictions
-You agree not to access or use the Summit Assets in a manner that may interfere with any other participants’ or users’ use of such assets, unless provided with express written consent by the University. Your access to and use of the Codefest Assets may be limited, throttled, or terminated at any time at the sole discretion of the University.
+You agree not to access or use the Summit Assets in a manner that may interfere with any other participants’ or users’ use of such assets, unless provided with express written consent by the University. Your access to and use of the Summit Assets may be limited, throttled, or terminated at any time at the sole discretion of the University.
 
 # Intellectual Property
 
@@ -40,13 +40,13 @@ For purposes of this Agreement, “Intellectual Property” includes all copyrig
 You agree to make Your Solution publicly available in GitHub under the MIT open-source license within five (5) months from the end of the Summit.
 
 ## 6.2 Government Rights
-In consideration of the funding provided by NSF for the Summit, You hereby grant and agree to grant to the U.S. Government (i) a nonexclusive, non-transferable, irrevocable, royalty-free license to exercise or have exercised for or on behalf of the U.S. throughout the world all the exclusive rights provided by copyright in any copyrightable intellectual property that You create during the Codefest and (ii) a nonexclusive, non-transferable, irrevocable, paid-up license to practice, or have practiced for or on its behalf, any invention created by You during the Codefest throughout the world.
+In consideration of the funding provided by NSF for the Summit, You hereby grant and agree to grant to the U.S. Government (i) a nonexclusive, non-transferable, irrevocable, royalty-free license to exercise or have exercised for or on behalf of the U.S. throughout the world all the exclusive rights provided by copyright in any copyrightable intellectual property that You create during the Summit and (ii) a nonexclusive, non-transferable, irrevocable, paid-up license to practice, or have practiced for or on its behalf, any invention created by You during the Summit throughout the world.
 
 ## 6.3 NSF Agreement and Invention Ownership
 You acknowledge that the Summit is subject to NSF’s Cooperative Agreement Terms and Conditions effective May 12, 2023. As such, the U.S. Government may be entitled to own any invention that You create during the Summit as further outlined within 37 CFR 401 and the NSF Proposal & Award Policies and Procedures Guide. In such event, You agree to assign any invention created by You during the Summit to the U.S. Government and to reasonably cooperate with the University and NSF to accomplish the same.
 
 ## 6.4 Representations and Warranties
-You represent and warrant that You are legally entitled to grant the above licenses and other intellectual property rights as outlined in Sections 6.1, 6.2, and 6.3. If You are an individual, and if Your employer(s) and/or another third party has rights to Intellectual Property that You create that includes Your Solution, You represent that You have received permission to participate in the Codefest on behalf of that employer or third party and that Your employer or the third party has waived such rights for Your contributions.
+You represent and warrant that You are legally entitled to grant the above licenses and other intellectual property rights as outlined in Sections 6.1, 6.2, and 6.3. If You are an individual, and if Your employer(s) and/or another third party has rights to Intellectual Property that You create that includes Your Solution, You represent that You have received permission to participate in the Summit on behalf of that employer or third party and that Your employer or the third party has waived such rights for Your contributions.
 
 ## 6.5 Originality and Third-Party Materials
 You represent that Your Solution is Your original creation. If you obtain permission under Section 6.5 to include third-party materials, You represent that Your Solution includes complete details of any third-party license or other restriction (including, but not limited to, related patents and trademarks) of which You are aware and which are associated with any part of Your Solution. You represent and warrant that You will not submit any materials to the University that You know or believe to have components that are malicious or harmful. You represent that You will perform a reasonable amount of due diligence in order to be properly informed of third-party licenses, infringing materials, or harmful content associated with any part of Your Solution.
@@ -56,11 +56,11 @@ You agree to notify the University of any facts or circumstances of which You be
 
 # Limitation of Liability
 
-TO THE EXTENT ALLOWED BY LAW, IN NO EVENT SHALL THE UNIVERSITY, ITS PARTNERS, LICENSORS, SERVICE PROVIDERS, OR ANY OF THEIR RESPECTIVE OFFICERS, DIRECTORS, AGENTS, EMPLOYEES OR REPRESENTATIVES, BE LIABLE FOR DIRECT, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE HACKATHON OR THIS AGREEMENT (HOWEVER ARISING, INCLUDING NEGLIGENCE). IF YOU HAVE A DISPUTE WITH ANY PARTICIPANT OR ANY OTHER THIRD PARTY, YOU RELEASE THE UNIVERSITY, ITS, PARTNERS, LICENSORS, AND SERVICE PROVIDERS, AND EACH OF THEIR RESPECTIVE OFFICERS, DIRECTORS, AGENTS, EMPLOYEES AND REPRESENTATIVES FROM ANY AND ALL CLAIMS, DEMANDS AND DAMAGES (ACTUAL AND CONSEQUENTIAL) OF EVERY KIND AND NATURE ARISING OUT OF OR IN ANY WAY CONNECTED WITH SUCH DISPUTES. YOU AGREE THAT ANY CLAIMS AGAINST UNIVERSITY ARISING OUT OF THE HACKATHON OR THIS AGREEMENT MUST BE FILED WITHIN ONE YEAR AFTER SUCH CLAIM AROSE; OTHERWISE, YOUR CLAIM IS PERMANENTLY BARRED.
+TO THE EXTENT ALLOWED BY LAW, IN NO EVENT SHALL THE UNIVERSITY, ITS PARTNERS, LICENSORS, SERVICE PROVIDERS, OR ANY OF THEIR RESPECTIVE OFFICERS, DIRECTORS, AGENTS, EMPLOYEES OR REPRESENTATIVES, BE LIABLE FOR DIRECT, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE HACKATHON OR THIS AGREEMENT (HOWEVER ARISING, INCLUDING NEGLIGENCE). IF YOU HAVE A DISPUTE WITH ANY PARTICIPANT OR ANY OTHER THIRD PARTY, YOU RELEASE THE UNIVERSITY, ITS, PARTNERS, LICENSORS, AND SERVICE PROVIDERS, AND EACH OF THEIR RESPECTIVE OFFICERS, DIRECTORS, AGENTS, EMPLOYEES AND REPRESENTATIVES FROM ANY AND ALL CLAIMS, DEMANDS AND DAMAGES (ACTUAL AND CONSEQUENTIAL) OF EVERY KIND AND NATURE ARISING OUT OF OR IN ANY WAY CONNECTED WITH SUCH DISPUTES. YOU AGREE THAT ANY CLAIMS AGAINST UNIVERSITY ARISING OUT OF THE SUMMIT OR THIS AGREEMENT MUST BE FILED WITHIN ONE YEAR AFTER SUCH CLAIM AROSE; OTHERWISE, YOUR CLAIM IS PERMANENTLY BARRED.
 
 # Not an Offer or Contract of Employment
 
-Under no circumstances will Your participation in the Codefest or anything in this Agreement be construed as an offer or contract of employment with the University.
+Under no circumstances will Your participation in the Summit or anything in this Agreement be construed as an offer or contract of employment with the University.
 
 # Additional Terms
 
@@ -69,7 +69,7 @@ Under no circumstances will Your participation in the Codefest or anything in th
 - Any attempt to deliberately damage the Summit or the operation thereof is unlawful and subject to legal action by the University, which may seek damages to the fullest extent permitted by law.
 - The University assumes no responsibility for any injury or damage to Your or any other person’s computer relating to or resulting from entering or downloading materials or software in connection with the Summit. 
 - The University is not responsible for telecommunications, network, electronic, technical, or computer failures of any kind; for inaccurate transcription of entry information; for any human or electronic error; or for Solutions that are stolen, misdirected, garbled, delayed, lost, late, damaged, or returned.
-- The University reserves the right to cancel, modify, or suspend the Codefest or any element thereof (including, without limitation, this Agreement) without notice in any manner and for any reason (including, without limitation, in the event of any unanticipated occurrence that is not fully addressed in this Agreement).
+- The University reserves the right to cancel, modify, or suspend the Summit or any element thereof (including, without limitation, this Agreement) without notice in any manner and for any reason (including, without limitation, in the event of any unanticipated occurrence that is not fully addressed in this Agreement).
 - The University may prohibit any person from participating in the Summit, if such person shows a disregard for this Agreement; acts with an intent to annoy, abuse, threaten, or harass any other entrant or any agents or representatives of the University (or any associated, partners, licensors, or service providers for the University); or behaves in any other disruptive manner (as determined by the University in its sole discretion).
 - Nothing contained in this Agreement shall be construed as an express or implied waiver by University of its governmental immunity or of the governmental immunity of the State of Colorado.
 - Your Solutions shall not contain any item(s) that are either export-controlled under the International Traffic in Arms Regulations, or that appear on the Commerce Control List (except as EAR99) of the Export Administration Regulations.
@@ -80,7 +80,7 @@ This Agreement and the Summit shall be governed and construed in accordance with
 
 # Entire Agreement
 
-This Agreement and the Event Code of Conduct, constitutes the entire agreement between the University and You with respect to the Codefest and supersedes all previous or contemporaneous oral or written agreements concerning the Summit. In the event of a conflict between this Agreement and/or the Event Code of Conduct, the conflict shall be resolved with the following order of precedence:
+This Agreement and the Event Code of Conduct, constitutes the entire agreement between the University and You with respect to the Summit and supersedes all previous or contemporaneous oral or written agreements concerning the Summit. In the event of a conflict between this Agreement and/or the Event Code of Conduct, the conflict shall be resolved with the following order of precedence:
 
 1. This Agreement
 2. The Event Code of Conduct
@@ -89,4 +89,4 @@ This Agreement and the Event Code of Conduct, constitutes the entire agreement b
 
 The invalidity, illegality, or unenforceability of any one or more phrases, sentences, clauses, or sections in this Agreement does not affect the remaining portions of this Agreement.
 
-If you have questions about the Summit, please contact Ming Posa at [esiil@colorado.edu](mailto:esiil@colorado.edu).
+If you have questions about the Summit, please contact ESIIL at [esiil@colorado.edu](mailto:esiil@colorado.edu).
