@@ -24,7 +24,7 @@ By and through Your participation in the Summit, You represent and warrant the f
 # Summit Assets
 
 ## 5.1 Access and Use
-By participating in the Innovation Summit, You may receive access to certain datasets, webinars, and/or other copyrighted materials (collectively, the “Summit Assets”). You agree to follow all licenses, restrictions, and other instructions provided to You with the SUmmit Assets.
+By participating in the Innovation Summit, You may receive access to certain datasets, webinars, and/or other copyrighted materials (collectively, the “Summit Assets”). You agree to follow all licenses, restrictions, and other instructions provided to You with the Summit Assets.
 
 ## 5.2 Disclaimer
 The Summit Assets are provided “as is” without warranty of any kind, either express or implied, including, without limitation, any implied warranties of merchantability and fitness for a particular purpose. Without limiting the foregoing, the University does not warrant that the Materials will be suitable for Your Solution or that the operation or supply of the Summit Assets will be uninterrupted or error free.
