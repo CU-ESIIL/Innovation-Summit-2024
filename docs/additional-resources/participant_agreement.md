@@ -74,3 +74,7 @@ This Agreement and the Event Code of Conduct, constitutes the entire agreement b
 The invalidity, illegality, or unenforceability of any one or more phrases, sentences, clauses, or sections in this Agreement does not affect the remaining portions of this Agreement.
 
 If you have questions about the Summit, please contact ESIIL at [esiil@colorado.edu](mailto:esiil@colorado.edu).
+
+#   Guideline for Intellectual Contributions and Credit
+
+[ESIIL Guidelines for Intellectual Contributions and Credit](https://drive.google.com/file/d/1WcjV412EzCxohNtjFtca-o2Gpf36ISAX/view)
