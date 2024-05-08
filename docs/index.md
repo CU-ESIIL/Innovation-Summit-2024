@@ -74,6 +74,8 @@ RSVP: Please confirm your attendance by Monday, May 13th.
 
 ## Join our Slack Workspace
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ). 
+## Event Photography
+We plan to take some photos of activities throughout the course of the week for use in internal and external publications. If you do not wish to have your image recorded for distribution, please inform the photographer and/or email Casey.Jenson@colorado.edu. By participating in ESIIL events, you are agreeing to the use of your photos unless you notify us in writing of your desire to opt out of being photographed. 
 ## Venue Information
 The ESIIL Innovation Summit will be held at the University of Colorado Boulder East Campus SEEC Building (4001 Discovery Dr, Boulder, CO 80303). Directions to the SEEC Building here.
 ### Explore Boulder Like a Local!
