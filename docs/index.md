@@ -51,10 +51,10 @@ At 4 pm, ESIIL will host a **social hour** at the SEEC Cafe (4001 Discovery Driv
 
 **[RSVP HERE](https://docs.google.com/forms/d/e/1FAIpQLScRBSXTCmWLbVAV55TB4VqoCFMbDsDUm3NtAbsY3EbVeUyI-w/viewform)** by May 8th. We will email further details to those who sign up.
 
-## RSVP for Co-WY Engine Event 
-The CO-WY Engine is excited to extend a warm invitation to you for a special Happy Hour event after day 2 of the ESIIL Innovation conference. Please join them to connect and unwind while participants learn about shaping the future of climate resilience in our region.
+## RSVP for CO-WY Engine Event 
+The CO-WY Engine is excited to extend a warm invitation to you for a special Happy Hour event after day 2 of the ESIIL Innovation conference. Please join us to connect and unwind while participants learn about shaping the future of climate resilience in our region.
 
-Event Details:
+**Event Details:**
 Date: Wednesday, May 15th
 Time: 6:00 PM to 8:00 PM
 Location: Hotel Boulderado, 2115 13th St, Boulder, CO 80302 
