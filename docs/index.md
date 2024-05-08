@@ -38,7 +38,7 @@ May 15: 9am-5pm MT
 
 May 16: 9am-12pm MT
 
-[2024 ESIIL Innovation Summit Agenda](https://o365coloradoedu.sharepoint.com/:b:/s/CIRES-EarthLab/Ee4u9_g6iUdEnK-In8iEWj4BbG5rwOHzPK_SJI2MCyRttg?e=VYPntA)
+**[2024 ESIIL Innovation Summit Agenda](https://o365coloradoedu.sharepoint.com/:b:/s/CIRES-EarthLab/Ee4u9_g6iUdEnK-In8iEWj4BbG5rwOHzPK_SJI2MCyRttg?e=VYPntA)**
 
 ## RSVP for Optional May 13th Activities
 Are you arriving early and eager to explore Boulder? Join one of our Summit social events from 1:30-3:30 pm on Monday, May 13th. 
