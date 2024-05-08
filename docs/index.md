@@ -50,6 +50,26 @@ Are you arriving early and eager to explore Boulder? Join one of our Summit soci
 At 4 pm, ESIIL will host a **social hour** at the SEEC Cafe (4001 Discovery Drive, Boulder CO). Register for the event, mingle with other Summit attendees and enjoy some finger food and non-alcoholic drinks. 
 
 **[RSVP HERE](https://docs.google.com/forms/d/e/1FAIpQLScRBSXTCmWLbVAV55TB4VqoCFMbDsDUm3NtAbsY3EbVeUyI-w/viewform)** by May 8th. We will email further details to those who sign up.
+
+## RSVP for Co-WY Engine Event 
+The CO-WY Engine is excited to extend a warm invitation to you for a special Happy Hour event after day 2 of the ESIIL Innovation conference. Please join them to connect and unwind while participants learn about shaping the future of climate resilience in our region.
+
+Event Details:
+Date: Wednesday, May 15th
+Time: 6:00 PM to 8:00 PM
+Location: Hotel Boulderado, 2115 13th St, Boulder, CO 80302 
+
+**About the CO-WY Engine Partnership:**
+ESIIL is proud to partner with the CO-WY Engine, an initiative led by Innosphere Ventures and supported by the U.S. National Science Foundation. This partnership aims to drive innovation and spur economic growth in Colorado and Wyoming by developing and commercializing technologies that enhance climate resilience. Together, we are committed to enabling our communities, governments, and industries to effectively address the challenges posed by climate change.
+
+Discover more about how this initiative plans to transform our approach to sustainability and resilience at [www.co-wyengine.org](www.co-wyengine.org).
+
+We look forward to seeing you there and discussing how we can collectively work towards a more resilient future.
+
+RSVP: Please confirm your attendance by Monday, May 13th.
+
+[CLICK HERE TO RSVP](https://lp.constantcontactpages.com/ev/reg/qzrjc3c/lp/32583a69-fc4a-48ab-be9d-3f881224319f)
+
 ## Join our Slack Workspace
 We will be using Slack for communication before, during, and after the Summit. Please join our Slack Workspace [HERE](https://join.slack.com/t/slack-ekh3745/shared_invite/zt-2ffdma1ck-rdDxOfWeNIk29vhbCwpHzQ). 
 ## Venue Information
