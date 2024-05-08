@@ -75,6 +75,6 @@ The invalidity, illegality, or unenforceability of any one or more phrases, sent
 
 If you have questions about the Summit, please contact ESIIL at [esiil@colorado.edu](mailto:esiil@colorado.edu).
 
-#   Guideline for Intellectual Contributions and Credit
+## Guidelines for Intellectual Contributions and Credit
 
 [ESIIL Guidelines for Intellectual Contributions and Credit](https://drive.google.com/file/d/1WcjV412EzCxohNtjFtca-o2Gpf36ISAX/view)
