@@ -12,7 +12,7 @@ ESIIL's 2024 Innovation Summit will offer an opportunity to use big data to unde
 
 ## How to Participate
 
-You will join a team of environmental scientists, data experts, and coders to explore curated data, consider the objectivity of the data, propose a scientific question that can be addressed with all or some of the data sets, and analyze the data in an attempt to answer your scientific question by the end of the event. You will present your Solution to the event community. ESIIL will provide environmental data, cyberinfrastructure, cyberinfrastructure and data analytics training, and technical support. 
+You will join a team of environmental scientists, data experts, and coders to explore curated data, consider the objectivity of the data, propose a scientific question that can be addressed with all or some of the data sets, and analyze the data in an attempt to answer your scientific question. You will present your Work to the event community. ESIIL will provide environmental data, cyberinfrastructure, cyberinfrastructure and data analytics training, and technical support. 
 
 ## Representations and Warranties
 
@@ -56,7 +56,7 @@ Under no circumstances will Your participation in the Summit or anything in this
 - The University reserves the right to cancel, modify, or suspend the Summit or any element thereof (including, without limitation, this Agreement) without notice in any manner and for any reason (including, without limitation, in the event of any unanticipated occurrence that is not fully addressed in this Agreement).
 - The University may prohibit any person from participating in the Summit, if such person shows a disregard for this Agreement; acts with an intent to annoy, abuse, threaten, or harass any other entrant or any agents or representatives of the University (or any associated, partners, licensors, or service providers for the University); or behaves in any other disruptive manner (as determined by the University in its sole discretion).
 - Nothing contained in this Agreement shall be construed as an express or implied waiver by University of its governmental immunity or of the governmental immunity of the State of Colorado.
-- Your Solutions shall not contain any item(s) that are either export-controlled under the International Traffic in Arms Regulations, or that appear on the Commerce Control List (except as EAR99) of the Export Administration Regulations.
+- Your Work shall not contain any item(s) that are either export-controlled under the International Traffic in Arms Regulations, or that appear on the Commerce Control List (except as EAR99) of the Export Administration Regulations.
 
 # Dispute Resolution
 
