@@ -38,3 +38,5 @@ Time: 9-11 AM MST
 **Virtual Meeting 3 Recording**: [https://youtu.be/Ea21i3do9sA](https://youtu.be/Ea21i3do9sA)
 
 **[Science of Team Science Slides](https://o365coloradoedu.sharepoint.com/:b:/s/CIRES-EarthLab/ESBIjItMBfFIsl_ZELF1t5kBjEpK09UK8fiONZ-fnKuxuw?e=MDZdKg)**
+
+**[Community Skills Slides](https://o365coloradoedu.sharepoint.com/:b:/s/CIRES-EarthLab/ESBIjItMBfFIsl_ZELF1t5kBjEpK09UK8fiONZ-fnKuxuw?e=lcfRbJ)**
