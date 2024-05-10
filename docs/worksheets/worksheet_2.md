@@ -55,7 +55,7 @@ Describe how your proposed project aligns with the Summit's themes of resilience
 
 
 ## Choosing Big Data Sets
-Explore potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, organizing them by whether they represent the system you're studying (e.g. deciduous forests) or the disruption to it (e.g., wildfire). Then discuss your choices and indicate your final selections.
+Explore potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, organizing them by whether they represent the system you're studying (e.g., deciduous forests) or the disruption to it (e.g., wildfire). Then discuss your choices and indicate your final selections.
 
 ### Draft Potential Data Sets
   - **System Being Perturbed/Disrupted:**
