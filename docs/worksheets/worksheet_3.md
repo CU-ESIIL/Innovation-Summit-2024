@@ -24,7 +24,7 @@ Use the gradient of agreement (Kaner 20214) to make decisions as a team.
 ![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
 ## Day 2 Report Back
-Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. For the report back, reflect on your team's process. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
+Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
 
 1. What worked well for your team?
      - [insert response here]
