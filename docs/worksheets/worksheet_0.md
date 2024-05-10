@@ -58,7 +58,7 @@ The following group exercise will uncover the impact of redlining on urban green
 
 ## Setting up CyVerse 
 - Log into [CyVerse](https://de.cyverse.org/)
-- Use the [Startup procedure](https://cu-esiil.github.io/Innovation-Summit-2024/resources/cyverse_startup/) to start an instance on CyVerse. Be sure to:
+- Use the [startup procedure](https://cu-esiil.github.io/Innovation-Summit-2024/resources/cyverse_startup/) to start an instance on CyVerse. Be sure to:
   - Create an SSH key and add it to your Github account (2nd half of start-up procedure instructions)
   - Clone the [Innovation-Summit-2024 repository](https://github.com/CU-ESIIL/Innovation-Summit-2024)
   - Complete the [R Studio hack](https://cu-esiil.github.io/Innovation-Summit-2024/additional-resources/cyverse_hacks/)
@@ -67,14 +67,14 @@ The following group exercise will uncover the impact of redlining on urban green
 
 ## Create a Map
 
-We'll be using developed code to visualize redlining impacts on Denver, CO. Please follow these steps: 
+We'll be using pre-developed code to visualize redlining impacts on Denver, CO. Please follow these steps: 
 
 1. Open R Studio in CyVerse
 2. Use "files" (lower right) to navigate to this markdown document:\
   **innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd**
 3. Start at the beginning of the code and complete the following:
-   - Create a map of historically red-lined districts in Denver
-   - Overlay NDVI (vegetation greenness) data onto your map
+   - Create a map of historically redlined districts in Denver
+   - Overlay current-day NDVI (vegetation greenness) data onto your map
 4. Now, it's your turn to choose a variable to observe. Use the provided code (written as a function) to select the variable you want to add to your map.
 
 **Variable Options:**
@@ -108,4 +108,4 @@ As a group, choose another variable to explore and then discuss your findings.
 
 ### Look through all the variables
 
-Once you are done, you can see all the code and variable maps on the "Teacher Edition" version of the activity: <https://cu-esiil.github.io/Innovation-Summit-2024/worksheets/worksheet_redlining/>
+Once you're done, you can see all the code and variable maps on the "Teacher Edition" version of the activity: <https://cu-esiil.github.io/Innovation-Summit-2024/worksheets/worksheet_redlining/>
