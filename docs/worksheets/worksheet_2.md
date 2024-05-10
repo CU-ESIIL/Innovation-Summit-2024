@@ -37,17 +37,17 @@ Please share the following information about yourself. Each team member should w
   ---
 ### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
 **Write the research question your team selected in the space below. Feel free to revise the original question.**
-  - [Insert research question here]
+- [Insert research question here]
 
 
 ### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
 **Craft a catchy title for your team’s project. Think of something that would grab attention at a conference or in a headline.**
-  - [Insert title here]
+- [Insert title here]
 
 
 ### Promoting Resilience and Adaptation
 **Describe how your proposed project aligns with the Summit's themes of resilience and adaptation. Please provide 1-2 sentences that clearly connect your project's goals or methods to these themes.**
-  - [Insert your response here]
+- [Insert your response here]
 
 
 ### Which Big Data Sets
