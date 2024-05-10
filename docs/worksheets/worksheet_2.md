@@ -1,7 +1,12 @@
 # TEAM ACTIVITY Day 1: Make a plan
 
 ## Instructions
-Work through the prompts in order. Please use a decision-making method “to decide” before moving to a new section of the handout.  
+Work through the prompts in order. Please use a decision-making method “to decide” before moving to a new section of the activity.  
+
+## Day 1 Objectives
+1. Get to know your group members.
+2. Decide on a research question and project title.
+3. Start exploring potential datasets.
 
 ## Introductions (approx. time: 10 mins total or "2 breaths" per person)
 Please share the following information about yourself. Each team member should write their response in the space below (create more as needed).
