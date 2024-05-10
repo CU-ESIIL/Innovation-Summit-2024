@@ -27,27 +27,21 @@ Use the gradient of agreement (Kaner 20214) to make decisions as a team.
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
 
 1. **What worked well for your team?**
-     - [insert response here]
 3. **What’s one thing you would change?**
-     - [insert response here]
 4. **Did your group ever have an “ah-ha” moment?  What led up to that moment?**
-     - [insert response here]
 5. **Did your group experience the groan zone?  What is one tip you want to share with future groups at the Summit about getting through the groan zone?**
-     - [insert responses here]
+     - [insert your group reflection responses here]
 
-## Looking Ahead: Day 3 Report Back
-Select one or more people from your group to give a final report back. You will share this page on the screen as your presentation. Presentations should be no longer than 4 minutes.
+**************************************************************
+
+### Looking Ahead: Day 3 Report Back
+*These are the prompts for the final Report Back **tomorrow (Day 3)** - start thinking about these questions as you work today. Each group will share their Day 3 GitHub page on the screen and give a 4 minute presentation.*
 
 - **Project Title:**
-    - [Insert project title here]
 - **Research Question:**
-    - [Insert research question here]
 - **One interesting graphic/finding:**
-    - [Insert graphic/finding here]
 - **What are you thinking about doing next with your team? Long-term, short-term?**
-    - [Insert response here]
 - **What’s missing: what resources, people, data sets, etc. does your team need?**
-    - [Insert response here]
       
 ### Reminder
 There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall. See the ESIIL website for more information: <https://esiil.org/working-groups>.
