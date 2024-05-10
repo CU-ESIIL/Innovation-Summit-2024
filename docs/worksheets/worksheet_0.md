@@ -1,6 +1,28 @@
-# Exploring the Impact of Historical Redlining on Urban Greenspace: A Collaborative Examination of Maps, Justice, and Resilience
+# Exploring Resilience with Data in your Third Space
 
-## Introduction
+## Instructions
+
+Work through the prompts below with the people at your table.  Please use a decision-making method “to decide” before moving to a new section of the handout.  Note: You might also decide to revisit a section of the handout. 
+
+## Introductions
+
+Please share the following information with your team:
+- Name
+- Pronouns 
+- Where did you travel from?
+- Reflecting back on the polarities exercise, share one thing you observed about yourself. 
+
+## Goals of this group activity
+
+The primary objectives of this tutorial are:
+1. Increase comfort with Cyverse
+2. Practice decision-making with a group
+3. Get to know other Summit participants
+4. Explore how historic policies continue to affect the spatial distribution of environmental amenities.
+
+# Background
+
+## Introduction to Redlining
 
 This group exploration delves into the long-term impacts of historical redlining on urban greenspace, emphasizing the powerful role of maps in shaping environmental and social landscapes. By drawing on the research by Nardone et al. (2021), you will collaboratively investigate how discriminatory practices encoded in maps have led to persistent disparities in urban settings. This exploration aims to uncover the resilience of communities in adapting to these entrenched injustices and to foster a deeper understanding of how mapping can serve both as a tool of exclusion and as a means for promoting social equity.
 
@@ -15,7 +37,6 @@ Maps serve as powerful tools beyond navigation; they communicate and enforce con
 **Figure 1:** 1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”
 
 
-
 [![ArcGIS Story Map](../assets/redlining/georectified-thumbnail.png)](https://storymaps.arcgis.com/stories/0f58d49c566b486482b3e64e9e5f7ac9)
 
 **Explore the Story Map:** Click on the image above to explore the interactive story map about [subject of the story map].
@@ -27,26 +48,57 @@ The legacy of redlining presents both a challenge and an opportunity for resilie
 
 Despite these adversities, urban communities have continually demonstrated remarkable resilience. Adaptation strategies, such as community-led green initiatives, urban agriculture, and grassroots activism, have emerged as responses to these systemic disturbances. By enhancing green infrastructure and advocating for equitable environmental policies, these communities strive to increase their resilience against both historical inequities and environmental challenges.
 
-[![Watch the video](https://img.youtube.com/vi/O5FBJyqfoLM/hqdefault.jpg)](https://youtu.be/O5FBJyqfoLM)
-
-**Video Title:** Exploring the Impacts of Historical Redlining on Urban Development  
-**Description:** Click on the image above to watch a video that delves into the consequences of historical redlining and its ongoing impact on urban environments. This educational piece offers insights into how such discriminatory practices have shaped cities and what can be learned from them.
-
-The following group exercise will not only uncover the impact of redlining on urban greenspace but also highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
-
+The following group exercise will uncover the impact of redlining on urban greenspace and highlight the adaptive strategies developed in response to this enduring disturbance. Through mapping and analysis, we aim to illustrate the powerful role that geographic data can play in understanding and fostering urban resilience and social equity.
 
 ### References
 
 - Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. *Environmental Health Perspectives*, 129(1), 017006. DOI:10.1289/EHP7495.
 - Hoffman, J. S., Shandas, V., & Pendleton, N. (2020). The Effects of Historical Housing Policies on Resident Exposure to Intra-Urban Heat: A Study of 108 US Urban Areas. *Climate*, 8(1), 12. DOI:10.3390/cli8010012.
 
+# Group Activity
 
-## Goals of this group activity
+## Log into CyVerse 
+- Link to log-in instructions
+- Open "this" file
 
-The primary objectives of this tutorial are:
-  1. To practice coding in CyVerse.
-  2. To analyze the relationship between HOLC grades and the presence of urban greenspace.
-  3. To understand how historic policies continue to affect the spatial distribution of environmental amenities.
+## Create a Map
+
+Using the intructions and code on Cyverse, choose one of the variables below to observe the influence of redlining. 
+
+1. x
+2. x
+3. x
+4. x
+5. x
+6. x
+
+# Decision-Making
+Use the gradient of agreement to make a decision as a team about which attribute you want to explore.
+
+*insert Gradient of Agreement fig*
+
+# Unique Title
+Come up with a unique title for your anaylysis. Write it on a sticky note at your table. 
+
+## Discussion Questions
+
+After completing your anaylysis, discuss these questions with your group. 
+1. What patterns do you notice? What are the immediate questions that come to mind?
+2. How does big data help illustrate resilience? 
+3. Redlining has a long-term impact. How is the impact of redlining still evident today?
+
+## Still have time? 
+
+At the bottom of the page, there is a link to more information related to red-lining (still true?). Or choose another attribute to explore!
+
+
+# Additional Information
+
+LINK
+
+
+
+**************************
 
 ## Part 1: Accessing and Visualizing Historic Redlining Data
 
