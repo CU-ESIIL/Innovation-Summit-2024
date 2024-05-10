@@ -1,5 +1,5 @@
 # Exploring Resilience with Data in your Third Space
-test
+
 ## Instructions
 
 Work through the prompts below with the people at your table.  Please use a decision-making method “to decide” before moving to a new section of the handout.  Note: You might also decide to revisit a section of the handout. 
