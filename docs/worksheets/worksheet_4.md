@@ -3,7 +3,7 @@
 Use this time to prepare for the final report back, where you'll share an interesting result/outcome from your project and discuss potential future plans.
 
 ## Day 3 Report Back
-Select one or more people to come to the front to give a final report back. You will share this page on the screen as your presentation. Presentations should be no longer than 4 minutes.
+Select one or more people from your group to give a final report back. You will share this page on the screen as your presentation. Presentations should be no longer than 4 minutes.
 
 - **Project Title:**
     - [Insert project title here]
