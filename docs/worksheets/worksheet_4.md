@@ -1,4 +1,4 @@
-# TEAM ACTIVITY 3: Share your Progress
+# TEAM ACTIVITY 3: Share Your Progress
 
 Use this time to prepare for the final report back, where you'll share an interesting result/outcome from your project and discuss potential future plans.
 
@@ -15,3 +15,9 @@ Select one or more people to come to the front to give a final report back. You 
     - [Insert response here]
 - **What’s missing: what resources, people, data sets, etc. does your team need?**
     - [Insert response here]
+
+
+### Reminder
+There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall. See the ESIIL website for more information: <https://esiil.org/working-groups>.
+
+**Thank you for participating in the 2024 ESIIL Innovation Summit!!**
