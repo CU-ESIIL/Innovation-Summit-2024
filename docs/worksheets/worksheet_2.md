@@ -1,60 +1,57 @@
-# TEAM ACTIVITY 2: Make a plan
+# TEAM ACTIVITY Day 1: Make a plan
 ### Instructions:
-- **Follow the Prompts Sequentially:**
-    - Work through the prompts in the order they are presented.
-- **Decision-Making Process:**
-    - Before advancing to the next section of the handout, use a structured decision-making method. Ensure that all team members agree on the decisions made. This approach helps in maintaining coherence and collective agreement throughout the activities.
+Work through the prompts in order. Please use a decision-making method “to decide” before moving to a new section of the handout.  
 
 ### Introductions (approx. time: 10 mins total or "2 breaths" per person)
-- **Each team member please share the following information about yourself:**
+Please share the following information about yourself. Each team member should write their response in the space below (create more as needed).
 
   - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
+  - **Pronouns:** [Your Pronouns]
   - **Expertise:** [Your Expertise]
   - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
   - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
 
   ---
   - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
+  - **Pronouns:** [Your Pronouns]
   - **Expertise:** [Your Expertise]
   - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
   - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
 
   ---
   - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
+  - **Pronouns:** [Your Pronouns]
   - **Expertise:** [Your Expertise]
   - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
   - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
 
   ---
   - **Name:** [Your Name]
-  - **Preferred Pronouns:** [Your Pronouns]
+  - **Pronouns:** [Your Pronouns]
   - **Expertise:** [Your Expertise]
   - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
   - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
 
   ---
-  - **Continue adding more team members following the same format, with a line break after each person.**
+  - Continue adding more team members following the same format, with a line break after each person.
   ---
 ### Research Question: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Refine the initial research question your team developed earlier. Please make any necessary edits or adjustments below:**
+- **Write the research question your team selected in the space below. Feel free to revise the original question.**
   - [Edit or refine your team's previously selected research question here]
 
 
 ### Title: Innovation for Inclusion or Computation (approx. time: 5-10 mins)
-- **Craft a catchy and public-facing title for your team’s project. Think of something that would grab attention at a conference or in a headline:**
+- **Craft a catchy title for your team’s project. Think of something that would grab attention at a conference or in a headline.**
   - [Create an engaging title that captures the essence of your project here]
 
 
 ### Promoting Resilience and Adaptation
-- **Describe how your proposed project aligns with the summit's themes of resilience and adaptation. Please provide 1-2 sentences that clearly connect your project's goals or methods to these themes:**
+- **Describe how your proposed project aligns with the Summit's themes of resilience and adaptation. Please provide 1-2 sentences that clearly connect your project's goals or methods to these themes.**
   - [Insert your response here]
 
 
 ### Which Big Data Sets
-- **Explore potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, and after discussion and review, indicate your final choice for both the system being perturbed/disrupted and the perturbator/disrupter.**
+- **Explore potential data sets for your project's topic from the [data library](https://cu-esiil.github.io/data-library/). List your options below, organizing them by whether they represent the system you're studying (e.g. deciduous forests) or the disruption to it (e.g., wildfire). Then discuss your choices and indicate your final selections.**
 
 #### Draft Potential Data Sets
   - **System Being Perturbed/Disrupted:**
@@ -71,14 +68,14 @@
 
 
 ### Brief Check-in: Definition of Resilience (approx. 5 mins)
-- **Review and refine the working definition of 'Resilience' provided below, based on your discussions and insights from earlier sections of this worksheet. Adjust the definition to better align with your team’s understanding or reaffirm it if it resonates with your views:**
+- **Below is a working definition of the word "Resilience" for the Summit. Please edit the definition below based on your earlier discussion and chosen project.**
   - "Resilience is the capacity of a system, community, organization, or individual to absorb stress, recover from disruptions, adapt to change, and continue to develop and thrive."
     - [Edit or reaffirm this definition here]
 
 
 ### Day 1 Report Back
-- **Select one representative from your group to present your proposed project to all Summit attendees (~125 people). This is an opportunity for your breakout group to summarize your project’s approach as it relates to the Summit themes of adaptation and resilience.**
-  - **Presentation Content:**
+- **Select one representative from your group to present your proposed project. For the report back, each group will have 30-60 seconds to present their responses to the questions below. Keep it concise and focused. This is just a quick oral presentation - you will not be able to use slides/images.**
+
     - **Project Title:** 
       - [Insert your team's project title here]
     - **Research Question:** 
@@ -86,6 +83,3 @@
     - **Selected Data Sets:** 
       - [List the data sets your team has chosen to use here]
       
-  - **Presentation Guidelines:**
-    - **Duration:** Your presentation should last between 30-60 seconds. Keep it concise and focused. This is just a quick oral presentation -you will not be able to use slides/images.
-    - **Objective:** Clearly communicate how your project aligns with the conference themes and highlight actionable insights that can aid decision makers.
