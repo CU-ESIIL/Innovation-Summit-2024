@@ -26,7 +26,7 @@ The primary objectives of this tutorial are:
 
 This group exploration delves into the long-term impacts of historical redlining on urban greenspace, emphasizing the powerful role of maps in shaping environmental and social landscapes. By drawing on the research by Nardone et al. (2021), you will collaboratively investigate how discriminatory practices encoded in maps have led to persistent disparities in urban settings. This exploration aims to uncover the resilience of communities in adapting to these entrenched injustices and to foster a deeper understanding of how mapping can serve both as a tool of exclusion and as a means for promoting social equity.
 
-![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining/redlining.png))
+![1938 Map of Atlanta uses colors as grades for neighborhoods. The red swaths identify each area with large African-American populations that were deemed “less safe.”](../assets/redlining/redlining.png)
 
 ## Understanding Redlining as a Systemic Disturbance
 
@@ -73,9 +73,9 @@ Using the intructions and code on Cyverse, choose one of the variables below to 
 6. x
 
 # Decision-Making
-Use the gradient of agreement to make a decision as a team about which attribute you want to explore.
+Use the gradient of agreement (Kaner 2014) to make a decision as a team about which attribute you want to explore.
 
-*insert Gradient of Agreement fig*
+![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
 # Unique Title
 Come up with a unique title for your anaylysis. Write it on a sticky note at your table. 
