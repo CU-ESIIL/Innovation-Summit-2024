@@ -1,8 +1,8 @@
-# Exploring Resilience with Data in your Third Space
+# Exploring Resilience with Data in your Third Space (CyVerse)
 
 ## Instructions
 
-Work through the prompts below with the people at your table.  Please use a decision-making method “to decide” before moving to a new section of the handout.  Note: You might also decide to revisit a section of the handout. 
+Work through the prompts below with the people at your table. Please use a decision-making method *to decide* before moving to a new section of the activity.
 
 ## Introductions
 
@@ -12,9 +12,8 @@ Please share the following information with your team:
 - Where did you travel from?
 - Reflecting back on the polarities exercise, share one thing you observed about yourself. 
 
-## Goals of this group activity
+## Objectives of this group activity
 
-The primary objectives of this tutorial are:
 1. Increase comfort with Cyverse
 2. Practice decision-making with a group
 3. Get to know other Summit participants
@@ -57,28 +56,44 @@ The following group exercise will uncover the impact of redlining on urban green
 
 # Group Activity
 
-## Log into CyVerse 
-- Link to log-in instructions
-- Open "this" file
+## Setting up CyVerse 
+- Log into [CyVerse](https://de.cyverse.org/)
+- Use the [Startup procedure](https://cu-esiil.github.io/Innovation-Summit-2024/resources/cyverse_startup/) to start an instance on CyVerse. Be sure to:
+  - Create an SSH key and add it to your Github account (2nd half of start-up procedure instructions)
+  - Clone the [Innovation-Summit-2024 repository](https://github.com/CU-ESIIL/Innovation-Summit-2024)
+  - Complete the [R Studio hack](https://cu-esiil.github.io/Innovation-Summit-2024/additional-resources/cyverse_hacks/)
+- Please raise your hand if you have questions or run into technical issues. ESIIL represenatives will be walking around to help.
+- Once you initiate your CyVerse instance, **DO NOT close it**. You can keep this instance running the entire Summit so you don't have to do the start-up procedure again.
 
 ## Create a Map
 
-Using the intructions and code on Cyverse, choose one of the variables below to observe the influence of redlining. 
+We'll be using developed code to visualize redlining impacts on Denver, CO. Please follow these steps: 
 
-1. x
-2. x
-3. x
-4. x
-5. x
-6. x
+1. Open R Studio in CyVerse
+2. Use "files" (lower right) to navigate to this markdown document:\
+  **innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd**
+3. Start at the beginning of the code and complete the following:
+   - Create a map of historically red-lined districts in Denver
+   - Overlay NDVI (vegetation greenness) data onto your map
+4. Now, it's your turn to choose a variable to observe. Use the provided code (written as a function) to select the variable you want to add to your map.
 
-# Decision-Making
-Use the gradient of agreement (Kaner 2014) to make a decision as a team about which attribute you want to explore.
+**Variable Options:**
+
+1. Tree inventory
+2. Traffic accidents
+3. Stream sampling effort
+4. Soil sampling effort
+5. Public art density
+6. Liquor license density
+7. Crime density
+
+### Decision-Making
+Use the gradient of agreement (Kaner 2014) to make a decision as a team about which variable you want to explore.
 
 ![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
-# Unique Title
-Come up with a unique title for your anaylysis. Write it on a sticky note at your table. 
+## Unique Title
+Come up with a unique title for your anaylysis. Write it down on a sticky note at your table. 
 
 ## Discussion Questions
 
@@ -89,45 +104,8 @@ After completing your anaylysis, discuss these questions with your group.
 
 ## Still have time? 
 
-At the bottom of the page, there is a link to more information related to red-lining (still true?). Or choose another attribute to explore!
+As a group, choose another variable to explore and then discuss your findings.
 
+### Look through all the variables
 
-# Additional Information
-
-LINK
-
-
-
-**************************
-
-## Part 1: Accessing and Visualizing Historic Redlining Data
-
-We will begin by accessing HOLC maps from the Mapping Inequality project and overlaying this data with modern geographic datasets to visualize the historical impact on contemporary urban landscapes.
-
-### Data Acquisition
-- Download HOLC map shapefiles from the University of Richmond’s Mapping Inequality Project.
-- Utilize satellite imagery and other geospatial data to map current greenspace using the normalized difference vegetation index (NDVI).
-
-### Analysis Methodology
-- Replicate the approach used by Nardone et al. to calculate NDVI values for each HOLC neighborhood, assessing greenspace as a health-promoting resource.
-- Employ statistical methods such as propensity score matching to control for confounding variables and estimate the true impact of HOLC grades on urban greenspace.
-
-## Part 2: Integrating Environmental Data
-
-### Data Processing
-- Use satellite data from 2010 to analyze greenspace using NDVI, an index that measures the quantity of vegetation in an area.
-- Apply methods to adjust for potential confounders as described in the study, ensuring that comparisons of greenspace across HOLC grades are valid and not biased by historical or socio-demographic factors.
-
-## Part 3: Comparative Analysis and Visualization
-
-### Statistical Analysis
-- Conduct a detailed statistical analysis to compare greenspace across different HOLC grades, using techniques like Targeted Maximum Likelihood Estimation (TMLE) to assess the association between historical redlining and current greenspace levels.
-- Visualize the disparities in greenspace distribution using GIS tools, highlighting how redlining has shaped urban ecological landscapes.
-
-## Conclusion
-
-This tutorial provides tools and methodologies to explore the lingering effects of historic redlining on urban greenspace, offering insights into the intersection of urban planning, environmental justice, and public health.
-
-### References
-
-- Nardone, A., Rudolph, K. E., Morello-Frosch, R., & Casey, J. A. (2021). Redlines and Greenspace: The Relationship between Historical Redlining and 2010 Greenspace across the United States. *Environmental Health Perspectives*, 129(1), 017006. DOI:10.1289/EHP7495. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7839347/pdf/ehp7495.pdf)
+Once you are done, you can see all the code and variable maps on the "Teacher Edition" version of the activity: <https://cu-esiil.github.io/Innovation-Summit-2024/worksheets/worksheet_redlining/>
