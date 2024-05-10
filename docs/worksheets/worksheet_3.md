@@ -1,9 +1,9 @@
 # TEAM ACTIVITY 2: Innovate as a Team
 
-Welcome back! We hope today is a productive day getting to know your team and coding! 
+Welcome back! We hope today is a productive day getting to know your team and coding.
 
 ## Day 2 summary: 
-Please complete the warm-up with your team, briefly review today’s objectives, and carefully read the end of the day report out items so you are familiar with the goals of the day.  
+Please complete the warm-up with your team, briefly review today’s objectives, and carefully read the end of the day report out items to guide your efforts.  
 
 ## Objectives for Day 2-3
 1. Work together to decide on the data sets you will use. Reminder: Use a decision-making technique discussed during Day 1. Kaner’s Gradient of Agreement is below for reference.
