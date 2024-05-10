@@ -107,6 +107,6 @@ After completing your anaylysis, discuss these questions with your group.
 
 As a group, choose another variable to explore and then discuss your findings.
 
-### Look through all the variables
+### Look through all the variables:
 
 Once you're done, you can see all the code and variable maps on the "Teacher Edition" version of the activity: <https://cu-esiil.github.io/Innovation-Summit-2024/worksheets/worksheet_redlining/>
