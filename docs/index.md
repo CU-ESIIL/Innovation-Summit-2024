@@ -40,6 +40,21 @@ May 16: 9am-12pm MT
 
 **[2024 ESIIL Innovation Summit Agenda](https://docs.google.com/document/d/1BXgUkbmGIVD12UDrnMlF9ERXN3jM1GW4/edit?usp=sharing&ouid=116923712774938340817&rtpof=true&sd=true)**
 
+## Pre-Summit Survey
+We are conducting a research study to assess the outcomes and impacts of the ESIIL Innovation Summit.
+
+We would like to invite you to complete a voluntary 10-minute, online pre-survey before the Summit begins. Your participation in the survey will make an important contribution to understanding the impacts and outcomes of the ESIIL Innovation Summit. All ESIIL Summit participants are invited to take part in this study.
+
+Follow this link to the Survey:
+[Take the Survey](https://cuboulder.qualtrics.com/jfe/form/SV_bl2yWzi37xXUdNQ)
+
+Or copy and paste the URL below into your internet browser:
+https://cuboulder.qualtrics.com/jfe/form/SV_bl2yWzi37xXUdNQ
+
+If you have any questions about the study, please contact program evaluation Megan Littrell at megan.littrell@colorado.edu. 
+
+Thank you for your support.
+
 ## Optional May 13th Activities
 
 **Explore Pearl Street:** In the heart of Boulder lies Pearl Street, a bustling thoroughfare adorned with restaurants, stores, and people-watching spots. This lively street has been the pulse of Boulder for over forty years. At the core of the historic downtown area, both locals and tourists leisurely walk along the brick-paved pedestrian path, relax on sunlit benches and restaurant terraces, indulge in shopping, and pause to enjoy the unique street performers that Boulder offers. While four blocks of Pearl Street are car-free, the vibrant atmosphere extends for blocks in every direction.
