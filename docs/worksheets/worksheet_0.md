@@ -60,9 +60,9 @@ The following group exercise will uncover the impact of redlining on urban green
 ## Setting up CyVerse 
 - Log into [CyVerse](https://de.cyverse.org/)
 - Use the [startup procedure](https://cu-esiil.github.io/Innovation-Summit-2024/resources/cyverse_startup/) to start an instance on CyVerse. Be sure to:
-  - Create an SSH key and add it to your Github account (2nd half of start-up procedure instructions)
-  - Clone the [Innovation-Summit-2024 repository](https://github.com/CU-ESIIL/Innovation-Summit-2024)
-  - Complete the [R Studio hack](https://cu-esiil.github.io/Innovation-Summit-2024/additional-resources/cyverse_hacks/)
+    - Create an SSH key and add it to your Github account (2nd half of start-up procedure instructions)
+    - Clone the [Innovation-Summit-2024 repository](https://github.com/CU-ESIIL/Innovation-Summit-2024)
+    - Complete the [R Studio hack](https://cu-esiil.github.io/Innovation-Summit-2024/additional-resources/cyverse_hacks/)
 - Please raise your hand if you have questions or run into technical issues. ESIIL represenatives will be walking around to help.
 - Once you initiate your CyVerse instance, **DO NOT close it**. You can keep this instance running the entire Summit so you don't have to do the start-up procedure again.
 
@@ -72,10 +72,10 @@ We'll be using pre-developed code to visualize redlining impacts on Denver, CO. 
 
 - Open R Studio in CyVerse
 - Use "files" (lower right) to navigate to this markdown document:
-  - *innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd*
+    - *innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd*
 - Start at the beginning of the code and complete the following:
-  - Create a map of historically redlined districts in Denver
-  - Overlay current-day NDVI (vegetation greenness) data onto your map
+    - Create a map of historically redlined districts in Denver
+    - Overlay current-day NDVI (vegetation greenness) data onto your map
 - Now, it's your turn to choose a variable to observe. Use the provided code (written as a function) to select the variable you want to add to your map.
 
 **Variable Options:**
