@@ -25,12 +25,13 @@ Use the gradient of agreement to make decisions as a team
 
 ## Day 2 Report Back
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. For the report back, reflect on your team's process. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
+
 1. What worked well for your team?
 2. What’s one thing you would change?
 3. Did your group ever have an “ah-ha” moment?  What led up to that moment?
 4. Did your group experience the groan zone?  What is one tip you want to share with future groups at the Summit about getting through the groan zone?
 
 ### Reminder
-There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall.  
+There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall. See here for more information <https://esiil.org/working-groups>.
      
 
