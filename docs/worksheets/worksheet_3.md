@@ -13,15 +13,15 @@ Please complete the warm-up with your team, briefly review today’s objectives,
 
 
 ## Morning Warm-up
-**Please share the following informaton with your team. (No need to write down your responses this time.)**
+**Please share the following informaton with your team. (No need to write down your responses this time)**
 - Name
 - Pronouns
 - Reflecting on Day 1, what is something that surprised you?
 
 ## Decision-Making
-Use the gradient of agreement to make decisions as a team
+Use the gradient of agreement (Kaner 20214) to make decisions as a team.
 
-*Insert graphic*
+![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
 ## Day 2 Report Back
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. For the report back, reflect on your team's process. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
@@ -32,6 +32,6 @@ Day 2 report-back questions are about the team *process*. We are interested in y
 4. Did your group experience the groan zone?  What is one tip you want to share with future groups at the Summit about getting through the groan zone?
 
 ### Reminder
-There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall. See here for more information <https://esiil.org/working-groups>.
+There is the opportunity for groups to continue working on their projects as an ESIIL Working Group. If you love your team and want to continue working together, considering submitting a Working Group Application this fall. See the ESIIL website for more information: <https://esiil.org/working-groups>.
      
 
