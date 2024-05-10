@@ -8,7 +8,7 @@ Work through the prompts in order. Please use a decision-making method “to dec
 2. Decide on a research question and project title.
 3. Start exploring potential datasets.
 
-## Introductions (approx. time: 10 mins total or "2 breaths" per person)
+## Introductions (approx. time: 10 mins total or "1-2 breaths" per prompt)
 Please share the following information about yourself. Each team member should type their response in the space below (create more as needed).
 
   - **Name:** [Your Name]
