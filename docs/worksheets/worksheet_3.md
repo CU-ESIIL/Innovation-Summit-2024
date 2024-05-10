@@ -13,7 +13,7 @@ Please complete the warm-up with your team, briefly review today’s objectives,
 
 
 ## Morning Warm-up
-**Please share the following informaton with your team. (No need to write down your responses this time)**
+Please share the following informaton with your team. (No need to write down your responses this time)
 - Name
 - Pronouns
 - Reflecting on Day 1, what is something that surprised you?
