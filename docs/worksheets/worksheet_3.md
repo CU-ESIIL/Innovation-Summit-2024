@@ -3,12 +3,12 @@
 Welcome back! We hope today is a productive day getting to know your team and coding.
 
 ## Day 2 summary: 
-Please complete the warm-up with your team, briefly review today’s objectives, and carefully read the end of the day report out items to guide your efforts.  
+Please complete the warm-up with your team, briefly review today’s objectives, and carefully read the Day 2 and Day 3 report out items to guide your efforts.  
 
 ## Objectives for Day 2
 1. Work together to decide on the data sets you will use. Reminder: Use a decision-making technique discussed during Day 1. Kaner’s Gradient of Agreement is below for reference.
-2. Think about how to join your datasets together. 
-3. Think about creating interesting graphics.
+2. Practice joining your datasets together. 
+3. Discuss and try creating interesting graphics.
 4. Report back on your results at the end of the day. Today’s report back is short and focused on your team process. The Day 3 report back is more detailed. 
 
 
