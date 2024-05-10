@@ -69,13 +69,13 @@ The following group exercise will uncover the impact of redlining on urban green
 
 We'll be using pre-developed code to visualize redlining impacts on Denver, CO. Please follow these steps: 
 
-1. Open R Studio in CyVerse
-2. Use "files" (lower right) to navigate to this markdown document:\
-  **innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd**
-3. Start at the beginning of the code and complete the following:
+- Open R Studio in CyVerse
+- Use "files" (lower right) to navigate to this markdown document:
+  - *innovation-summit-2024/docs/worksheets/worksheet_redlining.qmd*
+- Start at the beginning of the code and complete the following:
   - Create a map of historically redlined districts in Denver
   - Overlay current-day NDVI (vegetation greenness) data onto your map
-5. Now, it's your turn to choose a variable to observe. Use the provided code (written as a function) to select the variable you want to add to your map.
+- Now, it's your turn to choose a variable to observe. Use the provided code (written as a function) to select the variable you want to add to your map.
 
 **Variable Options:**
 
