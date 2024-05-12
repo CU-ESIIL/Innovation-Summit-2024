@@ -98,9 +98,9 @@ Come up with a unique title for your anaylysis. Write it down on a sticky note a
 
 ## Discussion Questions
 
-After completing your anaylysis, discuss these questions with your group. 
+After completing your anaylysis, discuss these questions with your group: 
 1. What patterns do you notice? What are the immediate questions that come to mind?
-2. How does big data help illustrate resilience? 
+2. How does big data help illustrate resilience?
 3. Redlining has a long-term impact. How is the impact of redlining still evident today?
 
 ## Still have time? 
