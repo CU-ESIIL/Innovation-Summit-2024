@@ -44,6 +44,7 @@ library(ggplot2)
 library(ggthemes)
 library(glue)
 library(purrr)
+library(dplyr)
 ```
 
 ```{r, collapse=TRUE}
