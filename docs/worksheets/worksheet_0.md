@@ -76,7 +76,7 @@ We'll be using pre-developed code to visualize redlining impacts on Denver, CO. 
 - Start at the beginning of the code and complete the following:
     - Create a map of historically redlined districts in Denver
     - Overlay current-day NDVI (vegetation greenness) data onto your map
-- Choose "Run All" to run all the code. Note: It will take about **5 minutes** to run.
+- You can choose "Run All" to run all the code. Note: It will take about **5 minutes** to run.
 
 ![](../worksheets/R_run_all.png)
     
