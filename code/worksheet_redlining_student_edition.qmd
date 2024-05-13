@@ -19,15 +19,9 @@ Data Visualization (plot_city_redlining and split_plot): These functions are use
 Advanced Spatial Analysis (process_and_plot_sf_layers): This function performs complex spatial operations like buffering and intersecting different layers to analyze the interactions between them. It exemplifies how to handle and visualize spatial relationships and dependencies.
 
 ```{r, collapse=TRUE}
-install.packages("devtools")
-install.packages("tidytext")
-library(devtools)
-install_github('Chrisjb/basemapR')
-library(basemapR)
-library(tidytext)
+remotes::install_version("ggplot2", version = "3.5.0")
 library(sf)
-library(ggplot2)
-library(ggthemes)
+
 library(dplyr)
 library(rstac)
 library(gdalcubes)
@@ -35,16 +29,36 @@ library(gdalUtils)
 library(gdalcubes)
 library(colorspace)
 library(terra)
-library(tidyterra)
-library(tidytext)
-library(ggwordcloud)
-library(osmextract)
+
 library(sf)
-library(ggplot2)
-library(ggthemes)
-library(glue)
 library(purrr)
 library(dplyr)
+library(gdalcubes)
+
+install.packages("osmextract")
+install.packages('ggthemes')
+install.packages("rstac")
+install.packages("tidyterra")
+install.packages("glue")
+install.packages("tidytext")
+install.packages("ggwordcloud")
+#install.packages("ggplot2", upgrade = TRUE)
+
+library(glue)
+library(tidytext)
+library(osmextract)
+library(ggthemes)
+library(rstac)
+
+library(ggwordcloud)
+
+library(ggplot2)
+library(tidyterra)
+
+install.packages("devtools")
+library(devtools)
+install_github('Chrisjb/basemapR')
+library(basemapR)
 ```
 
 ```{r, collapse=TRUE}
