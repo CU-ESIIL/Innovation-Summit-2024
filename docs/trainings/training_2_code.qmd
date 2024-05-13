@@ -1,5 +1,4 @@
 ---
-title: "Pre-summit training"
 format: gfm
 ---
 
@@ -20,7 +19,6 @@ library(gdalcubes)
 library(colorspace)
 library(terra)
 library(tidyterra)
-library(basemapR)
 library(tidytext)
 library(ggwordcloud)
 library(osmextract)
@@ -32,7 +30,15 @@ library(glue)
 library(purrr)
 ```
 
-
+```{r}
+require(terra)
+require(tictoc)
+system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap") #move the data first!!
+tictoc::tic()
+treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
+terra::plot(treemap)
+tictoc::toc()
+```
 
 ```{r}
  address <- "https://www.denvergov.org/media/gis/DataCatalog/tree_inventory/shape/tree_inventory.zip"
@@ -42,6 +48,13 @@ inner_file <- "tree_inventory.shp"
   shape_data
 ```
 
+```{r}
+redlining_data <- read_sf(url)
+  city_redline <- redlining_data |>
+    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
+  
+city_redline
+```
 
 ```{r}
  url <- "https://raw.githubusercontent.com/americanpanorama/mapping-inequality-census-crosswalk/main/MIv3Areas_2010TractCrosswalk.geojson"
@@ -59,13 +72,7 @@ city_state_df
 
 
 
-```{r}
-redlining_data <- read_sf(url)
-  city_redline <- redlining_data |>
-    filter(city == "Denver" & city_survey == "TRUE" & grade != "")
-  
-city_redline
-```
+
 
 
 
