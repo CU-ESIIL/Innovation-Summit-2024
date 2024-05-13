@@ -20,6 +20,7 @@ Advanced Spatial Analysis (process_and_plot_sf_layers): This function performs c
 
 ```{r, collapse=TRUE}
 install.packages("devtools")
+install.packages("tidytext")
 library(devtools)
 install_github('Chrisjb/basemapR')
 library(basemapR)
