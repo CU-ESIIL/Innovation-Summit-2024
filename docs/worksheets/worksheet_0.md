@@ -74,7 +74,7 @@ We'll be using pre-developed code to visualize redlining impacts on Denver, CO. 
 - Use "files" (lower right) to navigate to this markdown document:
     - **innovation-summit-2024/code/worksheet_redlining_student_edition.qmd**
 
-![](../worksheets/R_run_all)
+![](../worksheets/R_run_all.png)
 
 - Start at the beginning of the code and complete the following:
     - Create a map of historically redlined districts in Denver
