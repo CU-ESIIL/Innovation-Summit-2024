@@ -33,10 +33,10 @@ Please share the following information about yourself. Each team member should t
 
   ---
   - **Name:** [Jada Szympruch]
-  - **Pronouns:** [Your Pronouns]
-  - **Expertise:** [Your Expertise]
-  - **Environmental Data Science Superpower:** [Describe your unique skill or interest in environmental data science]
-  - **Reflection on Polarities Exercise:** [Share one thing you observed about yourself]
+  - **Pronouns:** [She/her]
+  - **Expertise:** [Biological Sciences/Anthropolgy]
+  - **Environmental Data Science Superpower:** []
+  - **Reflection on Polarities Exercise:** [Many internal processers in the group]
 
   ---
   - Continue adding more team members following the same format, with a line break after each person.
