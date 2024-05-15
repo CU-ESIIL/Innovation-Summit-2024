@@ -40,6 +40,9 @@ May 16: 9am-12pm MT
 
 **[2024 ESIIL Innovation Summit Agenda](https://docs.google.com/document/d/1BXgUkbmGIVD12UDrnMlF9ERXN3jM1GW4/edit?usp=sharing&ouid=116923712774938340817&rtpof=true&sd=true)**
 
+## Attendees
+Here is a list of attendees and affiliations. Please feel free to edit or add YOUR additional information if you would like: [https://docs.google.com/spreadsheets/d/1TKP-HD5IYVEB9xDe19KXofy4C5E35_725NPUNe_dFyU/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1TKP-HD5IYVEB9xDe19KXofy4C5E35_725NPUNe_dFyU/edit?usp=sharing)
+
 ## Pre-Summit Survey
 We are conducting a research study to assess the outcomes and impacts of the ESIIL Innovation Summit.
 
