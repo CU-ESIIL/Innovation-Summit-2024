@@ -20,17 +20,17 @@ Please share the following informaton with your team. (No need to write down you
 
 ## Decision-Making
 Use the gradient of agreement (Kaner 20214) to make decisions as a team.
+**Instead of the suggested gradient, we used a TEK-consistent process which includes consensus, making sure all voices are heard, respect for Elders, the importance of ceremony and prayer, elevating youth, thinking generationally, being a good relative, including all age groups, especially children, generosity, and the importance of language and culture projection.**
 
 ![Gradients of agreement](../worksheets/love_gradient-of-agreement.png)
 
 ## Day 2 Report Back
 Day 2 report-back questions are about the team *process*. We are interested in your team’s unique experience. Below are some prompts you might consider. You don't need to address all of them - choose which ones you want to present. Please limit your reflection to 2-3 mins.  
 
-1. **What worked well for your team?**
-3. **What’s one thing you would change?**
-4. **Did your group ever have an “ah-ha” moment?  What led up to that moment?**
-5. **Did your group experience the groan zone?  What is one tip you want to share with future groups at the Summit about getting through the groan zone?**
-     - [insert your group reflection responses here]
+1. **What worked well for your team? Bouncing ideas back and forth, active listening, constructive arguments and feedback.**
+3. **What’s one thing you would change? We immediately put the tables in a circle to decolonize the workspace.**
+4. **Did your group ever have an “ah-ha” moment? Yes, several. First, we changed (decolonized) the group question. Then we came to the realization that of what our focus and output should be. We also came to some new conceptualizations and realized the importance of having Tribal Leadership in the conversation.  What led up to that moment? The above mentioned processes that worked well.**
+5. **Did your group experience the groan zone?  What is one tip you want to share with future groups at the Summit about getting through the groan zone? Yes. We had to remember that disagreements are OK. We worked through things by listening to different perspectives and letting everyone speak, especially if the deeply passionate parts.**
 
 **************************************************************
 
