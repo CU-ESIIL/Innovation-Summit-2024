@@ -4,11 +4,12 @@
 
 !!! Success "Almost here!"
 
-    May 14th-16th, 2024
+    November 7th-8th, 2024
 
     University of Colorado Boulder
 
-ESIIL's 2024 Innovation Summit will offer an opportunity to use big data to understand resilience across genes, species, ecosystems and societies, advance ecological forecasting with solutions in mind, and inform adaptive management and natural climate solutions. The Summit will support attendees to advance data-informed courses of action for resilience and adaptation in the face of our changing environment. It will be an in-person ‘unconference’, enabling participants to dynamically work on themes that most inspire them, with inclusive physical and intellectual spaces for working together. Over two and a half days participants will work in teams to explore research questions using open science approaches, including: data infrastructure, artificial intelligence (AI) and novel analytics, and cloud computing. Participants will be encouraged to work across and respect different perspectives, with the aim of co-developing resilience solutions. ESIIL will provide participants with opportunities to learn more about cultural intelligence, ethical and open science practices, and leadership in the rapidly evolving field of environmental data science. Overall, the Summit will capitalize on the combination of open data and analytics opportunities to develop innovative or impactful approaches that improve environmental resilience and adaptation.
+Cultivating inclusive and collaborative wildland fire science: linking FIRE-PLAN teams 
+
 
 **Why Big Data for Environmental Resilience and Adaptation?**
 Humans have vastly altered ecosystems, leading to habitat and biodiversity loss, climate change, and altered nutrient and water cycles. At the same time, we are in an unprecedented moment where vast amounts of data are being produced about our planet faster than we can generate insights in a responsible way. We urgently need solutions that foster equitable use of our planet’s resources and better distribute the burden of adaptation.
