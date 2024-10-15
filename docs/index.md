@@ -12,7 +12,7 @@ Cultivating inclusive and collaborative wildland fire science: linking FIRE-
 
 
 **Why Big Data for Environmental Resilience and Adaptation?**
-Humans have vastly altered ecosystems, leading to habitat and biodiversity loss, climate change, and altered nutrient and water cycles. At the same time, we are in an unprecedented moment where vast amounts of data are being produced about our planet faster than we can generate insights in a responsible way. We urgently need solutions that foster equitable use of our planet’s resources and better distribute the burden of adaptation.
+
 
 **The goals of the 2024 ESIIL Innovation Summit are to:**
 Explore big data for environmental resilience and adaptation by identifying data synthesis opportunities and utilizing ESIIL cloud-compute capabilities. 
