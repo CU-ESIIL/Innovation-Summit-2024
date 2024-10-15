@@ -1,0 +1,168 @@
+---
+title: "nsf report 2024"
+format:
+  html:
+    theme: default
+    toc: true
+    number-sections: true
+---
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(dplyr)
+
+# Get world data
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# Data frame with country names and counts
+data <- data.frame(
+  name = c("United States of America", "Brazil", "Germany", "Canada", "Nigeria",
+           "Australia", "Peru", "Israel", "United Kingdom", "Panama",
+           "Saudi Arabia", "Kenya", "Japan", "Nepal", "Spain",
+           "Sweden", "Czech Republic", "Vietnam"),
+  count = c(252, 6, 5, 5, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+)
+
+# Join this data with the world map data
+world_data <- left_join(world, data, by = "name")
+
+# Plot
+# Plot with adjusted scale
+countries_plot <- ggplot(data = world_data) +
+  geom_sf(aes(fill = count), color = "white", size = 0.25) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue", 
+                      limits = c(0, 252), 
+                      breaks = c(1,  50, 100, 252),
+                      na.value = "grey90", name = "Users",
+                      labels = scales::comma) +
+  #labs(title = "ESIIL Cyverse users per country") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        plot.title = element_text(hjust = 0.5))
+
+ggsave(countries_plot, file="countries_plot.png", dpi=600)
+
+```
+
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Get U.S. states and Canadian provinces data
+states <- ne_states(country = "united states of america", returnclass = "sf")
+provinces <- ne_states(country = "canada", returnclass = "sf")
+
+# Combine U.S. states and Canadian provinces
+north_america_map <- rbind(states, provinces)
+
+# Data frame with regions and counts
+data <- data.frame(
+  region = c("colorado", "california", "florida", "south dakota", "arizona",
+             "louisiana", "new york", "south carolina", "new mexico", "north carolina",
+             "minnesota", "massachusetts", "connecticut", "oregon", "wisconsin",
+             "maryland", "virginia", "pennsylvania", "texas", "michigan", "illinois",
+             "ontario", "north dakota", "georgia", "new jersey", "utah",
+             "missouri", "idaho", "montana", "maine", "new hampshire", "ohio", "nevada",
+             "hawaii", "arkansas", "wyoming", "oklahoma", "tennessee", "washington",
+             "alabama", "district of columbia", "kentucky", "indiana", "rhode island", "iowa",
+             "quebec", "british columbia"),
+  count = c(76, 20, 16, 13, 8, 8, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4,
+            3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+)
+
+# Map data to region names
+north_america_map$region <- tolower(north_america_map$name)
+north_america_map <- left_join(north_america_map, data, by = "region")
+
+# Filter out regions with no data
+filled_regions <- north_america_map[!is.na(north_america_map$count), ]
+
+# Calculate the bounding box of the filled regions
+bbox <- st_bbox(filled_regions)
+
+# Crop the original map based on the bounding box
+cropped_map <- st_crop(north_america_map, bbox)
+
+# Plot the map, focusing only on regions with data
+states_plot <- ggplot(data = cropped_map) +
+  geom_sf(aes(fill = count), color = "white", size = 0.25) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue", na.value = "grey90", name = "Users") +
+  #labs(title = "ESIIL Cyverse users per state") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+ggsave(states_plot, file="states_plot.png", dpi=600)
+
+
+```
+
+
+
+```{r}
+library(plotly)
+
+# Define tasks and their assumed start and end dates
+tasks <- data.frame(
+  Task = c("CI User Needs Assessment", "Write new draft", "IRB approval", "Send to community",
+           "analyze survey results", "Respond to User Needs Assessment", "CyVerse Workbench Integration",
+           "Requirements & UI / UX design", "Code free large JupyterHub deployment", "Docker Registry",
+           "Data library", "reorganize sections after summit", "write guidelines for community contribution",
+           "guide a prototype community contribution into the library", "recruit community contributions",
+           "write ESIIL contributions to the library", "Analytics library - Integrated workflows",
+           "ESIIL community-driven high-level design", "Write code of conduct, authorship credits",
+           "Write guidelines for community contribution", "Create ESIIL codes template", "Bring codes from Earth Lab's GitHub",
+           "CI library", "Push-button terraform template", "WG-generated value-added information products",
+           "Cycle ESIIL personnel through FOSS class", "Unified branding", "CI for Analytics / Data library",
+           "ESIIL User Tracking Site", "Jim's Data Cube Pilot Project", "gdal set up on Jim's laptop",
+           "Planning and Data Acquisition", "Data Cube Design and Setup", "Storage and Management",
+           "Analysis and Visualization", "Security and Quality Assurance", "Scalability and Maintenance"),
+  Start = seq(as.Date("2023-06-01"), length.out = 37, by = "15 days"),
+  End = seq(as.Date("2023-07-01"), length.out = 37, by = "15 days"),
+  Owner = rep(c("Ty", "Tyson, Ty, Cibele", "Tyson", "Erick", "Cibele", "Jim"), length.out = 37),
+  Color = ifelse(seq(as.Date("2023-06-01"), length.out = 37, by = "15 days") < as.Date("2024-06-01"), 'rgb(0,123,255)', 'rgb(255,0,0)')
+)
+
+# Create a Gantt chart using Plotly
+fig <- plot_ly()
+fig <- fig %>% add_trace(
+  type = 'bar',
+  x = as.numeric(difftime(tasks$End, tasks$Start, units = "days")),
+  y = tasks$Task,
+  base = as.numeric(difftime(tasks$Start, as.Date("2023-06-01"), units = "days")),
+  orientation = 'h',
+  marker = list(color = tasks$Color, line = list(color = 'rgb(255,255,255)', width = 2))
+)
+
+fig <- fig %>% layout(
+  title = "Gantt Chart for ESIIL Year 2 Projects",
+  paper_bgcolor='rgba(0,0,0,0)',  # transparent background
+  plot_bgcolor='rgba(0,0,0,0)',  # transparent background
+  xaxis = list(
+    title = "Days from Start",
+    showgrid = TRUE,
+    tickvals = seq(0, 760, by = 30),
+    ticktext = seq(as.Date("2023-06-01"), length.out = 26, by = "month") %>% format("%b %Y")
+  ),
+  yaxis = list(title = "")
+)
+
+# Show the plot
+fig
+
+# Save Plotly plot to HTML
+htmlwidgets::saveWidget(as_widget(fig), "temp_plot.html", selfcontained = TRUE)
+
+# Use webshot to convert the HTML to PNG
+webshot::webshot("temp_plot.html", "gantt_chart.png", delay = 5)  # delay may need adjustment
+
+
+```
+
